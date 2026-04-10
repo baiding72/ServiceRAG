@@ -1,0 +1,33 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.pytest_cache/
+
+# Virtual environments
+.venv
+
+# Local environment
+.env
+.env.*
+.python-version
+
+# macOS
+.DS_Store
+
+# Vector DB artifacts
+data/chroma_db/
+data/chroma_db_m3/
+data/chroma_db_m3_*/
+data/chroma_db_m3_test/
+data/chroma_db_m3_manual/
+data/chroma_db_m3_smoke/
+data/chroma_db_m3_probe100/
+data/chroma_db_m3_add10/
+
+# Generated outputs
+data/submission.csv
+*.log
