@@ -560,13 +560,17 @@ def call_llm(
         if unique_images:
             image_hint = f"\n\n【可用图片ID】（引用时请确保使用这些正确的ID）: {json.dumps(unique_images, ensure_ascii=False)}"
 
+        visual_block = ""
+        if visual_context:
+            visual_block = visual_context + "\n"
+
         # 构建 User Prompt
         user_prompt = f"""【用户问题】
 {question}
 
 【参考知识】
 {context}
-{f"{visual_context}\n" if visual_context else ""}{image_hint}
+{visual_block}{image_hint}
 
 请根据以上信息，输出 JSON 格式的回答。记住：判断问题是"产品技术与使用问题"还是"通用售后与客诉问题"，并采用相应的回答策略。"""
 
