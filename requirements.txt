@@ -28,6 +28,7 @@ sentence-transformers>=2.2.0
 # Hugging Face 依赖
 transformers>=4.30.0
 torch>=2.0.0
+Pillow>=10.0.0
 
 # ============================================
 # LLM API 依赖

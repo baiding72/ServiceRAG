@@ -17,6 +17,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 import re
+import unicodedata
 
 # 配置
 API_URL = "http://localhost:8000/chat"
@@ -54,7 +55,41 @@ def normalize_answer(answer: str) -> str:
     """将答案压平成单行，降低评测平台 CSV 解析失败风险。"""
     if answer is None:
         return ""
-    return re.sub(r"\s+", " ", str(answer)).strip()
+    text = re.sub(r"\s+", " ", str(answer)).strip()
+
+    cleaned_chars = []
+    for ch in text:
+        code = ord(ch)
+        category = unicodedata.category(ch)
+
+        if code < 32 and ch not in "\t\n\r":
+            continue
+        if code == 127:
+            continue
+        if code > 0xFFFF:
+            continue
+        if category in {"Cf", "Cs"}:
+            continue
+
+        cleaned_chars.append(ch)
+
+    cleaned = "".join(cleaned_chars)
+    return re.sub(r"\s+", " ", cleaned).strip()
+
+
+def validate_submission_file(file_path: Path) -> None:
+    """校验提交文件是否为合法 UTF-8 且列头符合要求。"""
+    raw = file_path.read_bytes()
+    if raw.startswith(b"\xef\xbb\xbf"):
+        raw.decode("utf-8-sig")
+    else:
+        raw.decode("utf-8")
+
+    with file_path.open("r", encoding="utf-8-sig", newline="") as infile:
+        reader = csv.reader(infile)
+        header = next(reader, [])
+        if header != ["id", "ret"]:
+            raise ValueError(f"提交文件表头错误: {header}")
 
 
 def main():
@@ -107,7 +142,7 @@ def main():
             time.sleep(0.1)  # 防止并发过高
 
     # 写入提交文件（兼容官方提交流程）
-    with open(OUTPUT_FILE, mode='w', encoding='utf-8', newline='') as outfile:
+    with open(OUTPUT_FILE, mode='w', encoding='utf-8-sig', newline='') as outfile:
         fieldnames = ['id', 'ret']
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -135,6 +170,8 @@ def main():
 
     with open(run_metadata_file, mode='w', encoding='utf-8') as outfile:
         json.dump(metadata, outfile, ensure_ascii=False, indent=2)
+
+    validate_submission_file(Path(OUTPUT_FILE))
 
     print("\n" + "=" * 50)
     print(f"✅ 处理完成！")
