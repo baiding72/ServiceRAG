@@ -16,6 +16,7 @@ import requests
 import time
 from datetime import datetime
 from pathlib import Path
+import re
 
 # 配置
 API_URL = "http://localhost:8000/chat"
@@ -47,6 +48,13 @@ def get_answer(question: str) -> str:
             return f"Error: {response.status_code}"
     except Exception as e:
         return f"Request Failed: {str(e)}"
+
+
+def normalize_answer(answer: str) -> str:
+    """将答案压平成单行，降低评测平台 CSV 解析失败风险。"""
+    if answer is None:
+        return ""
+    return re.sub(r"\s+", " ", str(answer)).strip()
 
 
 def main():
@@ -86,7 +94,7 @@ def main():
             print(f"\n[{i}/{total}] 处理 ID: {q_id}")
             print(f"   问题: {question[:50]}...")
 
-            answer = get_answer(question)
+            answer = normalize_answer(get_answer(question))
 
             print(f"   回答: {answer[:150]}...")
 
@@ -100,10 +108,10 @@ def main():
 
     # 写入提交文件（兼容官方提交流程）
     with open(OUTPUT_FILE, mode='w', encoding='utf-8', newline='') as outfile:
-        fieldnames = ['id', 'question', 'ret']
+        fieldnames = ['id', 'ret']
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows(results)
+        writer.writerows([{"id": row["id"], "ret": row["ret"]} for row in results])
 
     # 同时保留本轮实验结果
     with open(run_submission_file, mode='w', encoding='utf-8', newline='') as outfile:
