@@ -15,7 +15,6 @@
 
 import json
 import os
-from pathlib import Path
 from typing import List, Dict, Any, Optional
 
 os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
@@ -23,7 +22,7 @@ os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 
 import chromadb
 from chromadb.config import Settings
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import CrossEncoder, SentenceTransformer
 
 
 # ============================================
@@ -40,6 +39,9 @@ COLLECTION_NAME = "manuals_qa_m3"
 # Embedding 模型名称（多语言 SOTA 模型）
 # BAAI/bge-m3: 多语言支持，向量维度 1024，中英文效果俱佳
 EMBEDDING_MODEL_NAME = "BAAI/bge-m3"
+ENABLE_RERANK = os.getenv("ENABLE_RERANK", "true").lower() == "true"
+RERANKER_MODEL_NAME = os.getenv("RERANKER_MODEL_NAME", "BAAI/bge-reranker-base")
+RERANK_CANDIDATE_K = int(os.getenv("RERANK_CANDIDATE_K", "18"))
 
 
 # ============================================
@@ -61,7 +63,9 @@ class ManualRetriever:
         self,
         persist_dir: str = CHROMA_PERSIST_DIR,
         collection_name: str = COLLECTION_NAME,
-        model_name: str = EMBEDDING_MODEL_NAME
+        model_name: str = EMBEDDING_MODEL_NAME,
+        enable_rerank: bool = ENABLE_RERANK,
+        reranker_model_name: str = RERANKER_MODEL_NAME
     ):
         """
         初始化检索器
@@ -72,10 +76,22 @@ class ManualRetriever:
             model_name: Embedding 模型名称
         """
         print(f"🔧 初始化检索器...")
+        self.enable_rerank = enable_rerank
+        self.reranker = None
 
         # 加载 Embedding 模型
         print(f"   📥 加载 Embedding 模型: {model_name}")
         self.model = SentenceTransformer(model_name)
+
+        if self.enable_rerank:
+            try:
+                print(f"   📥 加载 Reranker 模型: {reranker_model_name}")
+                self.reranker = CrossEncoder(reranker_model_name)
+                print("   ✓ Reranker 加载成功")
+            except Exception as e:
+                print(f"   ⚠️  Reranker 加载失败，回退为纯向量检索: {e}")
+                self.enable_rerank = False
+                self.reranker = None
 
         # 连接 ChromaDB
         print(f"   📂 连接向量数据库: {persist_dir}")
@@ -95,7 +111,31 @@ class ManualRetriever:
                 f"请先运行 build_vector_db.py 构建向量数据库。错误: {e}"
             )
 
-    def search(
+    def _parse_results(self, results: Dict[str, Any]) -> List[Dict[str, Any]]:
+        parsed_results = []
+
+        for i in range(len(results['ids'][0])):
+            metadata = results['metadatas'][0][i]
+            images_str = metadata.get('images', '[]')
+
+            try:
+                images = json.loads(images_str)
+            except json.JSONDecodeError:
+                images = []
+
+            parsed_results.append(
+                {
+                    'chunk_id': results['ids'][0][i],
+                    'content': results['documents'][0][i],
+                    'images': images,
+                    'product': metadata.get('product', 'unknown'),
+                    'distance': results['distances'][0][i]
+                }
+            )
+
+        return parsed_results
+
+    def search_semantic(
         self,
         query: str,
         top_k: int = 5,
@@ -117,7 +157,6 @@ class ManualRetriever:
                 - product: 产品名称
                 - distance: 相似度距离（越小越相似）
         """
-        # 1. 将查询文本向量化
         query_embedding = self.model.encode(
             query,
             show_progress_bar=False,
@@ -125,7 +164,6 @@ class ManualRetriever:
             normalize_embeddings=True
         ).tolist()
 
-        # 2. 执行向量检索
         results = self.collection.query(
             query_embeddings=[query_embedding],
             n_results=top_k,
@@ -133,28 +171,52 @@ class ManualRetriever:
             include=['documents', 'metadatas', 'distances']
         )
 
-        # 3. 解析结果
-        parsed_results = []
+        return self._parse_results(results)
 
-        for i in range(len(results['ids'][0])):
-            # 从 metadata 中反序列化 images 列表
-            metadata = results['metadatas'][0][i]
-            images_str = metadata.get('images', '[]')
+    def rerank_results(
+        self,
+        query: str,
+        candidates: List[Dict[str, Any]],
+        top_k: Optional[int] = None
+    ) -> List[Dict[str, Any]]:
+        if not candidates:
+            return []
 
-            try:
-                images = json.loads(images_str)
-            except json.JSONDecodeError:
-                images = []
+        if not self.enable_rerank or self.reranker is None:
+            sorted_candidates = sorted(candidates, key=lambda x: x.get("distance", 999.0))
+            return sorted_candidates[:top_k] if top_k is not None else sorted_candidates
 
-            result_item = {
-                'content': results['documents'][0][i],
-                'images': images,
-                'product': metadata.get('product', 'unknown'),
-                'distance': results['distances'][0][i]
-            }
-            parsed_results.append(result_item)
+        pairs = [[query, item.get("content", "")] for item in candidates]
+        scores = self.reranker.predict(pairs, show_progress_bar=False)
 
-        return parsed_results
+        reranked = []
+        for item, score in zip(candidates, scores):
+            enriched = dict(item)
+            enriched["rerank_score"] = float(score)
+            reranked.append(enriched)
+
+        reranked.sort(
+            key=lambda x: (
+                -x.get("rerank_score", float("-inf")),
+                x.get("distance", 999.0)
+            )
+        )
+        return reranked[:top_k] if top_k is not None else reranked
+
+    def search(
+        self,
+        query: str,
+        top_k: int = 5,
+        where_filter: Optional[Dict] = None,
+        candidate_k: Optional[int] = None
+    ) -> List[Dict[str, Any]]:
+        candidate_k = max(top_k, candidate_k or RERANK_CANDIDATE_K)
+        candidates = self.search_semantic(
+            query=query,
+            top_k=candidate_k,
+            where_filter=where_filter
+        )
+        return self.rerank_results(query, candidates, top_k=top_k)
 
     def search_by_product(
         self,
@@ -176,7 +238,8 @@ class ManualRetriever:
         return self.search(
             query=query,
             top_k=top_k,
-            where_filter={"product": product}
+            where_filter={"product": product},
+            candidate_k=max(top_k, RERANK_CANDIDATE_K)
         )
 
     def get_all_products(self) -> List[str]:

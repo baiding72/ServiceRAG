@@ -20,14 +20,12 @@ wheels/
 
 # Vector DB artifacts
 data/chroma_db/
-data/chroma_db_m3/
 data/chroma_db_m3_*/
 data/chroma_db_m3_test/
 data/chroma_db_m3_manual/
 data/chroma_db_m3_smoke/
 data/chroma_db_m3_probe100/
 data/chroma_db_m3_add10/
-data/chroma_image_db/
 data/chroma_image_db*/
 
 # Generated outputs

@@ -46,6 +46,7 @@ LLM_MODEL_NAME = os.getenv("LLM_MODEL_NAME", "qwen-plus")  # 模型名称
 # 检索配置
 RETRIEVE_TOP_K = 10  # 检索返回的文档数量（扩大召回池，避免漏答复杂问题）
 VISUAL_RETRIEVE_TOP_K = 5  # 图片辅助召回数量
+SEMANTIC_CANDIDATE_K = int(os.getenv("SEMANTIC_CANDIDATE_K", "18"))
 
 # 超时配置（秒）
 LLM_TIMEOUT = 30
@@ -283,13 +284,13 @@ def retrieve_knowledge(question: str, top_k: int = RETRIEVE_TOP_K) -> List[dict]
         merged_results = []
         seen_keys = {}
 
-        per_query_top_k = max(4, min(top_k, 6))
+        per_query_top_k = max(6, min(SEMANTIC_CANDIDATE_K, 10))
         for query_text in queries:
-            results = retriever.search(query_text, top_k=per_query_top_k)
+            results = retriever.search_semantic(query_text, top_k=SEMANTIC_CANDIDATE_K)
             for item in results:
                 key = (
+                    item.get("chunk_id", ""),
                     item.get("product", ""),
-                    item.get("content", "")
                 )
                 distance = item.get("distance", 999.0)
                 if key not in seen_keys or distance < seen_keys[key]["distance"]:
@@ -297,7 +298,8 @@ def retrieve_knowledge(question: str, top_k: int = RETRIEVE_TOP_K) -> List[dict]
 
         merged_results = list(seen_keys.values())
         merged_results.sort(key=lambda x: x.get("distance", 999.0))
-        return merged_results[:top_k]
+        candidate_pool = merged_results[:max(top_k, SEMANTIC_CANDIDATE_K)]
+        return retriever.rerank_results(question, candidate_pool, top_k=top_k)
     except Exception as e:
         print(f"检索失败: {e}")
         return []
