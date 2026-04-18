@@ -148,8 +148,8 @@ def build_vector_database(
             # ID
             ids.append(item['chunk_id'])
 
-            # 文档内容
-            documents.append(item['content'])
+            # 检索用文本：优先使用富化后的 embedding_text
+            documents.append(item.get('embedding_text') or item['content'])
 
             # 元数据（注意：images 列表必须序列化为字符串）
             metadata = {
@@ -166,6 +166,8 @@ def build_vector_database(
                 'sub_manual': item.get('sub_manual', '') or '',
                 'language': item.get('language', '') or '',
                 'content_type': item.get('content_type', '') or '',
+                'raw_content': item.get('content', '') or '',
+                'bm25_text': item.get('bm25_text', item.get('content', '')) or '',
             }
             metadatas.append(metadata)
 

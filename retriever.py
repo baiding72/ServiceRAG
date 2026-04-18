@@ -148,15 +148,22 @@ class ManualRetriever:
             except json.JSONDecodeError:
                 images = []
 
+            raw_content = metadata.get("raw_content", content)
+            bm25_text = metadata.get("bm25_text", content)
             corpus.append(
                 {
                     "chunk_id": chunk_id,
-                    "content": content,
+                    "content": raw_content,
+                    "retrieval_text": content,
                     "images": images,
                     "product": metadata.get("product", "unknown"),
+                    "sub_manual": metadata.get("sub_manual", ""),
+                    "section_title": metadata.get("section_title", ""),
+                    "language": metadata.get("language", ""),
+                    "content_type": metadata.get("content_type", ""),
                     "distance": 999.0,
-                    "normalized_content": self._normalize_text(content),
-                    "bm25_tokens": self._tokenize_for_bm25(content),
+                    "normalized_content": self._normalize_text(bm25_text),
+                    "bm25_tokens": self._tokenize_for_bm25(bm25_text),
                     "corpus_index": corpus_index,
                 }
             )
@@ -415,9 +422,14 @@ class ManualRetriever:
             parsed_results.append(
                 {
                     'chunk_id': results['ids'][0][i],
-                    'content': results['documents'][0][i],
+                    'content': metadata.get('raw_content', results['documents'][0][i]),
+                    'retrieval_text': results['documents'][0][i],
                     'images': images,
                     'product': metadata.get('product', 'unknown'),
+                    'sub_manual': metadata.get('sub_manual', ''),
+                    'section_title': metadata.get('section_title', ''),
+                    'language': metadata.get('language', ''),
+                    'content_type': metadata.get('content_type', ''),
                     'distance': results['distances'][0][i]
                 }
             )

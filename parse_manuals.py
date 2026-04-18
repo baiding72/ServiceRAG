@@ -63,6 +63,8 @@ class TextChunk:
     sub_manual: str = ""
     language: str = ""
     content_type: str = ""
+    embedding_text: str = ""
+    bm25_text: str = ""
 
 
 # ============================================
@@ -256,6 +258,66 @@ def infer_content_type(section_title: str, content: str, images: List[str], step
     if images:
         return "image_section"
     return "general"
+
+
+def build_embedding_text(
+    product: str,
+    sub_manual: str,
+    section_title: str,
+    content_type: str,
+    language: str,
+    content: str
+) -> str:
+    """
+    构造供 Dense Embedding 使用的富化文本。
+    """
+    content = clean_text(content)
+    section_title = clean_text(section_title)
+    sub_manual = clean_text(sub_manual) or clean_text(product)
+    content_type = clean_text(content_type) or "general"
+
+    if language == "en":
+        parts = [
+            "This is an English product manual.",
+            f"Product: {sub_manual}.",
+        ]
+        if section_title:
+            parts.append(f"Section: {section_title}.")
+        parts.append(f"Content type: {content_type}.")
+        parts.append(f"Details: {content}")
+        return " ".join(parts)
+
+    parts = [
+        "这是中文产品说明书内容。",
+        f"产品：{sub_manual or product}。",
+    ]
+    if section_title:
+        parts.append(f"章节：{section_title}。")
+    parts.append(f"内容类型：{content_type}。")
+    parts.append(f"详细内容：{content}")
+    return "".join(parts)
+
+
+def build_bm25_text(
+    product: str,
+    sub_manual: str,
+    section_title: str,
+    content_type: str,
+    language: str,
+    content: str
+) -> str:
+    """
+    构造供 BM25 使用的高密度关键词文本。
+    """
+    fields = [
+        language,
+        clean_text(product),
+        clean_text(sub_manual),
+        clean_text(section_title),
+        clean_text(content_type),
+        clean_text(content),
+    ]
+    return " ".join(part for part in fields if part)
 
 
 def parse_raw_manual_records(raw_content: str, file_name: str) -> List[Tuple[str, List[str]]]:
@@ -753,6 +815,22 @@ def parse_manual_file(file_path: Path) -> List[TextChunk]:
                     sub_manual=sub_manual,
                     language=language,
                     content_type=parent_type,
+                    embedding_text=build_embedding_text(
+                        product=product,
+                        sub_manual=sub_manual,
+                        section_title=section_title,
+                        content_type=parent_type,
+                        language=language,
+                        content=parent_text,
+                    ),
+                    bm25_text=build_bm25_text(
+                        product=product,
+                        sub_manual=sub_manual,
+                        section_title=section_title,
+                        content_type=parent_type,
+                        language=language,
+                        content=parent_text,
+                    ),
                 )
             )
 
@@ -783,6 +861,24 @@ def parse_manual_file(file_path: Path) -> List[TextChunk]:
                         language=language,
                         content_type=infer_content_type(section_title, child_text, child_images, step_no),
                     )
+                )
+
+            for child_chunk in child_chunks:
+                child_chunk.embedding_text = build_embedding_text(
+                    product=child_chunk.product,
+                    sub_manual=child_chunk.sub_manual,
+                    section_title=child_chunk.section_title,
+                    content_type=child_chunk.content_type,
+                    language=child_chunk.language,
+                    content=child_chunk.content,
+                )
+                child_chunk.bm25_text = build_bm25_text(
+                    product=child_chunk.product,
+                    sub_manual=child_chunk.sub_manual,
+                    section_title=child_chunk.section_title,
+                    content_type=child_chunk.content_type,
+                    language=child_chunk.language,
+                    content=child_chunk.content,
                 )
 
             for idx, child_chunk in enumerate(child_chunks):
