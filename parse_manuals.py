@@ -37,6 +37,8 @@ MIN_CHUNK_LENGTH = 5
 
 # 图片占位符标记
 IMAGE_PLACEHOLDER = "<PIC>"
+CHILD_TARGET_LENGTH = 560
+CHILD_OVERLAP = 40
 
 
 # ============================================
@@ -50,6 +52,17 @@ class TextChunk:
     product: str            # 产品名称（来源文件名）
     content: str            # 文本内容
     images: List[str]       # 关联的图片ID列表
+    level: str = "child"    # chunk 层级：parent / child
+    parent_id: Optional[str] = None
+    section_title: str = ""
+    step_no: str = ""
+    chunk_index: int = 0
+    prev_chunk_id: str = ""
+    next_chunk_id: str = ""
+    source_file: str = ""
+    sub_manual: str = ""
+    language: str = ""
+    content_type: str = ""
 
 
 # ============================================
@@ -177,6 +190,131 @@ def clean_text(text: str) -> str:
     return text
 
 
+def preprocess_text_for_structure(text: str, product: str) -> str:
+    """
+    对结构较差的原文做轻量预标准化，帮助 section / step 识别。
+    """
+    text = text or ""
+    if product == "汇总英文":
+        text = re.sub(r'(?<!\n)\s+(#\s*[A-Z][A-Za-z/&\'’ -]{1,80})', r'\n\1', text)
+        text = re.sub(r'(?<=[.?!])\s+(?=#\s*[A-Z])', '\n', text)
+    return text
+
+
+def infer_sub_manual(text: str, product: str, record_index: int) -> str:
+    """
+    为聚合手册推断更细的子手册标题。
+    """
+    normalized = clean_text(text)
+    if not normalized:
+        return f"{product}_{record_index:02d}"
+
+    lines = [line.strip() for line in normalized.split("\n") if line.strip()]
+    heading_candidate = ""
+    for line in lines[:12]:
+        if line.startswith("#"):
+            heading_candidate = re.sub(r'^#+\s*', '', line).strip()
+            break
+
+    candidate = heading_candidate or lines[0]
+    candidate = candidate.replace(IMAGE_PLACEHOLDER, " ")
+    candidate = re.sub(r'\s+', ' ', candidate)
+    candidate = re.sub(r'[|•·]+', ' ', candidate)
+    candidate = re.split(r'(?<=[.?!:])\s+', candidate, maxsplit=1)[0]
+    words = candidate.split()
+    if len(words) > 12:
+        candidate = " ".join(words[:12])
+    candidate = candidate.strip(" -_\t")
+    if len(candidate) > 80:
+        candidate = candidate[:80].rstrip()
+    return candidate or f"{product}_{record_index:02d}"
+
+
+def infer_language(product: str, text: str) -> str:
+    if product == "汇总英文":
+        return "en"
+    cjk_hits = len(re.findall(r'[\u4e00-\u9fff]', text))
+    ascii_hits = len(re.findall(r'[A-Za-z]', text))
+    return "zh" if cjk_hits >= ascii_hits else "en"
+
+
+def infer_content_type(section_title: str, content: str, images: List[str], step_no: str) -> str:
+    normalized_title = clean_text(section_title).lower()
+    normalized_content = clean_text(content).lower()
+    haystack = f"{normalized_title}\n{normalized_content}"
+
+    if step_no:
+        return "steps"
+    if is_toc_section(content, section_title):
+        return "toc"
+    if "warning" in haystack or "caution" in haystack or "注意" in haystack or "警告" in haystack:
+        return "warning"
+    if "screen" in haystack or "menu" in haystack or "button" in haystack or "setting" in haystack:
+        return "ui"
+    if "specification" in haystack or "specifications" in haystack or "参数" in haystack:
+        return "spec"
+    if images:
+        return "image_section"
+    return "general"
+
+
+def parse_raw_manual_records(raw_content: str, file_name: str) -> List[Tuple[str, List[str]]]:
+    """
+    解析手册原始内容，兼容三种格式：
+    1. 单个 JSON 数组 [text, images]
+    2. 单个 Python 字面量数组
+    3. 按行拼接的多条 JSON/字面量记录（汇总英文手册）
+    """
+    def normalize_record(data: Any) -> Optional[Tuple[str, List[str]]]:
+        if isinstance(data, list) and len(data) >= 1:
+            text_content = data[0]
+            image_list = data[1] if len(data) > 1 and isinstance(data[1], list) else []
+            return str(text_content), image_list
+        if isinstance(data, str):
+            return data, []
+        return None
+
+    try:
+        parsed = json.loads(raw_content)
+        record = normalize_record(parsed)
+        if record:
+            return [record]
+    except json.JSONDecodeError:
+        pass
+
+    try:
+        parsed = ast.literal_eval(raw_content)
+        record = normalize_record(parsed)
+        if record:
+            return [record]
+    except (ValueError, SyntaxError):
+        pass
+
+    records: List[Tuple[str, List[str]]] = []
+    for line in raw_content.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+
+        parsed_line = None
+        try:
+            parsed_line = json.loads(line)
+        except json.JSONDecodeError:
+            try:
+                parsed_line = ast.literal_eval(line)
+            except (ValueError, SyntaxError):
+                parsed_line = None
+
+        record = normalize_record(parsed_line) if parsed_line is not None else None
+        if record:
+            records.append(record)
+
+    if records:
+        return records
+
+    return [(raw_content, [])]
+
+
 # ============================================
 # 核心解析逻辑
 # ============================================
@@ -259,6 +397,309 @@ def smart_split_paragraph(text: str) -> List[str]:
     return result
 
 
+STEP_LINE_PATTERN = re.compile(
+    r'^\s*(?:#\s*)?(?:step\s*)?(?P<step>\d{1,2}|[一二三四五六七八九十]+)[.)、：:]?\s*',
+    re.IGNORECASE
+)
+
+
+def is_step_line(line: str) -> bool:
+    return bool(STEP_LINE_PATTERN.match(line.strip()))
+
+
+def extract_step_no(line: str) -> str:
+    match = STEP_LINE_PATTERN.match(line.strip())
+    return match.group("step") if match else ""
+
+
+def is_heading_line(line: str) -> bool:
+    stripped = line.strip()
+    if not stripped.startswith("#"):
+        return False
+    return not is_step_line(stripped)
+
+
+def is_major_heading_line(line: str) -> bool:
+    stripped = clean_text(line)
+    if not is_heading_line(stripped):
+        return False
+
+    title = re.sub(r'^#+\s*', '', stripped).strip()
+    if not title or title == IMAGE_PLACEHOLDER:
+        return False
+
+    if re.fullmatch(r'[#\s]+', stripped):
+        return False
+
+    words = re.findall(r"[A-Za-z0-9][A-Za-z0-9/&'’.-]*", title)
+    word_count = len(words)
+    upper_chars = sum(1 for ch in title if ch.isalpha() and ch.isupper())
+    alpha_chars = sum(1 for ch in title if ch.isalpha())
+    upper_ratio = upper_chars / alpha_chars if alpha_chars else 0.0
+
+    if "table of contents" in title.lower() or title.lower().startswith("contents"):
+        return True
+    if re.match(r'^(chapter|appendix)\b', title, flags=re.IGNORECASE):
+        return True
+    if re.search(r'\.{4,}', title):
+        return True
+    if len(title) <= 70 and word_count <= 9 and not re.search(r'[.?!]', title):
+        return True
+    if len(title) <= 90 and word_count <= 12 and upper_ratio >= 0.65:
+        return True
+
+    return False
+
+
+def attach_section_title(section_title: str, text: str) -> str:
+    text = clean_text(text)
+    title = clean_text(section_title)
+    if not title:
+        return text
+    if text.startswith(title):
+        return text
+    return f"{title}\n{text}" if text else title
+
+
+def split_into_sections(text: str, image_list: List[str]) -> List[Tuple[str, List[str], str]]:
+    """
+    按显式 section 标题切块，并将图片顺序映射回各 section。
+    """
+    lines = text.split("\n")
+    sections: List[Tuple[str, str]] = []
+    current_title = ""
+    current_lines: List[str] = []
+
+    for line in lines:
+        if is_major_heading_line(line):
+            if current_lines:
+                sections.append((current_title, "\n".join(current_lines).strip()))
+            current_title = clean_text(line)
+            current_lines = [line]
+        else:
+            current_lines.append(line)
+
+    if current_lines:
+        sections.append((current_title, "\n".join(current_lines).strip()))
+
+    if not sections:
+        return [(text, image_list, "")]
+
+    image_index = 0
+    resolved = []
+    for section_title, section_text in sections:
+        pic_count = section_text.count(IMAGE_PLACEHOLDER)
+        section_images = image_list[image_index:image_index + pic_count]
+        image_index += pic_count
+        resolved.append((section_text, section_images, section_title))
+
+    return resolved
+
+
+def split_step_blocks(text: str) -> List[Tuple[str, str]]:
+    """
+    识别连续步骤块，返回 [(step_no, block_text), ...]。
+    """
+    lines = [line.rstrip() for line in text.split("\n")]
+    blocks: List[Tuple[str, List[str]]] = []
+    current_step = ""
+    current_lines: List[str] = []
+
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            if current_lines:
+                current_lines.append(line)
+            continue
+
+        if is_step_line(stripped):
+            if current_lines:
+                blocks.append((current_step, current_lines))
+            current_step = extract_step_no(stripped)
+            current_lines = [line]
+        else:
+            current_lines.append(line)
+
+    if current_lines:
+        blocks.append((current_step, current_lines))
+
+    normalized = []
+    valid_steps = 0
+    for step_no, block_lines in blocks:
+        block_text = clean_text("\n".join(block_lines))
+        if len(block_text) >= MIN_CHUNK_LENGTH:
+            normalized.append((step_no, block_text))
+            if step_no:
+                valid_steps += 1
+
+    return normalized if valid_steps >= 2 else []
+
+
+def is_toc_section(text: str, section_title: str) -> bool:
+    normalized = clean_text(text).lower()
+    title = clean_text(section_title).lower()
+    if "table of contents" in normalized or "content/ contenu" in normalized:
+        return True
+    if title.startswith("# table of contents") or title.startswith("# content"):
+        return True
+    dot_leader_hits = len(re.findall(r'\.{4,}', normalized))
+    page_like_hits = len(re.findall(r'\bpage\s+\d+\b|\b\d{1,3}\s*$', normalized, flags=re.MULTILINE))
+    return dot_leader_hits >= 5 or page_like_hits >= 8
+
+
+def split_long_text_with_overlap(
+    text: str,
+    target_len: int = CHILD_TARGET_LENGTH,
+    overlap: int = CHILD_OVERLAP
+) -> List[str]:
+    """
+    对过长文本做轻量滑动窗口。
+    """
+    text = clean_text(text)
+    if len(text) <= target_len:
+        return [text] if text else []
+
+    units = [unit.strip() for unit in re.split(r'(?<=[。！？.!?])\s+|\n+', text) if unit.strip()]
+    if not units:
+        return [text]
+
+    windows: List[str] = []
+    start = 0
+    while start < len(units):
+        current = []
+        current_len = 0
+        idx = start
+        while idx < len(units):
+            unit = units[idx]
+            projected = current_len + len(unit) + (1 if current else 0)
+            if current and projected > target_len:
+                break
+            current.append(unit)
+            current_len = projected
+            idx += 1
+
+        if not current:
+            current = [units[start]]
+            idx = start + 1
+
+        windows.append(clean_text(" ".join(current)))
+        if idx >= len(units):
+            break
+
+        overlap_chars = 0
+        next_start = idx
+        while next_start > start:
+            overlap_chars += len(units[next_start - 1]) + 1
+            if overlap_chars >= overlap:
+                break
+            next_start -= 1
+        start = max(start + 1, next_start)
+
+    return windows
+
+
+def merge_pic_children(pic_units: List[Tuple[str, List[str]]], target_len: int = CHILD_TARGET_LENGTH) -> List[Tuple[str, List[str]]]:
+    """
+    将连续的短图文单元合并，避免一张图切成一个过短 child。
+    """
+    merged: List[Tuple[str, List[str]]] = []
+    current_texts: List[str] = []
+    current_images: List[str] = []
+    current_len = 0
+
+    for text, images in pic_units:
+        text = clean_text(text)
+        if not text and not images:
+            continue
+
+        unit_len = len(text)
+        if current_texts and current_len + unit_len > target_len:
+            merged.append((clean_text("\n".join(current_texts)), current_images))
+            current_texts = []
+            current_images = []
+            current_len = 0
+
+        if text:
+            current_texts.append(text)
+            current_len += unit_len
+        for image_id in images:
+            if image_id not in current_images:
+                current_images.append(image_id)
+
+    if current_texts or current_images:
+        merged.append((clean_text("\n".join(current_texts)), current_images))
+
+    return merged
+
+
+def merge_text_units(units: List[str], target_len: int = CHILD_TARGET_LENGTH) -> List[str]:
+    """
+    将连续短段落合并，避免普通正文一段一个 child。
+    """
+    merged: List[str] = []
+    current_parts: List[str] = []
+    current_len = 0
+
+    for unit in units:
+        unit = clean_text(unit)
+        if not unit:
+            continue
+
+        projected = current_len + len(unit) + (1 if current_parts else 0)
+        if current_parts and projected > target_len:
+            merged.append(clean_text("\n".join(current_parts)))
+            current_parts = [unit]
+            current_len = len(unit)
+            continue
+
+        current_parts.append(unit)
+        current_len = projected
+
+    if current_parts:
+        merged.append(clean_text("\n".join(current_parts)))
+
+    return merged
+
+
+def build_child_units(section_text: str, section_images: List[str], section_title: str) -> List[Tuple[str, List[str], str]]:
+    """
+    根据 section 结构生成 child 单元：
+    1. 连续步骤块
+    2. <PIC> 图文块
+    3. 普通段落 + 滑动窗口
+    """
+    if is_toc_section(section_text, section_title):
+        return []
+
+    step_blocks = split_step_blocks(section_text)
+    if step_blocks:
+        units = []
+        for step_no, block_text in step_blocks:
+            for piece in split_long_text_with_overlap(block_text):
+                units.append((attach_section_title(section_title, piece), [], step_no))
+        return units
+
+    if IMAGE_PLACEHOLDER in section_text:
+        units = []
+        merged_pic_units = merge_pic_children(split_text_by_pic_tags(section_text, section_images))
+        for piece, images in merged_pic_units:
+            for child_text in split_long_text_with_overlap(piece, target_len=max(CHILD_TARGET_LENGTH, 520)):
+                units.append((attach_section_title(section_title, child_text), images, ""))
+        return units
+
+    units = []
+    paragraphs = [
+        paragraph for paragraph in smart_split_paragraph(section_text)
+        if len(clean_text(paragraph)) >= 24 or section_images
+    ]
+    for paragraph in merge_text_units(paragraphs):
+        if len(clean_text(paragraph)) < 24 and not section_images:
+            continue
+        for piece in split_long_text_with_overlap(paragraph):
+            units.append((attach_section_title(section_title, piece), [], ""))
+    return units
+
+
 def parse_manual_file(file_path: Path) -> List[TextChunk]:
     """
     解析单个手册文件
@@ -280,79 +721,76 @@ def parse_manual_file(file_path: Path) -> List[TextChunk]:
         print(f"  ⚠️  无法读取文件: {file_path.name}")
         return chunks
 
-    # 初始化变量
-    text_content = ""
-    image_list = []
+    records = parse_raw_manual_records(raw_content, file_path.name)
 
-    # 尝试解析 JSON 格式
-    try:
-        data = json.loads(raw_content)
+    global_section_index = 0
+    for record_index, (record_text, record_images) in enumerate(records, start=1):
+        text_content = preprocess_text_for_structure(str(record_text), product)
+        image_list = record_images if isinstance(record_images, list) else []
+        sub_manual = infer_sub_manual(text_content, product, record_index)
+        language = infer_language(product, text_content)
 
-        # 检查数据格式
-        if isinstance(data, list) and len(data) >= 2:
-            # 格式: [文本内容, 图片ID列表]
-            text_content = data[0]
-            image_list = data[1] if len(data) > 1 else []
-        elif isinstance(data, str):
-            # 纯文本格式
-            text_content = data
-            image_list = []
-        else:
-            print(f"  ⚠️  未知数据格式: {file_path.name}")
-            return chunks
+        sections = split_into_sections(text_content, image_list)
 
-    except json.JSONDecodeError:
-        # JSON 解析失败，尝试使用 ast.literal_eval（更宽松的解析）
-        try:
-            data = ast.literal_eval(raw_content)
-            if isinstance(data, list) and len(data) >= 2:
-                text_content = data[0]
-                image_list = data[1] if len(data) > 1 else []
-            else:
-                text_content = raw_content
-                image_list = []
-        except (ValueError, SyntaxError):
-            # 最终回退：作为纯文本处理
-            text_content = raw_content
-            image_list = []
+        for section_text, section_images, section_title in sections:
+            parent_text = clean_text(section_text)
+            if len(parent_text) < MIN_CHUNK_LENGTH:
+                continue
 
-    # 确保 text_content 是字符串
-    if not isinstance(text_content, str):
-        text_content = str(text_content)
+            parent_id = generate_chunk_id(product, f"parent::{parent_text}")
+            parent_type = infer_content_type(section_title, parent_text, section_images, "")
+            chunks.append(
+                TextChunk(
+                    chunk_id=parent_id,
+                    product=product,
+                    content=parent_text,
+                    images=section_images,
+                    level="parent",
+                    parent_id=None,
+                    section_title=clean_text(section_title),
+                    chunk_index=global_section_index,
+                    source_file=file_path.name,
+                    sub_manual=sub_manual,
+                    language=language,
+                    content_type=parent_type,
+                )
+            )
 
-    # 确保图片列表是列表类型
-    if not isinstance(image_list, list):
-        image_list = []
+            child_units = build_child_units(section_text, section_images, section_title)
+            child_ids = []
+            child_chunks = []
 
-    # 按 <PIC> 标记分割并关联图片
-    if IMAGE_PLACEHOLDER in text_content:
-        # 有图片标记的情况
-        split_chunks = split_text_by_pic_tags(text_content, image_list)
-    else:
-        # 没有图片标记，按段落分割
-        paragraphs = smart_split_paragraph(text_content)
-        split_chunks = [(p, []) for p in paragraphs]
+            for child_index, (child_text, child_images, step_no) in enumerate(child_units):
+                child_text = clean_text(child_text)
+                if len(child_text) < MIN_CHUNK_LENGTH:
+                    continue
 
-    # 创建 TextChunk 对象
-    for text, images in split_chunks:
-        # 清洗文本
-        text = clean_text(text)
+                child_id = generate_chunk_id(product, f"child::{child_text}")
+                child_ids.append(child_id)
+                child_chunks.append(
+                    TextChunk(
+                        chunk_id=child_id,
+                        product=product,
+                        content=child_text,
+                        images=child_images,
+                        level="child",
+                        parent_id=parent_id,
+                        section_title=clean_text(section_title),
+                        step_no=step_no,
+                        chunk_index=child_index,
+                        source_file=file_path.name,
+                        sub_manual=sub_manual,
+                        language=language,
+                        content_type=infer_content_type(section_title, child_text, child_images, step_no),
+                    )
+                )
 
-        # 再次检查长度
-        if len(text) < MIN_CHUNK_LENGTH:
-            continue
+            for idx, child_chunk in enumerate(child_chunks):
+                child_chunk.prev_chunk_id = child_ids[idx - 1] if idx > 0 else ""
+                child_chunk.next_chunk_id = child_ids[idx + 1] if idx < len(child_ids) - 1 else ""
+                chunks.append(child_chunk)
 
-        # 生成唯一 ID
-        chunk_id = generate_chunk_id(product, text)
-
-        # 创建 TextChunk
-        chunk = TextChunk(
-            chunk_id=chunk_id,
-            product=product,
-            content=text,
-            images=images
-        )
-        chunks.append(chunk)
+            global_section_index += 1
 
     return chunks
 

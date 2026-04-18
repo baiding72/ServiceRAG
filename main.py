@@ -47,6 +47,8 @@ LLM_MODEL_NAME = os.getenv("LLM_MODEL_NAME", "qwen-plus")  # 模型名称
 RETRIEVE_TOP_K = 10  # 检索返回的文档数量（扩大召回池，避免漏答复杂问题）
 VISUAL_RETRIEVE_TOP_K = 5  # 图片辅助召回数量
 SEMANTIC_CANDIDATE_K = int(os.getenv("SEMANTIC_CANDIDATE_K", "18"))
+BM25_CANDIDATE_K = int(os.getenv("BM25_CANDIDATE_K", "12"))
+RRF_K = int(os.getenv("RRF_K", "60"))
 
 # 超时配置（秒）
 LLM_TIMEOUT = 30
@@ -281,24 +283,47 @@ def retrieve_knowledge(question: str, top_k: int = RETRIEVE_TOP_K) -> List[dict]
 
     try:
         queries = expand_query_variants(question)
-        merged_results = []
-        seen_keys = {}
+        merged_candidates = {}
 
-        per_query_top_k = max(6, min(SEMANTIC_CANDIDATE_K, 10))
         for query_text in queries:
-            results = retriever.search_semantic(query_text, top_k=SEMANTIC_CANDIDATE_K)
-            for item in results:
+            semantic_results = retriever.search_semantic(query_text, top_k=SEMANTIC_CANDIDATE_K)
+            bm25_results = retriever.search_bm25(query_text, top_k=BM25_CANDIDATE_K)
+
+            for rank, item in enumerate(semantic_results, 1):
                 key = (
                     item.get("chunk_id", ""),
                     item.get("product", ""),
                 )
-                distance = item.get("distance", 999.0)
-                if key not in seen_keys or distance < seen_keys[key]["distance"]:
-                    seen_keys[key] = item
+                candidate = merged_candidates.setdefault(key, dict(item))
+                candidate["distance"] = min(
+                    item.get("distance", 999.0),
+                    candidate.get("distance", 999.0),
+                )
+                candidate["semantic_hit"] = True
+                candidate["retrieval_score"] = candidate.get("retrieval_score", 0.0) + 1.0 / (RRF_K + rank)
 
-        merged_results = list(seen_keys.values())
-        merged_results.sort(key=lambda x: x.get("distance", 999.0))
-        candidate_pool = merged_results[:max(top_k, SEMANTIC_CANDIDATE_K)]
+            for rank, item in enumerate(bm25_results, 1):
+                key = (
+                    item.get("chunk_id", ""),
+                    item.get("product", ""),
+                )
+                candidate = merged_candidates.setdefault(key, dict(item))
+                candidate["bm25_score"] = max(
+                    item.get("bm25_score", 0.0),
+                    candidate.get("bm25_score", 0.0),
+                )
+                candidate["bm25_hit"] = True
+                candidate["retrieval_score"] = candidate.get("retrieval_score", 0.0) + 1.0 / (RRF_K + rank)
+
+        candidate_pool = sorted(
+            merged_candidates.values(),
+            key=lambda x: (
+                -x.get("retrieval_score", 0.0),
+                x.get("distance", 999.0),
+                -x.get("bm25_score", 0.0),
+            )
+        )[:max(top_k, SEMANTIC_CANDIDATE_K, BM25_CANDIDATE_K)]
+
         return retriever.rerank_results(question, candidate_pool, top_k=top_k)
     except Exception as e:
         print(f"检索失败: {e}")

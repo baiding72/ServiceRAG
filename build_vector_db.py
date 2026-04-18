@@ -71,8 +71,10 @@ def load_knowledge_data(file_path: Path) -> List[Dict[str, Any]]:
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    print(f"   ✓ 加载完成，共 {len(data)} 条记录")
-    return data
+    parent_count = sum(1 for item in data if item.get("level") == "parent")
+    child_count = sum(1 for item in data if item.get("level", "child") == "child")
+    print(f"   ✓ 加载完成，共 {len(data)} 条记录（parent={parent_count}, child={child_count}）")
+    return [item for item in data if item.get("level", "child") == "child"]
 
 
 # ============================================
@@ -152,7 +154,18 @@ def build_vector_database(
             # 元数据（注意：images 列表必须序列化为字符串）
             metadata = {
                 'product': item['product'],
-                'images': json.dumps(item['images'], ensure_ascii=False)  # 序列化列表
+                'images': json.dumps(item['images'], ensure_ascii=False),  # 序列化列表
+                'level': item.get('level', 'child'),
+                'parent_id': item.get('parent_id', '') or '',
+                'section_title': item.get('section_title', '') or '',
+                'step_no': item.get('step_no', '') or '',
+                'chunk_index': int(item.get('chunk_index', 0) or 0),
+                'prev_chunk_id': item.get('prev_chunk_id', '') or '',
+                'next_chunk_id': item.get('next_chunk_id', '') or '',
+                'source_file': item.get('source_file', '') or '',
+                'sub_manual': item.get('sub_manual', '') or '',
+                'language': item.get('language', '') or '',
+                'content_type': item.get('content_type', '') or '',
             }
             metadatas.append(metadata)
 

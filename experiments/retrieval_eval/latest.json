@@ -1,0 +1,1832 @@
+{
+  "semantic_only": [
+    {
+      "qid": 71,
+      "question": "如何找到空调遥控器的按键？",
+      "category": "screen_button",
+      "prefer_image": true,
+      "rank": 3,
+      "image_hit": true
+    },
+    {
+      "qid": 72,
+      "question": "如何给空调遥控器安装电池？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 73,
+      "question": "如何安装空调遥控器支架？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 4,
+      "image_hit": true
+    },
+    {
+      "qid": 80,
+      "question": "无遥控器时如何操作空调？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 99,
+      "question": "如何根据洗碗机型号安装餐具篮？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 4,
+      "image_hit": true
+    },
+    {
+      "qid": 100,
+      "question": "使用洗碗机前如何安装可折叠下层篮架？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 3,
+      "image_hit": true
+    },
+    {
+      "qid": 105,
+      "question": "如何安装空气净化器的脚轮？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 107,
+      "question": "空气净化器的室内空气质量指示灯是什么？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 120,
+      "question": "如果我想编辑健身单车的用户档案，需要遵循哪些步骤？",
+      "category": "chinese_tech",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 123,
+      "question": "如果要给电钻充电，需要遵循哪些步骤？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 124,
+      "question": "我的DCB101型号电钻指示灯闪烁时，这些闪烁标识代表什么含义？",
+      "category": "screen_button",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 126,
+      "question": "使用电钻时，如何安装单套无键夹头？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 127,
+      "question": "如果要安装和拆卸电钻的电池组，需要遵循什么步骤？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 156,
+      "question": "需要通过发电机的燃油开关旋钮供油时，我该遵循哪些步骤？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 158,
+      "question": "启动发电机发动机的前两个步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 163,
+      "question": "使用发电机前，对发动机机油进行使用前检查十分重要，正确的步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 168,
+      "question": "为了正确更换发电机的发动机机油，我需要遵循的前六个步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 181,
+      "question": "水泵发动机安全停机的正确步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 183,
+      "question": "清洗油箱滤网的详细步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 184,
+      "question": "水泵安全排放燃油的正确步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 7,
+      "image_hit": true
+    },
+    {
+      "qid": 203,
+      "question": "如何拆卸和重新安装功能键盘的轴体？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 206,
+      "question": "如何安装儿童电动摩托车的挡泥板？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 208,
+      "question": "如何为蓝牙激光鼠标安装电池？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 209,
+      "question": "如何为蓝牙激光鼠标安装WIDCOMM蓝牙驱动程序？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 243,
+      "question": "How do I use the battery conversion feature before sailing?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 246,
+      "question": "If I want to listen to music on my phone, how do I turn on the sound system?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 251,
+      "question": "How do I turn on or off the water supply button on my boat?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 9,
+      "image_hit": false
+    },
+    {
+      "qid": 253,
+      "question": "How do I install a bimini top on my boat if I want to use the canopy?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 269,
+      "question": "How should I do if I want to reset to factory settings of the coffee machine?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": false
+    },
+    {
+      "qid": 273,
+      "question": "What is the maintenance setting screen of the boat controller?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 5,
+      "image_hit": false
+    },
+    {
+      "qid": 274,
+      "question": "In the boat's steering position, what does the factory reset screen show?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 8,
+      "image_hit": false
+    },
+    {
+      "qid": 275,
+      "question": "What is the trip screen shown?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 283,
+      "question": "How do you mount the lens of a camera when preparing for photography?",
+      "category": "english",
+      "prefer_image": true,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 286,
+      "question": "How do I replace the camera's date/time battery?",
+      "category": "english",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 303,
+      "question": "From three different observing views, what buttons and interfaces should this eReader have?",
+      "category": "multi_subquestion",
+      "prefer_image": true,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 67,
+      "question": "吹风机冷机时，该如何启动？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 69,
+      "question": "该如何关闭吹风机？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 74,
+      "question": "如何用空调快速调节室内温度？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 75,
+      "question": "如何使用空调的自清洁运行功能？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 83,
+      "question": "如何清洁空调的空气滤网？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 93,
+      "question": "首次使用时，如何将洗碗机连接到排水口？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 94,
+      "question": "使用前如何为洗碗机添加专用盐？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 101,
+      "question": "如何调节洗碗机满载时上下碗篮的高度？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 102,
+      "question": "如何清洁洗碗机的进水管滤网？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 103,
+      "question": "如何清洁洗碗机的上层喷淋臂？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 108,
+      "question": "如何清洁空气净化器的设备内外？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 110,
+      "question": "如何更换空气净化器的滤网？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 111,
+      "question": "如何清洁空气净化器的灰尘传感器？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": true
+    },
+    {
+      "qid": 114,
+      "question": "启动健身单车前，我需要做什么？",
+      "category": "chinese_tech",
+      "prefer_image": false,
+      "rank": 9,
+      "image_hit": true
+    },
+    {
+      "qid": 116,
+      "question": "在健身单车上运动前，我需要调整什么来保证运动的舒适度？",
+      "category": "chinese_tech",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 157,
+      "question": "使用发电机时，燃油的使用前检查十分重要，该如何操作？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 164,
+      "question": "根据手册说明，启动发电机发动机的最后三个步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 166,
+      "question": "我需要让发电机的发动机停机，告诉我该如何操作。",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 4,
+      "image_hit": true
+    },
+    {
+      "qid": 171,
+      "question": "我需要将发电机的燃油排空，该如何正确操作？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 186,
+      "question": "如何为温控器设置日期和时间，以实现精准的日程和温度控制？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 187,
+      "question": "如何调整温控器的系统和风扇运行设置，以优化供暖和制冷效果？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 188,
+      "question": "如何调整温控器的程序日程，以实现高效的能源利用和温度控制？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 189,
+      "question": "如何在不影响已编程日程的情况下，临时更改温控器的温度设置？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 207,
+      "question": "如何安装儿童电动摩托车的前轮？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 211,
+      "question": "如何在Windows系统中为蓝牙激光鼠标设置快速配对？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 213,
+      "question": "如何查看蓝牙激光鼠标的电量状态？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": true
+    },
+    {
+      "qid": 217,
+      "question": "如何安装烤箱门？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 241,
+      "question": "If this is the first time to use airfryer, What should I do before first use?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": false
+    },
+    {
+      "qid": 245,
+      "question": "What should I do if face over temperature warning on the boat?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 248,
+      "question": "How to open the battery compartment when manipulating the boat?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 258,
+      "question": "When I want to start the boat, how do I turn on the boat's engine to get the machine started?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 304,
+      "question": "What do the functions of Main Menu and Browser History of the eReader can do?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 9,
+      "image_hit": false
+    },
+    {
+      "qid": 306,
+      "question": "If I want to listen to music using this eReader, what should I do?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 307,
+      "question": "Can this eReader record voice? If so, how do I operate this feature?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 308,
+      "question": "I can't find the way to play video using this eReader, can you tell me how to do that?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 309,
+      "question": "Can this eReader become a photo viewer? If so, how do I operate this feature?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 317,
+      "question": "When using the grill, how to connect regulator to the LP Tank?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 318,
+      "question": "To engure my safety when using the grill, how to do leak testing on valves, hose and regulatol?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": false
+    },
+    {
+      "qid": 328,
+      "question": "I'd like to remove and install the seat of my jetski, what steps should I follow?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 329,
+      "question": "In daily usage, how to open and close the hood of the jetski?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 7,
+      "image_hit": false
+    },
+    {
+      "qid": 320,
+      "question": "What are the first three steps in assembly process of the grill according to the manual?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    }
+  ],
+  "dense_plus_bm25": [
+    {
+      "qid": 71,
+      "question": "如何找到空调遥控器的按键？",
+      "category": "screen_button",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 72,
+      "question": "如何给空调遥控器安装电池？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 73,
+      "question": "如何安装空调遥控器支架？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 80,
+      "question": "无遥控器时如何操作空调？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 99,
+      "question": "如何根据洗碗机型号安装餐具篮？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 4,
+      "image_hit": true
+    },
+    {
+      "qid": 100,
+      "question": "使用洗碗机前如何安装可折叠下层篮架？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 3,
+      "image_hit": true
+    },
+    {
+      "qid": 105,
+      "question": "如何安装空气净化器的脚轮？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 107,
+      "question": "空气净化器的室内空气质量指示灯是什么？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 120,
+      "question": "如果我想编辑健身单车的用户档案，需要遵循哪些步骤？",
+      "category": "chinese_tech",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 123,
+      "question": "如果要给电钻充电，需要遵循哪些步骤？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 124,
+      "question": "我的DCB101型号电钻指示灯闪烁时，这些闪烁标识代表什么含义？",
+      "category": "screen_button",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 126,
+      "question": "使用电钻时，如何安装单套无键夹头？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 127,
+      "question": "如果要安装和拆卸电钻的电池组，需要遵循什么步骤？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 156,
+      "question": "需要通过发电机的燃油开关旋钮供油时，我该遵循哪些步骤？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 158,
+      "question": "启动发电机发动机的前两个步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 163,
+      "question": "使用发电机前，对发动机机油进行使用前检查十分重要，正确的步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 168,
+      "question": "为了正确更换发电机的发动机机油，我需要遵循的前六个步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 181,
+      "question": "水泵发动机安全停机的正确步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 183,
+      "question": "清洗油箱滤网的详细步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 18,
+      "image_hit": true
+    },
+    {
+      "qid": 184,
+      "question": "水泵安全排放燃油的正确步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 203,
+      "question": "如何拆卸和重新安装功能键盘的轴体？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 206,
+      "question": "如何安装儿童电动摩托车的挡泥板？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 208,
+      "question": "如何为蓝牙激光鼠标安装电池？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 209,
+      "question": "如何为蓝牙激光鼠标安装WIDCOMM蓝牙驱动程序？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 243,
+      "question": "How do I use the battery conversion feature before sailing?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 246,
+      "question": "If I want to listen to music on my phone, how do I turn on the sound system?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 251,
+      "question": "How do I turn on or off the water supply button on my boat?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 4,
+      "image_hit": false
+    },
+    {
+      "qid": 253,
+      "question": "How do I install a bimini top on my boat if I want to use the canopy?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 269,
+      "question": "How should I do if I want to reset to factory settings of the coffee machine?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 273,
+      "question": "What is the maintenance setting screen of the boat controller?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": false
+    },
+    {
+      "qid": 274,
+      "question": "In the boat's steering position, what does the factory reset screen show?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": false
+    },
+    {
+      "qid": 275,
+      "question": "What is the trip screen shown?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 283,
+      "question": "How do you mount the lens of a camera when preparing for photography?",
+      "category": "english",
+      "prefer_image": true,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 286,
+      "question": "How do I replace the camera's date/time battery?",
+      "category": "english",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 303,
+      "question": "From three different observing views, what buttons and interfaces should this eReader have?",
+      "category": "multi_subquestion",
+      "prefer_image": true,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 67,
+      "question": "吹风机冷机时，该如何启动？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 6,
+      "image_hit": true
+    },
+    {
+      "qid": 69,
+      "question": "该如何关闭吹风机？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 74,
+      "question": "如何用空调快速调节室内温度？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 75,
+      "question": "如何使用空调的自清洁运行功能？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 83,
+      "question": "如何清洁空调的空气滤网？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 93,
+      "question": "首次使用时，如何将洗碗机连接到排水口？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 94,
+      "question": "使用前如何为洗碗机添加专用盐？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 101,
+      "question": "如何调节洗碗机满载时上下碗篮的高度？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 102,
+      "question": "如何清洁洗碗机的进水管滤网？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 103,
+      "question": "如何清洁洗碗机的上层喷淋臂？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 108,
+      "question": "如何清洁空气净化器的设备内外？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 110,
+      "question": "如何更换空气净化器的滤网？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 111,
+      "question": "如何清洁空气净化器的灰尘传感器？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 114,
+      "question": "启动健身单车前，我需要做什么？",
+      "category": "chinese_tech",
+      "prefer_image": false,
+      "rank": 17,
+      "image_hit": true
+    },
+    {
+      "qid": 116,
+      "question": "在健身单车上运动前，我需要调整什么来保证运动的舒适度？",
+      "category": "chinese_tech",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 157,
+      "question": "使用发电机时，燃油的使用前检查十分重要，该如何操作？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 164,
+      "question": "根据手册说明，启动发电机发动机的最后三个步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 166,
+      "question": "我需要让发电机的发动机停机，告诉我该如何操作。",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 10,
+      "image_hit": true
+    },
+    {
+      "qid": 171,
+      "question": "我需要将发电机的燃油排空，该如何正确操作？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 186,
+      "question": "如何为温控器设置日期和时间，以实现精准的日程和温度控制？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 187,
+      "question": "如何调整温控器的系统和风扇运行设置，以优化供暖和制冷效果？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 188,
+      "question": "如何调整温控器的程序日程，以实现高效的能源利用和温度控制？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 189,
+      "question": "如何在不影响已编程日程的情况下，临时更改温控器的温度设置？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 207,
+      "question": "如何安装儿童电动摩托车的前轮？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 211,
+      "question": "如何在Windows系统中为蓝牙激光鼠标设置快速配对？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 213,
+      "question": "如何查看蓝牙激光鼠标的电量状态？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": true
+    },
+    {
+      "qid": 217,
+      "question": "如何安装烤箱门？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 241,
+      "question": "If this is the first time to use airfryer, What should I do before first use?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": false
+    },
+    {
+      "qid": 245,
+      "question": "What should I do if face over temperature warning on the boat?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 248,
+      "question": "How to open the battery compartment when manipulating the boat?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 258,
+      "question": "When I want to start the boat, how do I turn on the boat's engine to get the machine started?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 304,
+      "question": "What do the functions of Main Menu and Browser History of the eReader can do?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": false
+    },
+    {
+      "qid": 306,
+      "question": "If I want to listen to music using this eReader, what should I do?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 307,
+      "question": "Can this eReader record voice? If so, how do I operate this feature?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 308,
+      "question": "I can't find the way to play video using this eReader, can you tell me how to do that?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 309,
+      "question": "Can this eReader become a photo viewer? If so, how do I operate this feature?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 317,
+      "question": "When using the grill, how to connect regulator to the LP Tank?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 318,
+      "question": "To engure my safety when using the grill, how to do leak testing on valves, hose and regulatol?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 328,
+      "question": "I'd like to remove and install the seat of my jetski, what steps should I follow?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 329,
+      "question": "In daily usage, how to open and close the hood of the jetski?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": false
+    },
+    {
+      "qid": 320,
+      "question": "What are the first three steps in assembly process of the grill according to the manual?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    }
+  ],
+  "dense_plus_bm25_with_rerank": [
+    {
+      "qid": 71,
+      "question": "如何找到空调遥控器的按键？",
+      "category": "screen_button",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 72,
+      "question": "如何给空调遥控器安装电池？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 73,
+      "question": "如何安装空调遥控器支架？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 80,
+      "question": "无遥控器时如何操作空调？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 99,
+      "question": "如何根据洗碗机型号安装餐具篮？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 4,
+      "image_hit": true
+    },
+    {
+      "qid": 100,
+      "question": "使用洗碗机前如何安装可折叠下层篮架？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 105,
+      "question": "如何安装空气净化器的脚轮？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 107,
+      "question": "空气净化器的室内空气质量指示灯是什么？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 120,
+      "question": "如果我想编辑健身单车的用户档案，需要遵循哪些步骤？",
+      "category": "chinese_tech",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 123,
+      "question": "如果要给电钻充电，需要遵循哪些步骤？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 124,
+      "question": "我的DCB101型号电钻指示灯闪烁时，这些闪烁标识代表什么含义？",
+      "category": "screen_button",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 126,
+      "question": "使用电钻时，如何安装单套无键夹头？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 127,
+      "question": "如果要安装和拆卸电钻的电池组，需要遵循什么步骤？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 156,
+      "question": "需要通过发电机的燃油开关旋钮供油时，我该遵循哪些步骤？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 158,
+      "question": "启动发电机发动机的前两个步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 163,
+      "question": "使用发电机前，对发动机机油进行使用前检查十分重要，正确的步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 168,
+      "question": "为了正确更换发电机的发动机机油，我需要遵循的前六个步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": true
+    },
+    {
+      "qid": 181,
+      "question": "水泵发动机安全停机的正确步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 183,
+      "question": "清洗油箱滤网的详细步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 14,
+      "image_hit": true
+    },
+    {
+      "qid": 184,
+      "question": "水泵安全排放燃油的正确步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 203,
+      "question": "如何拆卸和重新安装功能键盘的轴体？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 206,
+      "question": "如何安装儿童电动摩托车的挡泥板？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 208,
+      "question": "如何为蓝牙激光鼠标安装电池？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 209,
+      "question": "如何为蓝牙激光鼠标安装WIDCOMM蓝牙驱动程序？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 243,
+      "question": "How do I use the battery conversion feature before sailing?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 246,
+      "question": "If I want to listen to music on my phone, how do I turn on the sound system?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 251,
+      "question": "How do I turn on or off the water supply button on my boat?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": false
+    },
+    {
+      "qid": 253,
+      "question": "How do I install a bimini top on my boat if I want to use the canopy?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 269,
+      "question": "How should I do if I want to reset to factory settings of the coffee machine?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 5,
+      "image_hit": false
+    },
+    {
+      "qid": 273,
+      "question": "What is the maintenance setting screen of the boat controller?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": false
+    },
+    {
+      "qid": 274,
+      "question": "In the boat's steering position, what does the factory reset screen show?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 275,
+      "question": "What is the trip screen shown?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 283,
+      "question": "How do you mount the lens of a camera when preparing for photography?",
+      "category": "english",
+      "prefer_image": true,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 286,
+      "question": "How do I replace the camera's date/time battery?",
+      "category": "english",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 303,
+      "question": "From three different observing views, what buttons and interfaces should this eReader have?",
+      "category": "multi_subquestion",
+      "prefer_image": true,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 67,
+      "question": "吹风机冷机时，该如何启动？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 69,
+      "question": "该如何关闭吹风机？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 74,
+      "question": "如何用空调快速调节室内温度？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 75,
+      "question": "如何使用空调的自清洁运行功能？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 83,
+      "question": "如何清洁空调的空气滤网？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 93,
+      "question": "首次使用时，如何将洗碗机连接到排水口？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 4,
+      "image_hit": true
+    },
+    {
+      "qid": 94,
+      "question": "使用前如何为洗碗机添加专用盐？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 2,
+      "image_hit": true
+    },
+    {
+      "qid": 101,
+      "question": "如何调节洗碗机满载时上下碗篮的高度？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 102,
+      "question": "如何清洁洗碗机的进水管滤网？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 103,
+      "question": "如何清洁洗碗机的上层喷淋臂？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 108,
+      "question": "如何清洁空气净化器的设备内外？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 110,
+      "question": "如何更换空气净化器的滤网？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 111,
+      "question": "如何清洁空气净化器的灰尘传感器？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 9,
+      "image_hit": true
+    },
+    {
+      "qid": 114,
+      "question": "启动健身单车前，我需要做什么？",
+      "category": "chinese_tech",
+      "prefer_image": false,
+      "rank": 5,
+      "image_hit": true
+    },
+    {
+      "qid": 116,
+      "question": "在健身单车上运动前，我需要调整什么来保证运动的舒适度？",
+      "category": "chinese_tech",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 157,
+      "question": "使用发电机时，燃油的使用前检查十分重要，该如何操作？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 164,
+      "question": "根据手册说明，启动发电机发动机的最后三个步骤是什么？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 166,
+      "question": "我需要让发电机的发动机停机，告诉我该如何操作。",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 171,
+      "question": "我需要将发电机的燃油排空，该如何正确操作？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 186,
+      "question": "如何为温控器设置日期和时间，以实现精准的日程和温度控制？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 187,
+      "question": "如何调整温控器的系统和风扇运行设置，以优化供暖和制冷效果？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 188,
+      "question": "如何调整温控器的程序日程，以实现高效的能源利用和温度控制？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 189,
+      "question": "如何在不影响已编程日程的情况下，临时更改温控器的温度设置？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 207,
+      "question": "如何安装儿童电动摩托车的前轮？",
+      "category": "steps",
+      "prefer_image": true,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 211,
+      "question": "如何在Windows系统中为蓝牙激光鼠标设置快速配对？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 213,
+      "question": "如何查看蓝牙激光鼠标的电量状态？",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 217,
+      "question": "如何安装烤箱门？",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": true
+    },
+    {
+      "qid": 241,
+      "question": "If this is the first time to use airfryer, What should I do before first use?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 245,
+      "question": "What should I do if face over temperature warning on the boat?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 248,
+      "question": "How to open the battery compartment when manipulating the boat?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 258,
+      "question": "When I want to start the boat, how do I turn on the boat's engine to get the machine started?",
+      "category": "english",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 304,
+      "question": "What do the functions of Main Menu and Browser History of the eReader can do?",
+      "category": "screen_button",
+      "prefer_image": false,
+      "rank": 11,
+      "image_hit": false
+    },
+    {
+      "qid": 306,
+      "question": "If I want to listen to music using this eReader, what should I do?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 307,
+      "question": "Can this eReader record voice? If so, how do I operate this feature?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 308,
+      "question": "I can't find the way to play video using this eReader, can you tell me how to do that?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    },
+    {
+      "qid": 309,
+      "question": "Can this eReader become a photo viewer? If so, how do I operate this feature?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": false
+    },
+    {
+      "qid": 317,
+      "question": "When using the grill, how to connect regulator to the LP Tank?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 318,
+      "question": "To engure my safety when using the grill, how to do leak testing on valves, hose and regulatol?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 1,
+      "image_hit": false
+    },
+    {
+      "qid": 328,
+      "question": "I'd like to remove and install the seat of my jetski, what steps should I follow?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": false
+    },
+    {
+      "qid": 329,
+      "question": "In daily usage, how to open and close the hood of the jetski?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": 3,
+      "image_hit": false
+    },
+    {
+      "qid": 320,
+      "question": "What are the first three steps in assembly process of the grill according to the manual?",
+      "category": "steps",
+      "prefer_image": false,
+      "rank": -1,
+      "image_hit": false
+    }
+  ]
+}
