@@ -18,6 +18,7 @@ from datetime import datetime
 from pathlib import Path
 import re
 import unicodedata
+import argparse
 
 # 配置
 API_URL = "http://localhost:8000/chat"
@@ -46,7 +47,8 @@ def get_answer(question: str) -> str:
             res_data = response.json()
             return res_data.get("data", {}).get("answer", "接口未返回有效答案")
         else:
-            return f"Error: {response.status_code}"
+            body_preview = response.text[:300].replace("\n", " ").strip()
+            return f"Error: {response.status_code} | {body_preview}"
     except Exception as e:
         return f"Request Failed: {str(e)}"
 
@@ -92,63 +94,39 @@ def validate_submission_file(file_path: Path) -> None:
             raise ValueError(f"提交文件表头错误: {header}")
 
 
-def main():
-    import sys
-    # 支持命令行参数指定处理数量，默认全部
-    max_count = int(sys.argv[1]) if len(sys.argv) > 1 else 0  # 0 表示全部
+def load_existing_results(run_submission_file: Path) -> list[dict]:
+    """加载已有实验结果，用于断点续跑。"""
+    if not run_submission_file.exists():
+        return []
 
-    started_at = datetime.now()
-    run_name = started_at.strftime("batch_%Y%m%d_%H%M%S")
-    run_dir = EXPERIMENTS_DIR / run_name
-    run_dir.mkdir(parents=True, exist_ok=True)
-
-    run_submission_file = run_dir / "submission.csv"
-    run_metadata_file = run_dir / "meta.json"
-
-    results = []
-
-    print("=" * 50)
-    print("🚀 开始批量处理测试集...")
-    if max_count > 0:
-        print(f"   仅处理前 {max_count} 条（测试模式）")
-    print(f"   实验目录: {run_dir}")
-    print("=" * 50)
-
-    with open(INPUT_FILE, mode='r', encoding='utf-8') as infile:
+    with run_submission_file.open("r", encoding="utf-8", newline="") as infile:
         reader = csv.DictReader(infile)
-        rows = list(reader)
+        results = []
+        for row in reader:
+            results.append(
+                {
+                    "id": row.get("id", ""),
+                    "question": row.get("question", ""),
+                    "ret": row.get("ret", ""),
+                }
+            )
+        return results
 
-        if max_count > 0:
-            rows = rows[:max_count]
-        total = len(rows)
 
-        for i, row in enumerate(rows, 1):
-            q_id = row.get('id', '')
-            question = row.get('question', '')
+def is_retryable_result(answer: str) -> bool:
+    """判断是否需要在续跑时重试该结果。"""
+    text = (answer or "").strip()
+    return text.startswith("Error:") or text.startswith("Request Failed:")
 
-            print(f"\n[{i}/{total}] 处理 ID: {q_id}")
-            print(f"   问题: {question[:50]}...")
 
-            answer = normalize_answer(get_answer(question))
-
-            print(f"   回答: {answer[:150]}...")
-
-            results.append({
-                "id": q_id,
-                "question": question,
-                "ret": answer
-            })
-
-            time.sleep(0.1)  # 防止并发过高
-
-    # 写入提交文件（兼容官方提交流程）
+def write_outputs(results: list[dict], run_submission_file: Path, run_metadata_file: Path, started_at: datetime, run_name: str, max_count: int) -> None:
+    """写出官方提交文件与实验文件。"""
     with open(OUTPUT_FILE, mode='w', encoding='utf-8-sig', newline='') as outfile:
         fieldnames = ['id', 'ret']
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows([{"id": row["id"], "ret": row["ret"]} for row in results])
 
-    # 同时保留本轮实验结果
     with open(run_submission_file, mode='w', encoding='utf-8', newline='') as outfile:
         fieldnames = ['id', 'question', 'ret']
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
@@ -172,6 +150,90 @@ def main():
         json.dump(metadata, outfile, ensure_ascii=False, indent=2)
 
     validate_submission_file(Path(OUTPUT_FILE))
+
+
+def main():
+    parser = argparse.ArgumentParser(description="批量调用本地 /chat 接口生成提交文件")
+    parser.add_argument("max_count", nargs="?", type=int, default=0, help="仅处理前 N 条，默认 0 表示全部")
+    parser.add_argument("--resume", type=str, default="", help="从已有实验目录断点续跑，例如 batch_20260419_012114")
+    parser.add_argument("--save-every", type=int, default=10, help="每处理多少条落盘一次")
+    args = parser.parse_args()
+    max_count = args.max_count
+
+    if args.resume:
+        run_name = args.resume
+        run_dir = EXPERIMENTS_DIR / run_name
+        if not run_dir.exists():
+            raise FileNotFoundError(f"未找到实验目录: {run_dir}")
+        run_metadata_file = run_dir / "meta.json"
+        if run_metadata_file.exists():
+            metadata = json.loads(run_metadata_file.read_text(encoding="utf-8"))
+            started_at = datetime.fromisoformat(metadata["started_at"])
+        else:
+            started_at = datetime.now()
+    else:
+        started_at = datetime.now()
+        run_name = started_at.strftime("batch_%Y%m%d_%H%M%S")
+        run_dir = EXPERIMENTS_DIR / run_name
+        run_dir.mkdir(parents=True, exist_ok=True)
+
+    run_submission_file = run_dir / "submission.csv"
+    run_metadata_file = run_dir / "meta.json"
+    results = load_existing_results(run_submission_file)
+    processed_ids = {row["id"] for row in results if not is_retryable_result(row["ret"])}
+    retry_rows = [row for row in results if is_retryable_result(row["ret"])]
+    if retry_rows:
+        retry_ids = {row["id"] for row in retry_rows}
+        results = [row for row in results if row["id"] not in retry_ids]
+    else:
+        retry_ids = set()
+
+    print("=" * 50)
+    print("🚀 开始批量处理测试集...")
+    if max_count > 0:
+        print(f"   仅处理前 {max_count} 条（测试模式）")
+    print(f"   实验目录: {run_dir}")
+    if results:
+        print(f"   断点续跑: 已有 {len(results)} 条结果，将跳过这些 ID")
+    if retry_ids:
+        print(f"   将自动重试 {len(retry_ids)} 条异常结果（Error:/Request Failed）")
+    print("=" * 50)
+
+    with open(INPUT_FILE, mode='r', encoding='utf-8') as infile:
+        reader = csv.DictReader(infile)
+        rows = list(reader)
+
+        if max_count > 0:
+            rows = rows[:max_count]
+        total = len(rows)
+
+        for i, row in enumerate(rows, 1):
+            q_id = row.get('id', '')
+            question = row.get('question', '')
+            if q_id in processed_ids:
+                continue
+
+            print(f"\n[{i}/{total}] 处理 ID: {q_id}")
+            print(f"   问题: {question[:50]}...")
+
+            answer = normalize_answer(get_answer(question))
+
+            print(f"   回答: {answer[:150]}...")
+
+            results.append({
+                "id": q_id,
+                "question": question,
+                "ret": answer
+            })
+            processed_ids.add(q_id)
+
+            if args.save_every > 0 and len(results) % args.save_every == 0:
+                write_outputs(results, run_submission_file, run_metadata_file, started_at, run_name, max_count)
+
+            time.sleep(0.1)  # 防止并发过高
+
+    results.sort(key=lambda row: int(row["id"]))
+    write_outputs(results, run_submission_file, run_metadata_file, started_at, run_name, max_count)
 
     print("\n" + "=" * 50)
     print(f"✅ 处理完成！")

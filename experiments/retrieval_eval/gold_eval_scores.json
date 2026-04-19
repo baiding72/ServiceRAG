@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "2",
+    "category": "general_service",
+    "query": "我想咨询一下，你们的售后维修服务范围是什么？ 如果是人为损坏的，能维修吗？维修费用怎么算？",
+    "ndcg@k": 0.9340617373195641,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 10,
+    "relevant_parents": 6
+  },
+  {
+    "id": "3",
+    "category": "general_service",
+    "query": "请问你们的商品能开发票吗？发票类型是什么？ 多久能收到呢？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "4",
+    "category": "general_service",
+    "query": "我收到商品后，发现包装破损了，怎么办？ 影响商品退换货吗？",
+    "ndcg@k": 0.7698986984637216,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 5,
+    "relevant_parents": 2
+  },
+  {
+    "id": "6",
+    "category": "general_service",
+    "query": "我想了解一下你们的退款政策，退款多久能到账？ 信用卡会原路返回吗？",
+    "ndcg@k": 0.43067655807339306,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "9",
+    "category": "general_service",
+    "query": "我收到的商品少了一件，联系客服说会补发，但是过了一周还没补发！",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "10",
+    "category": "general_service",
+    "query": "你们的售后维修服务太差了，我送修的商品，过了半个月还没修好！",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "19",
+    "category": "multi_subquestion_zh",
+    "query": "请问你们的商品能提供纸质版说明书吗？ 电子版在哪里可以找到？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "22",
+    "category": "general_service",
+    "query": "我收到商品后，发现商品有瑕疵，但是已经使用过了，能售后吗？ 换货还是只能维修？",
+    "ndcg@k": 0.5,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "26",
+    "category": "multi_subquestion_zh",
+    "query": "请问你们的智能客服能解答哪些问题？ 智能客服解答不了的问题，怎么办？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "34",
+    "category": "general_service",
+    "query": "我购买的商品，收到后发现少发了一件，怎么办？ 什么时候能补寄？需要我承担运费吗？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "39",
+    "category": "general_service",
+    "query": "我购买的商品，使用一段时间后出现质量问题，还能售后吗？",
+    "ndcg@k": 0.7869381449249442,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 5,
+    "relevant_parents": 2
+  },
+  {
+    "id": "40",
+    "category": "multi_subquestion_zh",
+    "query": "我想给商品更换成更大的尺寸，能换吗？ 尺寸差价怎么处理？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "41",
+    "category": "multi_subquestion_zh",
+    "query": "快递丢失了，怎么办？\"， \"这种情况你们会怎么赔偿？多久能解决？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "43",
+    "category": "general_chinese_tech",
+    "query": "我购买的商品，快递送达时，我不在家，怎么办？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "44",
+    "category": "general_chinese_tech",
+    "query": "请问你们的优惠券能用于所有商品吗？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "49",
+    "category": "general_service",
+    "query": "我购买的商品包装破损，商品出现损坏，而且快递员拒绝承认是运输问题，同时我已经签收商品，请问还能申请售后吗？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "53",
+    "category": "multi_subquestion_zh",
+    "query": "我想试用商品，但是试用期间商品出现故障，而且不是人为操作导致的，同时我想延长试用期限，请问可以吗？另外故障商品能更换吗？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "55",
+    "category": "general_service",
+    "query": "我购买的商品，收到后发现商品的颜色和详情页描述的不一致，详情页是深红色，实际收到的是浅红色，而且商品有轻微的异味，想申请换货",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "58",
+    "category": "general_service",
+    "query": "我购买的商品，使用时发现商品的功能和详情页描述的不一致，详情页说支持无线充电，实际不支持，而且商品的续航时间也比描述的短很多，要求退货退款并赔偿，请问可以吗？\",",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "64",
+    "category": "general_chinese_tech",
+    "query": "使用吹风机时，人员需要佩戴哪些防护装备？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "85",
+    "category": "steps_zh",
+    "query": "如何清洁空调的等离子滤网？",
+    "ndcg@k": 0.9060392238459887,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 4,
+    "relevant_parents": 4
+  },
+  {
+    "id": "87",
+    "category": "multi_subquestion_zh",
+    "query": "蒸汽清洁机有哪些实用的产品功能？如何快速上手使用？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 1
+  },
+  {
+    "id": "91",
+    "category": "general_chinese_tech",
+    "query": "这款椅子有哪些功能？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "97",
+    "category": "steps_zh",
+    "query": "如何在洗碗机中添加和使用亮碟剂以获得更好的洗涤效果？",
+    "ndcg@k": 0.9558295932317544,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 4,
+    "relevant_parents": 1
+  },
+  {
+    "id": "101",
+    "category": "steps_zh",
+    "query": "如何调节洗碗机满载时上下碗篮的高度？",
+    "ndcg@k": 0.9871451602176229,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 1
+  },
+  {
+    "id": "104",
+    "category": "steps_zh",
+    "query": "如何拆除空气净化器滤网的塑料包装？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 1
+  },
+  {
+    "id": "106",
+    "category": "multi_subquestion_zh",
+    "query": "空气净化器通常有哪些模式？如何设置？这些模式有什么特点？",
+    "ndcg@k": 0.9197207891481876,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 1
+  },
+  {
+    "id": "107",
+    "category": "screen_button_zh",
+    "query": "空气净化器的室内空气质量指示灯是什么？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "114",
+    "category": "steps_zh",
+    "query": "启动健身单车前，我需要做什么？",
+    "ndcg@k": 0.9217868789962071,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 1
+  },
+  {
+    "id": "115",
+    "category": "general_chinese_tech",
+    "query": "我听说买的这款健身单车配有控制台和显示功能，能为我介绍一下吗？",
+    "ndcg@k": 0.9758689003322701,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 9,
+    "relevant_parents": 1
+  },
+  {
+    "id": "119",
+    "category": "general_chinese_tech",
+    "query": "挑战健身单车的最高难度类别时，我能体验到哪些预设运动程序？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "121",
+    "category": "screen_button_zh",
+    "query": "我想在使用健身单车时设置心率目标，能否根据我的年龄为我推荐合适的目标心率？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 2
+  },
+  {
+    "id": "122",
+    "category": "general_chinese_tech",
+    "query": "我听说这款健身单车有体能测试程序，这是什么功能？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "129",
+    "category": "general_chinese_tech",
+    "query": "购买电钻后，应配备哪些附件？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "133",
+    "category": "general_chinese_tech",
+    "query": "为了让健身追踪器性能更佳，日常佩戴和运动时该将其佩戴在什么位置？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 2
+  },
+  {
+    "id": "135",
+    "category": "steps_zh",
+    "query": "我想取下健身追踪器，该如何正确拆卸表带？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "136",
+    "category": "screen_button_zh",
+    "query": "我听说可以操作健身追踪器的界面，具体该遵循哪些步骤？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 5,
+    "relevant_parents": 4
+  },
+  {
+    "id": "156",
+    "category": "screen_button_zh",
+    "query": "需要通过发电机的燃油开关旋钮供油时，我该遵循哪些步骤？",
+    "ndcg@k": 0.8016472493003257,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 4,
+    "relevant_parents": 4
+  },
+  {
+    "id": "159",
+    "category": "steps_zh",
+    "query": "我需要给发电机连接交流电，该过程中如何保证自身安全？",
+    "ndcg@k": 0.8529278650606567,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 3
+  },
+  {
+    "id": "160",
+    "category": "screen_button_zh",
+    "query": "我注意到发电机上有两种不同的开关，请为我介绍一下。",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "171",
+    "category": "steps_zh",
+    "query": "我需要将发电机的燃油排空，该如何正确操作？",
+    "ndcg@k": 0.9197207891481876,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 2
+  },
+  {
+    "id": "172",
+    "category": "general_chinese_tech",
+    "query": "使用该发电机为对电压敏感的精密设备供电前，我需要做什么？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 3
+  },
+  {
+    "id": "178",
+    "category": "steps_zh",
+    "query": "如何驾驶摩托艇以拖曳速度直行和转弯，保证操作的平顺性和操控性？",
+    "ndcg@k": 0.8937334126506665,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 6,
+    "relevant_parents": 5
+  },
+  {
+    "id": "182",
+    "category": "general_chinese_tech",
+    "query": "水泵的核心部件有哪些？",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "186",
+    "category": "screen_button_zh",
+    "query": "如何为温控器设置日期和时间，以实现精准的日程和温度控制？",
+    "ndcg@k": 0.7550451500695824,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 5,
+    "relevant_parents": 2
+  },
+  {
+    "id": "187",
+    "category": "screen_button_zh",
+    "query": "如何调整温控器的系统和风扇运行设置，以优化供暖和制冷效果？",
+    "ndcg@k": 0.9103075074400794,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 5,
+    "relevant_parents": 3
+  },
+  {
+    "id": "189",
+    "category": "screen_button_zh",
+    "query": "如何在不影响已编程日程的情况下，临时更改温控器的温度设置？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 1
+  },
+  {
+    "id": "190",
+    "category": "screen_button_zh",
+    "query": "当设备或系统出现警报界面时，应采取哪些操作？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "193",
+    "category": "steps_zh",
+    "query": "当标签与端子不匹配时，应如何正确为温控器重新接线，确保连接无误？",
+    "ndcg@k": 0.9674679834891693,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 1
+  },
+  {
+    "id": "200",
+    "category": "general_chinese_tech",
+    "query": "功能键盘的保修政策通常包含哪些内容，又不包含哪些内容？",
+    "ndcg@k": 0.5500805627351394,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 4,
+    "relevant_parents": 1
+  },
+  {
+    "id": "202",
+    "category": "screen_button_zh",
+    "query": "如何设置功能键盘？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "206",
+    "category": "steps_zh",
+    "query": "如何安装儿童电动摩托车的挡泥板？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 1
+  },
+  {
+    "id": "207",
+    "category": "steps_zh",
+    "query": "如何安装儿童电动摩托车的前轮？",
+    "ndcg@k": 0.6309297535714574,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "212",
+    "category": "screen_button_zh",
+    "query": "如何通过WIDCOMM蓝牙驱动程序为蓝牙激光鼠标设置配对？",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 1
+  },
+  {
+    "id": "214",
+    "category": "steps_zh",
+    "query": "如何首次为蓝牙激光鼠标使用该驱动程序？",
+    "ndcg@k": 0.9751957567060058,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 4,
+    "relevant_parents": 1
+  },
+  {
+    "id": "223",
+    "category": "general_chinese_tech",
+    "query": "烤箱的催化侧面板有什么作用？",
+    "ndcg@k": 0.7967075809905066,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 1
+  },
+  {
+    "id": "232",
+    "category": "screen_button_zh",
+    "query": "如何设置混合即时相机的自动打印模式？",
+    "ndcg@k": 0.6183063774733756,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 4,
+    "relevant_parents": 3
+  },
+  {
+    "id": "233",
+    "category": "screen_button_zh",
+    "query": "如何设置混合即时相机的手动打印模式（初始设置）？",
+    "ndcg@k": 0.8503449055347546,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 2
+  },
+  {
+    "id": "244",
+    "category": "general_english_tech",
+    "query": "How the ship steers?",
+    "ndcg@k": 0.9689557313628755,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 4,
+    "relevant_parents": 2
+  },
+  {
+    "id": "257",
+    "category": "screen_button_en",
+    "query": "How to perform anchor light switch check while sailing?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 1
+  },
+  {
+    "id": "258",
+    "category": "steps_en",
+    "query": "When I want to start the boat, how do I turn on the boat's engine to get the machine started?",
+    "ndcg@k": 0.6219707135675324,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 5,
+    "relevant_parents": 5
+  },
+  {
+    "id": "259",
+    "category": "general_english_tech",
+    "query": "How do I turn a boat while sailing?",
+    "ndcg@k": 0.38685280723454163,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "266",
+    "category": "screen_button_en",
+    "query": "How to change the default setting of the energy saving mode?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "269",
+    "category": "screen_button_en",
+    "query": "How should I do if I want to reset to factory settings of the coffee machine?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "273",
+    "category": "screen_button_en",
+    "query": "What is the maintenance setting screen of the boat controller?",
+    "ndcg@k": 0.6309297535714574,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "281",
+    "category": "steps_en",
+    "query": "How to install the camera battery when another one is power off?",
+    "ndcg@k": 0.5912352048230277,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 2
+  },
+  {
+    "id": "285",
+    "category": "screen_button_en",
+    "query": "Have you ever wondered how to remove the camera shutter button? Understanding this process can enhance your photography experience and allow for quick repairs!",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "288",
+    "category": "steps_en",
+    "query": "Before taking photos, we need to know How to use the eyepiece cover of the camera?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "289",
+    "category": "general_english_tech",
+    "query": "How do I select the AF Mode when before taking a picture?",
+    "ndcg@k": 0.9651911745127936,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 2
+  },
+  {
+    "id": "298",
+    "category": "steps_en",
+    "query": "When bluetooth are pairing and connecting, what scenarios I might encounter?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "303",
+    "category": "screen_button_en",
+    "query": "From three different observing views, what buttons and interfaces should this eReader have?",
+    "ndcg@k": 0.43067655807339306,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "304",
+    "category": "screen_button_en",
+    "query": "What do the functions of Main Menu and Browser History of the eReader can do?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 1
+  },
+  {
+    "id": "307",
+    "category": "multi_subquestion_en",
+    "query": "Can this eReader record voice? If so, how do I operate this feature?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "309",
+    "category": "multi_subquestion_en",
+    "query": "Can this eReader become a photo viewer? If so, how do I operate this feature?",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "312",
+    "category": "general_english_tech",
+    "query": "What should I pay attention to in order to ensure my safety when using this fax?",
+    "ndcg@k": 0.7317444927156903,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 9,
+    "relevant_parents": 2
+  },
+  {
+    "id": "313",
+    "category": "general_english_tech",
+    "query": "In order to keep your fingers safe, what should you pay attention to about the fax?",
+    "ndcg@k": 0.3333333333333333,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "315",
+    "category": "multi_subquestion_en",
+    "query": "Are caution or warning labels inside the fax important? If not, can I remove them?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "316",
+    "category": "general_english_tech",
+    "query": "If I'm in Canada, is there any statement of the fax vailable in my country?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "320",
+    "category": "steps_en",
+    "query": "What are the first three steps in assembly process of the grill according to the manual?",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "330",
+    "category": "steps_en",
+    "query": "I've noticed that there are two different kinds of filler caps on the jetski. How to remove them?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 2
+  },
+  {
+    "id": "331",
+    "category": "screen_button_en",
+    "query": "If I need to manipulate the two kinds of engine switches on the jetski, what should I do?",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "332",
+    "category": "steps_en",
+    "query": "There are two kinds of levers on the jetski, how to manipulate them?",
+    "ndcg@k": 0.7122630665145961,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 3
+  },
+  {
+    "id": "350",
+    "category": "general_english_tech",
+    "query": "What is the max load of the jetski?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 2
+  },
+  {
+    "id": "356",
+    "category": "screen_button_en",
+    "query": "How can you know about the current status with different LED indicator behavior on a landline?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 2
+  },
+  {
+    "id": "357",
+    "category": "screen_button_en",
+    "query": "How can you know about the current status with different LED indicator behavior on the base station of a landline?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "369",
+    "category": "general_english_tech",
+    "query": "How can you reheat food with a over-the-range microwave?",
+    "ndcg@k": 0.5,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "370",
+    "category": "general_english_tech",
+    "query": "How can you use auto defrost of a over-the-range microwave?",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "373",
+    "category": "steps_en",
+    "query": "How can you replace the oven light of a over-the-range microwave?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "385",
+    "category": "steps_en",
+    "query": "How do you know about TPM connector (14-1 pin TPM) for a motherboard?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "388",
+    "category": "general_english_tech",
+    "query": "How can you set pressure cooking lid for a multi-use pressure cooker and air fryer?",
+    "ndcg@k": 0.4306765580733931,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "392",
+    "category": "general_english_tech",
+    "query": "How can you set anti-block shield for a multi-use pressure cooker and air fryer?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 4,
+    "relevant_parents": 3
+  },
+  {
+    "id": "396",
+    "category": "steps_en",
+    "query": "How can you remove silicone sealing ring for a multi-use pressure cooker and air fryer?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "399",
+    "category": "screen_button_en",
+    "query": "What do you know about quick release button of a multi-use pressure cooker and air fryer?",
+    "ndcg@k": 0.7579237460681981,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 3
+  },
+  {
+    "id": "401",
+    "category": "general_english_tech",
+    "query": "What is the robot anatomy of the vacuum?",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "405",
+    "category": "steps_en",
+    "query": "What is the proper procedure for cleaning the full bin sensors on a vacuum cleaner?",
+    "ndcg@k": 0.9651911745127936,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 3,
+    "relevant_parents": 1
+  },
+  {
+    "id": "411",
+    "category": "steps_en",
+    "query": "What is the function of the dual-mode virtual wall barrier on a vacuum cleaner?",
+    "ndcg@k": 0.7967075809905066,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 1
+  },
+  {
+    "id": "415",
+    "category": "screen_button_en",
+    "query": "What is the proper way to use the brake lever and brake button?",
+    "ndcg@k": null,
+    "recall@k": null,
+    "parent_coverage@k": null,
+    "relevant_chunks": 0,
+    "relevant_parents": 0
+  },
+  {
+    "id": "417",
+    "category": "steps_en",
+    "query": "What are the detailed steps to start the engine of a snowmobile?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "423",
+    "category": "general_english_tech",
+    "query": "What are the proper techniques for riding downhill on a snowmobile?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 1,
+    "relevant_parents": 1
+  },
+  {
+    "id": "434",
+    "category": "screen_button_en",
+    "query": "How do you adjust the intensity settings on an electric toothbrush to suit your oral care needs?",
+    "ndcg@k": 1.0,
+    "recall@k": 1.0,
+    "parent_coverage@k": 1.0,
+    "relevant_chunks": 2,
+    "relevant_parents": 1
+  }
+]

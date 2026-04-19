@@ -49,6 +49,7 @@ VISUAL_RETRIEVE_TOP_K = 5  # 图片辅助召回数量
 SEMANTIC_CANDIDATE_K = int(os.getenv("SEMANTIC_CANDIDATE_K", "18"))
 BM25_CANDIDATE_K = int(os.getenv("BM25_CANDIDATE_K", "12"))
 RRF_K = int(os.getenv("RRF_K", "60"))
+SKIP_IMAGE_RETRIEVER = os.getenv("SKIP_IMAGE_RETRIEVER", "").lower() in {"1", "true", "yes"}
 
 # 超时配置（秒）
 LLM_TIMEOUT = 30
@@ -141,12 +142,16 @@ async def lifespan(app: FastAPI):
         print("   ⚠️  服务将以降级模式运行（仅返回兜底回复）")
 
     print("\n🖼️  加载图片检索器...")
-    try:
-        image_retriever = ImageRetriever()
-        print("   ✓ 图片检索器加载成功")
-    except Exception as e:
+    if SKIP_IMAGE_RETRIEVER:
         image_retriever = None
-        print(f"   ⚠️  图片检索器未启用: {e}")
+        print("   ⚠️  图片检索器已通过环境变量跳过")
+    else:
+        try:
+            image_retriever = ImageRetriever()
+            print("   ✓ 图片检索器加载成功")
+        except Exception as e:
+            image_retriever = None
+            print(f"   ⚠️  图片检索器未启用: {e}")
 
     # 2. 初始化 LLM 客户端
     print("\n🤖 初始化 LLM 客户端...")

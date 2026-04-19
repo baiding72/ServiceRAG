@@ -37,8 +37,11 @@ MIN_CHUNK_LENGTH = 5
 
 # 图片占位符标记
 IMAGE_PLACEHOLDER = "<PIC>"
-CHILD_TARGET_LENGTH = 560
-CHILD_OVERLAP = 40
+CHILD_TARGET_LENGTH = 720
+CHILD_OVERLAP = 24
+STEP_GROUP_TARGET_LENGTH = 960
+PIC_GROUP_TARGET_LENGTH = 760
+TEXT_GROUP_TARGET_LENGTH = 820
 
 
 # ============================================
@@ -723,6 +726,39 @@ def merge_text_units(units: List[str], target_len: int = CHILD_TARGET_LENGTH) ->
     return merged
 
 
+def merge_step_units(step_blocks: List[Tuple[str, str]], target_len: int = STEP_GROUP_TARGET_LENGTH) -> List[Tuple[str, str]]:
+    """
+    将连续步骤块合并成更完整的操作闭环，避免一步一个 child 导致语义过窄。
+    """
+    merged: List[Tuple[str, str]] = []
+    current_parts: List[str] = []
+    current_first_step = ""
+    current_len = 0
+
+    for step_no, block_text in step_blocks:
+        block_text = clean_text(block_text)
+        if not block_text:
+            continue
+
+        projected = current_len + len(block_text) + (1 if current_parts else 0)
+        if current_parts and projected > target_len:
+            merged.append((current_first_step, clean_text("\n".join(current_parts))))
+            current_parts = [block_text]
+            current_first_step = step_no
+            current_len = len(block_text)
+            continue
+
+        if not current_parts:
+            current_first_step = step_no
+        current_parts.append(block_text)
+        current_len = projected
+
+    if current_parts:
+        merged.append((current_first_step, clean_text("\n".join(current_parts))))
+
+    return merged
+
+
 def build_child_units(section_text: str, section_images: List[str], section_title: str) -> List[Tuple[str, List[str], str]]:
     """
     根据 section 结构生成 child 单元：
@@ -736,16 +772,19 @@ def build_child_units(section_text: str, section_images: List[str], section_titl
     step_blocks = split_step_blocks(section_text)
     if step_blocks:
         units = []
-        for step_no, block_text in step_blocks:
-            for piece in split_long_text_with_overlap(block_text):
+        for step_no, block_text in merge_step_units(step_blocks):
+            for piece in split_long_text_with_overlap(block_text, target_len=CHILD_TARGET_LENGTH):
                 units.append((attach_section_title(section_title, piece), [], step_no))
         return units
 
     if IMAGE_PLACEHOLDER in section_text:
         units = []
-        merged_pic_units = merge_pic_children(split_text_by_pic_tags(section_text, section_images))
+        merged_pic_units = merge_pic_children(
+            split_text_by_pic_tags(section_text, section_images),
+            target_len=PIC_GROUP_TARGET_LENGTH,
+        )
         for piece, images in merged_pic_units:
-            for child_text in split_long_text_with_overlap(piece, target_len=max(CHILD_TARGET_LENGTH, 520)):
+            for child_text in split_long_text_with_overlap(piece, target_len=PIC_GROUP_TARGET_LENGTH):
                 units.append((attach_section_title(section_title, child_text), images, ""))
         return units
 
@@ -754,10 +793,10 @@ def build_child_units(section_text: str, section_images: List[str], section_titl
         paragraph for paragraph in smart_split_paragraph(section_text)
         if len(clean_text(paragraph)) >= 24 or section_images
     ]
-    for paragraph in merge_text_units(paragraphs):
+    for paragraph in merge_text_units(paragraphs, target_len=TEXT_GROUP_TARGET_LENGTH):
         if len(clean_text(paragraph)) < 24 and not section_images:
             continue
-        for piece in split_long_text_with_overlap(paragraph):
+        for piece in split_long_text_with_overlap(paragraph, target_len=CHILD_TARGET_LENGTH):
             units.append((attach_section_title(section_title, piece), [], ""))
     return units
 
