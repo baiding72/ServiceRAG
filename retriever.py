@@ -56,6 +56,38 @@ ENGLISH_STOPWORDS = {
 }
 
 
+def _metadata_matches(item: Dict[str, Any], where_filter: Optional[Dict[str, Any]]) -> bool:
+    """
+    对 BM25/关键词检索做与 Chroma `where` 类似的轻量过滤。
+    当前只覆盖本项目需要的等值 / $in / $and / $or。
+    """
+    if not where_filter:
+        return True
+
+    if "$and" in where_filter:
+        return all(_metadata_matches(item, sub_filter) for sub_filter in where_filter["$and"])
+
+    if "$or" in where_filter:
+        return any(_metadata_matches(item, sub_filter) for sub_filter in where_filter["$or"])
+
+    for key, expected in where_filter.items():
+        if key in {"$and", "$or"}:
+            continue
+
+        value = item.get(key)
+        if isinstance(expected, dict):
+            if "$in" in expected:
+                if value not in expected["$in"]:
+                    return False
+            else:
+                return False
+        else:
+            if value != expected:
+                return False
+
+    return True
+
+
 # ============================================
 # 检索器类
 # ============================================
@@ -261,7 +293,7 @@ class ManualRetriever:
         wants_grill = "grill" in query_norm
 
         for item in self._corpus_cache:
-            if where_filter and item.get("product") != where_filter.get("product"):
+            if not _metadata_matches(item, where_filter):
                 continue
 
             content_norm = item["normalized_content"]
@@ -340,7 +372,7 @@ class ManualRetriever:
 
         scores = []
         for idx, item in enumerate(self._corpus_cache):
-            if where_filter and item.get("product") != where_filter.get("product"):
+            if not _metadata_matches(item, where_filter):
                 continue
 
             term_freq = self._bm25_doc_freqs[idx]

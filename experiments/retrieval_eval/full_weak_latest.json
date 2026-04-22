@@ -474,7 +474,7 @@
         "人员需要",
         "注意哪些"
       ],
-      "rank": 7
+      "rank": 2
     },
     {
       "qid": 66,
@@ -562,7 +562,7 @@
         "调遥控器",
         "安装电池"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 73,
@@ -575,7 +575,7 @@
         "空调遥控",
         "器支架"
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "qid": 74,
@@ -601,7 +601,7 @@
         "空调的自",
         "清洁运行"
       ],
-      "rank": 3
+      "rank": 1
     },
     {
       "qid": 76,
@@ -666,7 +666,7 @@
         "时如何操",
         "作空调"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 81,
@@ -692,7 +692,7 @@
         "空调的清",
         "洁频率是"
       ],
-      "rank": 9
+      "rank": 14
     },
     {
       "qid": 83,
@@ -757,7 +757,7 @@
         "机有哪些",
         "实用的产"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 88,
@@ -820,7 +820,7 @@
         "洗碗机的",
         "部件有哪"
       ],
-      "rank": 2
+      "rank": 6
     },
     {
       "qid": 93,
@@ -833,7 +833,7 @@
         "如何将洗",
         "碗机连接"
       ],
-      "rank": 2
+      "rank": 4
     },
     {
       "qid": 94,
@@ -924,7 +924,7 @@
         "机前如何",
         "安装可折"
       ],
-      "rank": 6
+      "rank": 8
     },
     {
       "qid": 101,
@@ -998,7 +998,7 @@
         "器通常有",
         "哪些模式"
       ],
-      "rank": 5
+      "rank": 3
     },
     {
       "qid": 107,
@@ -1037,7 +1037,7 @@
         "空气净化",
         "器的滤网"
       ],
-      "rank": 3
+      "rank": 4
     },
     {
       "qid": 110,
@@ -1050,7 +1050,7 @@
         "空气净化",
         "器的滤网"
       ],
-      "rank": 5
+      "rank": 3
     },
     {
       "qid": 111,
@@ -1063,7 +1063,7 @@
         "空气净化",
         "器的灰尘"
       ],
-      "rank": 5
+      "rank": 1
     },
     {
       "qid": 112,
@@ -1076,7 +1076,7 @@
         "器需要长",
         "期存放时"
       ],
-      "rank": 1
+      "rank": 4
     },
     {
       "qid": 113,
@@ -1102,7 +1102,7 @@
         "单车前",
         "我需要做什么"
       ],
-      "rank": 3
+      "rank": 4
     },
     {
       "qid": 115,
@@ -1297,7 +1297,7 @@
         "年有限保",
         "修包含哪"
       ],
-      "rank": 3
+      "rank": 6
     },
     {
       "qid": 131,
@@ -1449,7 +1449,7 @@
         "追踪器时",
         "我可能会"
       ],
-      "rank": 18
+      "rank": 8
     },
     {
       "qid": 144,
@@ -1475,7 +1475,7 @@
         "冰柜时需",
         "要注意什"
       ],
-      "rank": 5
+      "rank": 4
     },
     {
       "qid": 146,
@@ -1488,7 +1488,7 @@
         "接电源时",
         "需要做到"
       ],
-      "rank": -1
+      "rank": 9
     },
     {
       "qid": 153,
@@ -1618,7 +1618,7 @@
         "机的直流",
         "保护器时"
       ],
-      "rank": 7
+      "rank": 6
     },
     {
       "qid": 163,
@@ -1631,7 +1631,7 @@
         "对发动机",
         "机油进行"
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "qid": 164,
@@ -1709,7 +1709,7 @@
         "发电机空",
         "气滤清器"
       ],
-      "rank": 9
+      "rank": 1
     },
     {
       "qid": 170,
@@ -1722,7 +1722,7 @@
         "机的发动",
         "机无法启"
       ],
-      "rank": 11
+      "rank": 8
     },
     {
       "qid": 171,
@@ -1813,7 +1813,7 @@
         "托艇进行",
         "中低速转"
       ],
-      "rank": 3
+      "rank": -1
     },
     {
       "qid": 178,
@@ -1903,7 +1903,7 @@
         "排放燃油",
         "的正确步"
       ],
-      "rank": 7
+      "rank": 2
     },
     {
       "qid": 185,
@@ -1929,7 +1929,7 @@
         "控器设置",
         "日期和时"
       ],
-      "rank": 11
+      "rank": 3
     },
     {
       "qid": 187,
@@ -1955,7 +1955,7 @@
         "温控器的",
         "程序日程"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 189,
@@ -1981,7 +1981,7 @@
         "系统出现",
         "警报界面"
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "qid": 191,
@@ -2148,7 +2148,7 @@
         "儿童电动",
         "摩托车的"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 207,
@@ -2161,7 +2161,7 @@
         "儿童电动",
         "摩托车的"
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "qid": 208,
@@ -2213,7 +2213,7 @@
         "如何在",
         "系统中为"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 212,
@@ -2239,7 +2239,7 @@
         "蓝牙激光",
         "鼠标的电"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 214,
@@ -2252,7 +2252,7 @@
         "为蓝牙激",
         "光鼠标使"
       ],
-      "rank": 2
+      "rank": 3
     },
     {
       "qid": 215,
@@ -2302,7 +2302,7 @@
         "烤箱的顶",
         "部加热元"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 219,
@@ -2328,7 +2328,7 @@
         "烤箱的接",
         "油盘"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 221,
@@ -2365,7 +2365,7 @@
         "化侧面板",
         "有什么作"
       ],
-      "rank": 1
+      "rank": 5
     },
     {
       "qid": 224,
@@ -2520,7 +2520,7 @@
         "time airfryer",
         "airfryer first"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 242,
@@ -2598,7 +2598,7 @@
         "compartments store",
         "store wet"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 248,
@@ -2611,7 +2611,7 @@
         "battery compartment",
         "compartment manipulating"
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "qid": 249,
@@ -2637,7 +2637,7 @@
         "wash function",
         "function clean"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 251,
@@ -2650,7 +2650,7 @@
         "off water",
         "water supply"
       ],
-      "rank": 3
+      "rank": 2
     },
     {
       "qid": 252,
@@ -2767,7 +2767,7 @@
         "boat cross",
         "cross wakes"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 261,
@@ -2793,7 +2793,7 @@
         "cooling system",
         "system boat"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 263,
@@ -2845,7 +2845,7 @@
         "default setting",
         "setting energy"
       ],
-      "rank": -1
+      "rank": 17
     },
     {
       "qid": 267,
@@ -2884,7 +2884,7 @@
         "factory settings",
         "settings coffee"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 270,
@@ -2910,7 +2910,7 @@
         "swim platform",
         "platform boat"
       ],
-      "rank": 1
+      "rank": 4
     },
     {
       "qid": 272,
@@ -2936,7 +2936,7 @@
         "setting screen",
         "screen boat"
       ],
-      "rank": 5
+      "rank": 1
     },
     {
       "qid": 274,
@@ -2949,7 +2949,7 @@
         "steering factory",
         "factory reset"
       ],
-      "rank": 8
+      "rank": 2
     },
     {
       "qid": 275,
@@ -3001,7 +3001,7 @@
         "extinguishers stored",
         "stored board"
       ],
-      "rank": 2
+      "rank": -1
     },
     {
       "qid": 279,
@@ -3014,7 +3014,7 @@
         "throttle-cable boat",
         "care"
       ],
-      "rank": 3
+      "rank": 1
     },
     {
       "qid": 280,
@@ -3183,7 +3183,7 @@
         "single image",
         "image camera"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 293,
@@ -3196,7 +3196,7 @@
         "all images",
         "images camera"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 294,
@@ -3209,7 +3209,7 @@
         "photos camera",
         "camera direct"
       ],
-      "rank": 12
+      "rank": 2
     },
     {
       "qid": 295,
@@ -3222,7 +3222,7 @@
         "camera fine",
         "fine tune"
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "qid": 296,
@@ -3248,7 +3248,7 @@
         "battery earphones",
         "earphones low"
       ],
-      "rank": 6
+      "rank": 1
     },
     {
       "qid": 298,
@@ -3339,7 +3339,7 @@
         "main menu",
         "menu browser"
       ],
-      "rank": 7
+      "rank": 2
     },
     {
       "qid": 305,
@@ -3352,7 +3352,7 @@
         "mode ereader",
         "ereader will"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 306,
@@ -3508,7 +3508,7 @@
         "connect regulator",
         "regulator tank"
       ],
-      "rank": 6
+      "rank": 1
     },
     {
       "qid": 318,
@@ -3573,7 +3573,7 @@
         "numbers jetski",
         "jetski don"
       ],
-      "rank": 2
+      "rank": 4
     },
     {
       "qid": 323,
@@ -3586,7 +3586,7 @@
         "jetski has",
         "has cruising"
       ],
-      "rank": 5
+      "rank": 6
     },
     {
       "qid": 324,
@@ -3599,7 +3599,7 @@
         "jetski has",
         "has cruising"
       ],
-      "rank": 5
+      "rank": 6
     },
     {
       "qid": 325,
@@ -3612,7 +3612,7 @@
         "requirements jetski",
         "operation"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 326,
@@ -3625,7 +3625,7 @@
         "watercraft characteristics",
         "characteristics jetski"
       ],
-      "rank": 7
+      "rank": 13
     },
     {
       "qid": 327,
@@ -3638,7 +3638,7 @@
         "vessels driving",
         "driving jetski"
       ],
-      "rank": 3
+      "rank": -1
     },
     {
       "qid": 328,
@@ -3755,7 +3755,7 @@
         "adjustable sponson",
         "sponson jetski"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 346,
@@ -3781,7 +3781,7 @@
         "jetski situations",
         "start"
       ],
-      "rank": 4
+      "rank": 5
     },
     {
       "qid": 348,
@@ -3859,7 +3859,7 @@
         "handset landline",
         "install"
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "qid": 354,
@@ -3963,7 +3963,7 @@
         "lawn mower",
         "load"
       ],
-      "rank": 5
+      "rank": 4
     },
     {
       "qid": 362,
@@ -3976,7 +3976,7 @@
         "lawn mower",
         "unload"
       ],
-      "rank": 4
+      "rank": 19
     },
     {
       "qid": 363,
@@ -3989,7 +3989,7 @@
         "engine oil",
         "oil lawn"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 364,
@@ -4015,7 +4015,7 @@
         "mower belt",
         "belt lawn"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 366,
@@ -4028,7 +4028,7 @@
         "control over-the-range",
         "over-the-range microwave"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 367,
@@ -4041,7 +4041,7 @@
         "light timer",
         "timer over-the-range"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 368,
@@ -4054,7 +4054,7 @@
         "yout favorite",
         "favorite recipe"
       ],
-      "rank": 2
+      "rank": -1
     },
     {
       "qid": 369,
@@ -4067,7 +4067,7 @@
         "food over-the-range",
         "over-the-range microwave"
       ],
-      "rank": 2
+      "rank": -1
     },
     {
       "qid": 370,
@@ -4080,7 +4080,7 @@
         "defrost over-the-range",
         "over-the-range microwave"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 371,
@@ -4210,7 +4210,7 @@
         "odd usb",
         "usb devices"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 381,
@@ -4236,7 +4236,7 @@
         "installation central",
         "central processing"
       ],
-      "rank": 2
+      "rank": 19
     },
     {
       "qid": 383,
@@ -4288,7 +4288,7 @@
         "sensor connector",
         "connector 2-pin"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 387,
@@ -4444,7 +4444,7 @@
         "release valve",
         "valve multi-use"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 399,
@@ -4470,7 +4470,7 @@
         "release nrornpr",
         "nrornpr multi-use"
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "qid": 401,
@@ -4574,7 +4574,7 @@
         "positioning home",
         "home base"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 409,
@@ -4587,7 +4587,7 @@
         "cleaning front",
         "front caster"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 410,
@@ -4600,7 +4600,7 @@
         "cleaning side",
         "side brush"
       ],
-      "rank": 7
+      "rank": 1
     },
     {
       "qid": 411,
@@ -4652,7 +4652,7 @@
         "power camera",
         "steps"
       ],
-      "rank": 7
+      "rank": 4
     },
     {
       "qid": 415,
@@ -4678,7 +4678,7 @@
         "preparation checks",
         "checks perform"
       ],
-      "rank": 16
+      "rank": -1
     },
     {
       "qid": 417,
@@ -4691,7 +4691,7 @@
         "steps start",
         "start engine"
       ],
-      "rank": 4
+      "rank": 12
     },
     {
       "qid": 418,
@@ -4702,7 +4702,7 @@
       "phrases": [
         "v-beltholder"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 419,
@@ -4715,7 +4715,7 @@
         "adjust throttle",
         "throttle cable"
       ],
-      "rank": 3
+      "rank": 9
     },
     {
       "qid": 420,
@@ -4728,7 +4728,7 @@
         "steering system",
         "system snowmobile"
       ],
-      "rank": 10
+      "rank": -1
     },
     {
       "qid": 421,
@@ -4741,7 +4741,7 @@
         "turn snowmobile",
         "steps"
       ],
-      "rank": 11
+      "rank": -1
     },
     {
       "qid": 422,
@@ -4754,7 +4754,7 @@
         "riding uphill",
         "uphill snowmobile"
       ],
-      "rank": 1
+      "rank": 8
     },
     {
       "qid": 423,
@@ -4806,7 +4806,7 @@
         "clean snowmobile",
         "steps"
       ],
-      "rank": 4
+      "rank": 9
     },
     {
       "qid": 427,
@@ -4871,7 +4871,7 @@
         "properly connect",
         "connect dvd"
       ],
-      "rank": 15
+      "rank": -1
     },
     {
       "qid": 432,
@@ -4897,7 +4897,7 @@
         "precautions followed",
         "followed ensure"
       ],
-      "rank": 2
+      "rank": 13
     },
     {
       "qid": 434,
@@ -5414,7 +5414,7 @@
         "人员需要",
         "注意哪些"
       ],
-      "rank": 3
+      "rank": 2
     },
     {
       "qid": 66,
@@ -5502,7 +5502,7 @@
         "调遥控器",
         "安装电池"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 73,
@@ -5515,7 +5515,7 @@
         "空调遥控",
         "器支架"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 74,
@@ -5760,7 +5760,7 @@
         "洗碗机的",
         "部件有哪"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 93,
@@ -5773,7 +5773,7 @@
         "如何将洗",
         "碗机连接"
       ],
-      "rank": 3
+      "rank": 2
     },
     {
       "qid": 94,
@@ -5864,7 +5864,7 @@
         "机前如何",
         "安装可折"
       ],
-      "rank": 5
+      "rank": 4
     },
     {
       "qid": 101,
@@ -5977,7 +5977,7 @@
         "空气净化",
         "器的滤网"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 110,
@@ -6003,7 +6003,7 @@
         "空气净化",
         "器的灰尘"
       ],
-      "rank": 5
+      "rank": 1
     },
     {
       "qid": 112,
@@ -6016,7 +6016,7 @@
         "器需要长",
         "期存放时"
       ],
-      "rank": 3
+      "rank": 4
     },
     {
       "qid": 113,
@@ -6237,7 +6237,7 @@
         "年有限保",
         "修包含哪"
       ],
-      "rank": 2
+      "rank": 3
     },
     {
       "qid": 131,
@@ -6389,7 +6389,7 @@
         "追踪器时",
         "我可能会"
       ],
-      "rank": 10
+      "rank": 3
     },
     {
       "qid": 144,
@@ -6415,7 +6415,7 @@
         "冰柜时需",
         "要注意什"
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "qid": 146,
@@ -6428,7 +6428,7 @@
         "接电源时",
         "需要做到"
       ],
-      "rank": 9
+      "rank": 1
     },
     {
       "qid": 153,
@@ -6506,7 +6506,7 @@
         "机发动机",
         "的前两个"
       ],
-      "rank": 7
+      "rank": 10
     },
     {
       "qid": 159,
@@ -6558,7 +6558,7 @@
         "机的直流",
         "保护器时"
       ],
-      "rank": 6
+      "rank": 5
     },
     {
       "qid": 163,
@@ -6597,7 +6597,7 @@
         "电池电量",
         "不足了"
       ],
-      "rank": -1
+      "rank": 15
     },
     {
       "qid": 166,
@@ -6610,7 +6610,7 @@
         "发电机的",
         "发动机停"
       ],
-      "rank": 10
+      "rank": 7
     },
     {
       "qid": 167,
@@ -6662,7 +6662,7 @@
         "机的发动",
         "机无法启"
       ],
-      "rank": 5
+      "rank": 2
     },
     {
       "qid": 171,
@@ -6675,7 +6675,7 @@
         "发电机的",
         "燃油排空"
       ],
-      "rank": 18
+      "rank": 12
     },
     {
       "qid": 172,
@@ -6753,7 +6753,7 @@
         "托艇进行",
         "中低速转"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 178,
@@ -6869,7 +6869,7 @@
         "控器设置",
         "日期和时"
       ],
-      "rank": 3
+      "rank": 1
     },
     {
       "qid": 187,
@@ -7101,7 +7101,7 @@
         "儿童电动",
         "摩托车的"
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "qid": 208,
@@ -7153,7 +7153,7 @@
         "如何在",
         "系统中为"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 212,
@@ -7447,7 +7447,7 @@
         "混合即时",
         "相机拍摄"
       ],
-      "rank": 7
+      "rank": 6
     },
     {
       "qid": 241,
@@ -7460,7 +7460,7 @@
         "time airfryer",
         "airfryer first"
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "qid": 242,
@@ -7551,7 +7551,7 @@
         "battery compartment",
         "compartment manipulating"
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "qid": 249,
@@ -7577,7 +7577,7 @@
         "wash function",
         "function clean"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 251,
@@ -7590,7 +7590,7 @@
         "off water",
         "water supply"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 252,
@@ -7707,7 +7707,7 @@
         "boat cross",
         "cross wakes"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 261,
@@ -7733,7 +7733,7 @@
         "cooling system",
         "system boat"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 263,
@@ -7785,7 +7785,7 @@
         "default setting",
         "setting energy"
       ],
-      "rank": 5
+      "rank": 3
     },
     {
       "qid": 267,
@@ -7850,7 +7850,7 @@
         "swim platform",
         "platform boat"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 272,
@@ -7876,7 +7876,7 @@
         "setting screen",
         "screen boat"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 274,
@@ -7889,7 +7889,7 @@
         "steering factory",
         "factory reset"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 275,
@@ -7941,7 +7941,7 @@
         "extinguishers stored",
         "stored board"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 279,
@@ -8058,7 +8058,7 @@
         "off-center subject",
         "subject mode"
       ],
-      "rank": 11
+      "rank": 15
     },
     {
       "qid": 288,
@@ -8123,7 +8123,7 @@
         "single image",
         "image camera"
       ],
-      "rank": 1
+      "rank": 10
     },
     {
       "qid": 293,
@@ -8149,7 +8149,7 @@
         "photos camera",
         "camera direct"
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "qid": 295,
@@ -8279,7 +8279,7 @@
         "main menu",
         "menu browser"
       ],
-      "rank": 3
+      "rank": 1
     },
     {
       "qid": 305,
@@ -8448,7 +8448,7 @@
         "connect regulator",
         "regulator tank"
       ],
-      "rank": 5
+      "rank": 3
     },
     {
       "qid": 318,
@@ -8552,7 +8552,7 @@
         "requirements jetski",
         "operation"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 326,
@@ -8565,7 +8565,7 @@
         "watercraft characteristics",
         "characteristics jetski"
       ],
-      "rank": 4
+      "rank": 7
     },
     {
       "qid": 327,
@@ -8578,7 +8578,7 @@
         "vessels driving",
         "driving jetski"
       ],
-      "rank": 2
+      "rank": -1
     },
     {
       "qid": 328,
@@ -8721,7 +8721,7 @@
         "jetski situations",
         "start"
       ],
-      "rank": 7
+      "rank": 5
     },
     {
       "qid": 348,
@@ -8734,7 +8734,7 @@
         "steps board",
         "board jetski"
       ],
-      "rank": 13
+      "rank": -1
     },
     {
       "qid": 349,
@@ -8799,7 +8799,7 @@
         "handset landline",
         "install"
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "qid": 354,
@@ -8903,7 +8903,7 @@
         "lawn mower",
         "load"
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "qid": 362,
@@ -8916,7 +8916,7 @@
         "lawn mower",
         "unload"
       ],
-      "rank": 10
+      "rank": 9
     },
     {
       "qid": 363,
@@ -8942,7 +8942,7 @@
         "filters lawn",
         "lawn mower"
       ],
-      "rank": -1
+      "rank": 10
     },
     {
       "qid": 365,
@@ -8955,7 +8955,7 @@
         "mower belt",
         "belt lawn"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 366,
@@ -8968,7 +8968,7 @@
         "control over-the-range",
         "over-the-range microwave"
       ],
-      "rank": 3
+      "rank": -1
     },
     {
       "qid": 367,
@@ -8981,7 +8981,7 @@
         "light timer",
         "timer over-the-range"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 368,
@@ -8994,7 +8994,7 @@
         "yout favorite",
         "favorite recipe"
       ],
-      "rank": 2
+      "rank": -1
     },
     {
       "qid": 369,
@@ -9007,7 +9007,7 @@
         "food over-the-range",
         "over-the-range microwave"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 370,
@@ -9020,7 +9020,7 @@
         "defrost over-the-range",
         "over-the-range microwave"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 371,
@@ -9176,7 +9176,7 @@
         "installation central",
         "central processing"
       ],
-      "rank": 2
+      "rank": 4
     },
     {
       "qid": 383,
@@ -9241,7 +9241,7 @@
         "quick release",
         "release multi-use"
       ],
-      "rank": 3
+      "rank": 8
     },
     {
       "qid": 388,
@@ -9293,7 +9293,7 @@
         "steam release",
         "release valve"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 392,
@@ -9410,7 +9410,7 @@
         "release nrornpr",
         "nrornpr multi-use"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 401,
@@ -9423,7 +9423,7 @@
         "anatomy vacuum",
         "robot"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 402,
@@ -9527,7 +9527,7 @@
         "cleaning front",
         "front caster"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 410,
@@ -9540,7 +9540,7 @@
         "cleaning side",
         "side brush"
       ],
-      "rank": 5
+      "rank": 1
     },
     {
       "qid": 411,
@@ -9618,7 +9618,7 @@
         "preparation checks",
         "checks perform"
       ],
-      "rank": 3
+      "rank": 10
     },
     {
       "qid": 417,
@@ -9631,7 +9631,7 @@
         "steps start",
         "start engine"
       ],
-      "rank": 5
+      "rank": 19
     },
     {
       "qid": 418,
@@ -9655,7 +9655,7 @@
         "adjust throttle",
         "throttle cable"
       ],
-      "rank": 3
+      "rank": 2
     },
     {
       "qid": 420,
@@ -9681,7 +9681,7 @@
         "turn snowmobile",
         "steps"
       ],
-      "rank": 2
+      "rank": -1
     },
     {
       "qid": 422,
@@ -9694,7 +9694,7 @@
         "riding uphill",
         "uphill snowmobile"
       ],
-      "rank": 1
+      "rank": 5
     },
     {
       "qid": 423,
@@ -9746,7 +9746,7 @@
         "clean snowmobile",
         "steps"
       ],
-      "rank": 2
+      "rank": 13
     },
     {
       "qid": 427,
@@ -9837,7 +9837,7 @@
         "precautions followed",
         "followed ensure"
       ],
-      "rank": 1
+      "rank": 4
     },
     {
       "qid": 434,
@@ -10354,7 +10354,7 @@
         "人员需要",
         "注意哪些"
       ],
-      "rank": 8
+      "rank": 2
     },
     {
       "qid": 66,
@@ -10442,7 +10442,7 @@
         "调遥控器",
         "安装电池"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 73,
@@ -10481,7 +10481,7 @@
         "空调的自",
         "清洁运行"
       ],
-      "rank": 3
+      "rank": 1
     },
     {
       "qid": 76,
@@ -10559,7 +10559,7 @@
         "调实现自",
         "动重启"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 82,
@@ -10572,7 +10572,7 @@
         "空调的清",
         "洁频率是"
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "qid": 83,
@@ -10700,7 +10700,7 @@
         "洗碗机的",
         "部件有哪"
       ],
-      "rank": 4
+      "rank": 2
     },
     {
       "qid": 93,
@@ -10713,7 +10713,7 @@
         "如何将洗",
         "碗机连接"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 94,
@@ -10878,7 +10878,7 @@
         "器通常有",
         "哪些模式"
       ],
-      "rank": 5
+      "rank": 1
     },
     {
       "qid": 107,
@@ -10917,7 +10917,7 @@
         "空气净化",
         "器的滤网"
       ],
-      "rank": 1
+      "rank": 4
     },
     {
       "qid": 110,
@@ -10930,7 +10930,7 @@
         "空气净化",
         "器的滤网"
       ],
-      "rank": 2
+      "rank": 3
     },
     {
       "qid": 111,
@@ -10943,7 +10943,7 @@
         "空气净化",
         "器的灰尘"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 112,
@@ -10956,7 +10956,7 @@
         "器需要长",
         "期存放时"
       ],
-      "rank": 4
+      "rank": 3
     },
     {
       "qid": 113,
@@ -10982,7 +10982,7 @@
         "单车前",
         "我需要做什么"
       ],
-      "rank": 3
+      "rank": 2
     },
     {
       "qid": 115,
@@ -11329,7 +11329,7 @@
         "追踪器时",
         "我可能会"
       ],
-      "rank": 10
+      "rank": 5
     },
     {
       "qid": 144,
@@ -11355,7 +11355,7 @@
         "冰柜时需",
         "要注意什"
       ],
-      "rank": 6
+      "rank": 4
     },
     {
       "qid": 146,
@@ -11368,7 +11368,7 @@
         "接电源时",
         "需要做到"
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "qid": 153,
@@ -11381,7 +11381,7 @@
         "油高度易",
         "燃且有毒"
       ],
-      "rank": 3
+      "rank": 1
     },
     {
       "qid": 154,
@@ -11394,7 +11394,7 @@
         "发动机和",
         "消音器可"
       ],
-      "rank": 10
+      "rank": 2
     },
     {
       "qid": 155,
@@ -11433,7 +11433,7 @@
         "燃油的使",
         "用前检查"
       ],
-      "rank": 3
+      "rank": 2
     },
     {
       "qid": 158,
@@ -11498,7 +11498,7 @@
         "机的直流",
         "保护器时"
       ],
-      "rank": 9
+      "rank": 14
     },
     {
       "qid": 163,
@@ -11511,7 +11511,7 @@
         "对发动机",
         "机油进行"
       ],
-      "rank": 4
+      "rank": 2
     },
     {
       "qid": 164,
@@ -11524,7 +11524,7 @@
         "启动发电",
         "机发动机"
       ],
-      "rank": -1
+      "rank": 19
     },
     {
       "qid": 165,
@@ -11537,7 +11537,7 @@
         "电池电量",
         "不足了"
       ],
-      "rank": -1
+      "rank": 20
     },
     {
       "qid": 166,
@@ -11550,7 +11550,7 @@
         "发电机的",
         "发动机停"
       ],
-      "rank": 17
+      "rank": 11
     },
     {
       "qid": 167,
@@ -11602,7 +11602,7 @@
         "机的发动",
         "机无法启"
       ],
-      "rank": -1
+      "rank": 8
     },
     {
       "qid": 171,
@@ -11615,7 +11615,7 @@
         "发电机的",
         "燃油排空"
       ],
-      "rank": 17
+      "rank": 19
     },
     {
       "qid": 172,
@@ -11693,7 +11693,7 @@
         "托艇进行",
         "中低速转"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 178,
@@ -11783,7 +11783,7 @@
         "排放燃油",
         "的正确步"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 185,
@@ -11809,7 +11809,7 @@
         "控器设置",
         "日期和时"
       ],
-      "rank": 12
+      "rank": 2
     },
     {
       "qid": 187,
@@ -11835,7 +11835,7 @@
         "温控器的",
         "程序日程"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 189,
@@ -11861,7 +11861,7 @@
         "系统出现",
         "警报界面"
       ],
-      "rank": 7
+      "rank": 1
     },
     {
       "qid": 191,
@@ -11955,7 +11955,7 @@
         "的保修政",
         "策通常包"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 201,
@@ -12028,7 +12028,7 @@
         "儿童电动",
         "摩托车的"
       ],
-      "rank": 18
+      "rank": 1
     },
     {
       "qid": 207,
@@ -12041,7 +12041,7 @@
         "儿童电动",
         "摩托车的"
       ],
-      "rank": 16
+      "rank": 1
     },
     {
       "qid": 208,
@@ -12054,7 +12054,7 @@
         "牙激光鼠",
         "标安装电"
       ],
-      "rank": -1
+      "rank": 1
     },
     {
       "qid": 209,
@@ -12119,7 +12119,7 @@
         "蓝牙激光",
         "鼠标的电"
       ],
-      "rank": 6
+      "rank": 1
     },
     {
       "qid": 214,
@@ -12132,7 +12132,7 @@
         "为蓝牙激",
         "光鼠标使"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 215,
@@ -12145,7 +12145,7 @@
         "牙激光鼠",
         "标与其他"
       ],
-      "rank": 16
+      "rank": 1
     },
     {
       "qid": 216,
@@ -12270,7 +12270,7 @@
         "烤箱的烤",
         "架烤盘套"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 226,
@@ -12387,7 +12387,7 @@
         "混合即时",
         "相机拍摄"
       ],
-      "rank": 5
+      "rank": 16
     },
     {
       "qid": 241,
@@ -12400,7 +12400,7 @@
         "time airfryer",
         "airfryer first"
       ],
-      "rank": 2
+      "rank": 3
     },
     {
       "qid": 242,
@@ -12478,7 +12478,7 @@
         "compartments store",
         "store wet"
       ],
-      "rank": 3
+      "rank": 1
     },
     {
       "qid": 248,
@@ -12517,7 +12517,7 @@
         "wash function",
         "function clean"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 251,
@@ -12582,7 +12582,7 @@
         "check engine",
         "engine oil"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 256,
@@ -12647,7 +12647,7 @@
         "boat cross",
         "cross wakes"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 261,
@@ -12673,7 +12673,7 @@
         "cooling system",
         "system boat"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 263,
@@ -12725,7 +12725,7 @@
         "default setting",
         "setting energy"
       ],
-      "rank": 8
+      "rank": 12
     },
     {
       "qid": 267,
@@ -12764,7 +12764,7 @@
         "factory settings",
         "settings coffee"
       ],
-      "rank": 5
+      "rank": 1
     },
     {
       "qid": 270,
@@ -12790,7 +12790,7 @@
         "swim platform",
         "platform boat"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 272,
@@ -12881,7 +12881,7 @@
         "extinguishers stored",
         "stored board"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 279,
@@ -12894,7 +12894,7 @@
         "throttle-cable boat",
         "care"
       ],
-      "rank": 7
+      "rank": 1
     },
     {
       "qid": 280,
@@ -12998,7 +12998,7 @@
         "off-center subject",
         "subject mode"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 288,
@@ -13063,7 +13063,7 @@
         "single image",
         "image camera"
       ],
-      "rank": 4
+      "rank": 7
     },
     {
       "qid": 293,
@@ -13089,7 +13089,7 @@
         "photos camera",
         "camera direct"
       ],
-      "rank": 4
+      "rank": 6
     },
     {
       "qid": 295,
@@ -13128,7 +13128,7 @@
         "battery earphones",
         "earphones low"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 298,
@@ -13219,7 +13219,7 @@
         "main menu",
         "menu browser"
       ],
-      "rank": 4
+      "rank": 1
     },
     {
       "qid": 305,
@@ -13284,7 +13284,7 @@
         "become photo",
         "photo viewer"
       ],
-      "rank": 3
+      "rank": 6
     },
     {
       "qid": 310,
@@ -13362,7 +13362,7 @@
         "warning labels",
         "labels inside"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 316,
@@ -13388,7 +13388,7 @@
         "connect regulator",
         "regulator tank"
       ],
-      "rank": 5
+      "rank": 2
     },
     {
       "qid": 318,
@@ -13440,7 +13440,7 @@
         "some safety",
         "safety tips"
       ],
-      "rank": 3
+      "rank": 2
     },
     {
       "qid": 322,
@@ -13453,7 +13453,7 @@
         "numbers jetski",
         "jetski don"
       ],
-      "rank": 20
+      "rank": 1
     },
     {
       "qid": 323,
@@ -13466,7 +13466,7 @@
         "jetski has",
         "has cruising"
       ],
-      "rank": 17
+      "rank": 7
     },
     {
       "qid": 324,
@@ -13479,7 +13479,7 @@
         "jetski has",
         "has cruising"
       ],
-      "rank": 17
+      "rank": 7
     },
     {
       "qid": 325,
@@ -13492,7 +13492,7 @@
         "requirements jetski",
         "operation"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 326,
@@ -13505,7 +13505,7 @@
         "watercraft characteristics",
         "characteristics jetski"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 327,
@@ -13739,7 +13739,7 @@
         "handset landline",
         "install"
       ],
-      "rank": 3
+      "rank": 2
     },
     {
       "qid": 354,
@@ -13843,7 +13843,7 @@
         "lawn mower",
         "load"
       ],
-      "rank": 4
+      "rank": 7
     },
     {
       "qid": 362,
@@ -13856,7 +13856,7 @@
         "lawn mower",
         "unload"
       ],
-      "rank": 3
+      "rank": 10
     },
     {
       "qid": 363,
@@ -13882,7 +13882,7 @@
         "filters lawn",
         "lawn mower"
       ],
-      "rank": -1
+      "rank": 20
     },
     {
       "qid": 365,
@@ -13895,7 +13895,7 @@
         "mower belt",
         "belt lawn"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 366,
@@ -13908,7 +13908,7 @@
         "control over-the-range",
         "over-the-range microwave"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 367,
@@ -13921,7 +13921,7 @@
         "light timer",
         "timer over-the-range"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 368,
@@ -13934,7 +13934,7 @@
         "yout favorite",
         "favorite recipe"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 369,
@@ -13947,7 +13947,7 @@
         "food over-the-range",
         "over-the-range microwave"
       ],
-      "rank": 2
+      "rank": -1
     },
     {
       "qid": 370,
@@ -13960,7 +13960,7 @@
         "defrost over-the-range",
         "over-the-range microwave"
       ],
-      "rank": 1
+      "rank": -1
     },
     {
       "qid": 371,
@@ -14025,7 +14025,7 @@
         "jumpers motherboard",
         "set"
       ],
-      "rank": 1
+      "rank": 3
     },
     {
       "qid": 376,
@@ -14038,7 +14038,7 @@
         "rear panel",
         "panel connectors"
       ],
-      "rank": 3
+      "rank": 1
     },
     {
       "qid": 377,
@@ -14233,7 +14233,7 @@
         "steam release",
         "release valve"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 392,
@@ -14337,7 +14337,7 @@
         "release button",
         "button multi-use"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 400,
@@ -14363,7 +14363,7 @@
         "anatomy vacuum",
         "robot"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 402,
@@ -14532,7 +14532,7 @@
         "power camera",
         "steps"
       ],
-      "rank": 2
+      "rank": 4
     },
     {
       "qid": 415,
@@ -14571,7 +14571,7 @@
         "steps start",
         "start engine"
       ],
-      "rank": 1
+      "rank": 2
     },
     {
       "qid": 418,
@@ -14608,7 +14608,7 @@
         "steering system",
         "system snowmobile"
       ],
-      "rank": 5
+      "rank": 6
     },
     {
       "qid": 421,
@@ -14621,7 +14621,7 @@
         "turn snowmobile",
         "steps"
       ],
-      "rank": 4
+      "rank": -1
     },
     {
       "qid": 422,
@@ -14686,7 +14686,7 @@
         "clean snowmobile",
         "steps"
       ],
-      "rank": 2
+      "rank": 16
     },
     {
       "qid": 427,
@@ -14790,7 +14790,7 @@
         "intensity settings",
         "settings electric"
       ],
-      "rank": 2
+      "rank": 1
     },
     {
       "qid": 435,

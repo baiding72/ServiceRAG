@@ -1,0 +1,417 @@
+id,question,ret
+1,"""请问你们家的商品支持7天无理由退换货吗？"",
+""需要自己承担运费吗？""",您好，我们支持7天无理由退换货服务。关于运费问题，如果是商品质量问题导致的退换货，我们将承担往返运费；若因个人原因需要退换货，则需您自行承担寄回商品的运费。如有其他疑问欢迎随时咨询。
+2,"""我想咨询一下，你们的售后维修服务范围是什么？"",
+""如果是人为损坏的，能维修吗？维修费用怎么算？""",您好，关于您的问题：1. 我们的售后维修服务范围覆盖全国大部分地区，具体是否包含您所在的区域，您可以提供一下地址信息，我来帮您确认。2. 对于人为损坏的情况，我们也是可以提供维修服务的，但需要收取一定的费用。具体的维修费用会根据损坏的程度和需要更换的零件来确定。建议您先将产品送到我们的售后服务中心进行检测，我们会给出详细的报价单。如有其他疑问欢迎随时咨询。
+3,"""请问你们的商品能开发票吗？发票类型是什么？"",
+""多久能收到呢？""",您好，关于您的问题：1. 我们可以为购买的商品开具发票。2. 发票类型主要为电子发票，如需纸质发票，请在下单时备注或联系客服说明。3. 一般情况下，电子发票会在订单完成后1-3个工作日内发送到您预留的邮箱；纸质发票则需要更长时间，大约5-7个工作日通过快递寄出。如有其他疑问欢迎随时咨询。
+4,"""我收到商品后，发现包装破损了，怎么办？"",
+""影响商品退换货吗？""",您好，对于您收到的商品包装破损的情况，我们深感抱歉。请您先检查商品本身是否有损坏，如果商品完好无损，您可以选择继续使用；如果商品有损坏或者您对商品有任何不满意的地方，我们支持退换货服务。请您拍照留存证据，并联系我们的在线客服提供照片和订单信息，我们会尽快为您处理。关于退换货是否受影响的问题，只要您能够提供有效的破损证明，就不会影响您的退换货权益。
+6,"""我想了解一下你们的退款政策，退款多久能到账？"",
+""信用卡会原路返回吗？""",您好，关于您的问题：1. 我们的退款政策是，在收到并确认退货商品无误后，我们会在1-3个工作日内处理退款。2. 退款通常会在7-15个工作日内返回到您的原支付账户，具体到账时间可能因银行或支付平台的处理速度而有所不同。3. 如果您使用的是信用卡支付，退款会按照原支付路径退回至您的信用卡账户。请您耐心等待，并留意账户变动。如有其他疑问欢迎随时咨询。
+7,"""我收到的商品和图片不一样，颜色偏差很大，我要投诉！""",您好，非常抱歉给您带来了不愉快的购物体验。关于您反馈的商品颜色与图片存在较大偏差的问题，我们深感歉意。请您提供一下订单号以及商品照片，方便我们核实具体情况。确认无误后，我们会尽快为您处理换货或退货事宜，并对相关责任方进行追责。感谢您的理解和支持，期待您的回复。
+8,"""你们的商品存在虚假宣传，宣传的功能和实际不一样，我要投诉！""",您好，非常抱歉给您带来了不愉快的购物体验。关于您反馈的商品存在虚假宣传的问题，我们非常重视。请您提供一下具体的订单号以及商品存在的问题描述和相关照片或视频作为凭证，我们会尽快核实情况并给出处理方案。同时，为了更好地解决您的问题，我们也会将此情况反馈给相关部门进行调查。感谢您的理解和支持，期待您的回复。
+9,"""我收到的商品少了一件，联系客服说会补发，但是过了一周还没补发！""",您好，非常抱歉给您带来了不愉快的购物体验。关于您反馈的商品少发且补发延迟的问题，我们会尽快为您处理。请您提供一下订单号以及与客服沟通的相关截图或记录，以便我们核实情况并加快补发进度。同时，我也会将您的问题反馈给相关部门，确保此类问题不再发生。对于由此给您带来的不便，我们深感歉意。感谢您的理解和支持！
+10,"""你们的售后维修服务太差了，我送修的商品，过了半个月还没修好！""",非常抱歉给您带来了不愉快的体验，我们深感歉意。关于您送修商品维修时间过长的问题，我们会尽快为您处理。请您提供一下送修单号或者购买凭证，我将立即帮您查询具体的维修进度，并催促相关部门加快处理速度。同时，我们也会对此次服务进行内部调查，避免类似情况再次发生。感谢您的理解与支持！
+11,"""你们的商品保质期有问题，我收到的商品还有1个月就过期了！""",您好，非常抱歉给您带来了不愉快的购物体验。关于您反馈的商品保质期问题，我们深感歉意。请您提供一下订单号以及商品照片，我们会尽快为您核实处理。如情况属实，我们将按照您的意愿进行退换货处理，并且会加强仓库发货时对商品保质期的检查，避免类似问题再次发生。感谢您的理解与支持！
+12,"""你们的快递员态度特别差，送货时还辱骂我，我要投诉！""",非常抱歉给您带来了不愉快的体验，我们非常重视您的反馈。请您提供一下当时的具体情况以及快递员的相关信息（如工号、姓名等），我们会尽快核实并处理。同时，为了更好地解决您的问题，请您留下联系方式，我们的客服人员会尽快与您联系，并给出相应的解决方案。对于此次事件给您带来的困扰，我们再次表示歉意。
+13,"""你们的商品存在质量问题，我使用了一次就坏了，联系客服没人管！""",您好，非常抱歉给您带来了不愉快的购物体验。对于您反馈的商品质量问题，我们深感歉意。请您提供一下订单号以及商品出现的具体问题和相关照片或视频，我们会尽快为您核实处理。同时，我也会帮您加急联系售后专员跟进此事，确保您的问题能够得到妥善解决。再次为给您带来的不便表示歉意，感谢您的理解与支持。
+14,"""我收到的商品被拆封过，里面还有污渍，明显是二手商品，我要投诉！""",非常抱歉给您带来了不愉快的购物体验，对于您收到的商品存在问题我们深感歉意。请您先不要着急，我们会尽快为您处理。\n1. 投诉：您的反馈我们已经记录下来了，会立刻转交给相关部门进行调查处理。\n2. 退货/换货：针对您遇到的情况，您可以选择申请退货或换货服务。请您登录账号，在“我的订单”中找到对应商品，点击“申请售后”，并按照页面提示提交相关凭证（如商品照片等），我们的工作人员会在24小时内审核处理。\n3. 补偿：待核实情况后，我们将根据实际情况给予相应的补偿措施。\n再次为此次事件向您表示诚挚的歉意，感谢您的理解与支持！如有其他问题，请随时联系我们。
+15,"""你们的商品宣传是正品，但是我收到后验证是假货，我要投诉！""",您好，非常抱歉给您带来了不愉快的购物体验。请您先不要着急，我们非常重视您的反馈。为了尽快解决您的问题，请您提供以下信息：1. 订单号；2. 商品照片以及防伪验证结果截图。收到后我们会立即进行核实，并在24小时内给您回复处理结果。对于确认为假货的情况，我们将按照平台规定为您办理退货退款并给予相应赔偿。再次感谢您的理解与支持，期待您的回复。
+16,"""我收到商品后，发现商品有轻微划痕，不影响使用，能申请换货吗？""",您好，对于您收到的商品存在轻微划痕的情况，我们深感抱歉。如果划痕不影响正常使用，您可以选择申请换货服务。请您先拍照留存商品划痕的证据，并联系我们的在线客服提交换货申请。审核通过后，我们会尽快为您安排换货。一般情况下，审核会在1-3个工作日内完成，换货处理时间则根据库存情况而定，通常在7个工作日内可以完成。感谢您的理解与支持！
+17,"""我想换货，但是原来的商品包装盒丢了，还能换吗？"",
+""需要我额外支付包装费吗？""",您好，关于您的问题：1. 即使商品包装盒丢失，我们仍然可以为您提供换货服务。但为了保证商品在运输过程中的安全，请您尽量使用其他合适的包装材料进行打包。2. 关于包装费用的问题，如果是因为我们的原因导致需要换货，那么您无需支付额外的包装费用；如果是由于个人原因需要换货，可能需要您自行承担包装及运费。具体的费用情况请您联系在线客服确认。感谢您的理解与支持！
+18,"""我想退货，但是已经超过7天无理由退换货期限了，还能退吗？""",您好，关于您的退货需求，通常情况下我们的无理由退换货期限是7天。不过如果商品存在质量问题或者与描述不符的情况，您仍然可以申请退货。请您提供一下购买凭证和商品问题的照片或视频，我们会尽快为您审核处理。如果有其他疑问欢迎随时咨询。
+19,"""请问你们的商品能提供纸质版说明书吗？"",
+""电子版在哪里可以找到？""",您好，关于您的问题：1. 纸质版说明书：我们大部分商品默认提供电子版说明书以支持环保，但如果您确实需要纸质版说明书，可以联系我们的客服申请，我们会尽量满足您的需求。2. 电子版说明书：您可以在我们官方网站的产品详情页下方找到下载链接，或者在购买后通过订单页面中的“查看电子说明书”按钮获取。希望这些信息对您有所帮助，如有其他疑问欢迎随时咨询。
+20,"""请问你们家的商品能寄到国外吗？"",
+""运费怎么算？大概需要多久能到？""",您好，关于您的问题：1. 国际配送：我们目前支持部分国家的国际配送服务，具体是否可以配送到您所在的国家，请提供详细地址后由我们的客服人员进行确认。2. 运费计算：国际运费会根据包裹重量、体积以及目的地有所不同，具体的费用会在下单时系统自动计算并显示。3. 配送时效：国际物流通常需要7-30个工作日，具体时间取决于收货地点及当地清关速度。如有其他疑问欢迎随时咨询。
+21,"""我购买的商品，想开发票抬头为公司，需要注意什么？"",
+""抬头写错了，能重新开具吗？""",您好，关于您的问题：1. 开具公司抬头的发票时，请确保提供正确的公司名称、税号等信息。同时，在提交开票申请前，请仔细核对这些信息以避免错误。2. 如果发现抬头写错了，可以联系我们的客服人员说明情况并申请重新开具发票。通常情况下，只要原发票未用于报销且在一定期限内（如30天），我们是可以为您重新开具的。请准备好相关订单信息以便快速处理。如有其他疑问欢迎随时咨询。
+22,"""我收到商品后，发现商品有瑕疵，但是已经使用过了，能售后吗？"",
+""换货还是只能维修？""",您好，对于您收到的商品存在瑕疵的情况，我们深表歉意。即使商品已经使用过，只要在保修期内且非人为损坏，通常还是可以进行售后处理的。关于您的问题：1. 售后方式：一般情况下，我们会根据具体情况提供维修或换货服务。如果商品确实存在质量问题，我们会优先考虑为您更换新的商品；若暂时无库存，则会安排维修服务。2. 请您先联系我们的在线客服，并提供购买凭证、商品照片以及瑕疵部位的详细描述，以便我们尽快核实情况并给出具体的解决方案。感谢您的理解与配合！
+23,"""我想取消订单，但是订单已经付款了，能全额退款吗？""",您好，关于您的订单取消及退款问题：1. 如果您已经付款但希望取消订单，通常情况下是可以申请全额退款的。2. 请您尽快联系我们的在线客服或拨打客服热线，提供您的订单号和相关信息，以便我们为您处理退款事宜。3. 退款一般会在1-7个工作日内原路返回到您的支付账户，请注意查收。如有其他疑问欢迎随时咨询。
+24,"""请问你们的商品有售后保障卡吗？"",
+""卡丢了，还能享受售后服务吗？""",您好，关于您的问题：1. 我们的产品确实附带售后保障卡，这是您享受售后服务的重要凭证。2. 如果您的售后保障卡不慎丢失了，也不用担心，我们仍然可以为您提供售后服务。请您准备好购买凭证（如订单截图、发票等），并联系我们的客服人员进行核实。核实无误后，我们将按照正常流程为您处理售后事宜。如有其他疑问欢迎随时咨询。
+25,"""请问你们家支持以旧换新服务吗？""",您好，我们目前支持以旧换新服务。您可以通过以下步骤进行操作：1. 登录我们的官方网站或APP，在“以旧换新”页面选择您想要更换的新商品；2. 根据提示填写旧机信息并提交申请；3. 我们会安排工作人员上门取件，并在收到旧机后为您处理换新事宜。如有其他疑问欢迎随时咨询。
+26,"""请问你们的智能客服能解答哪些问题？"",
+""智能客服解答不了的问题，怎么办？""",您好，我们的智能客服可以解答关于产品使用、功能介绍、常见故障排查等问题。对于一些更复杂的情况，比如特定的技术难题或者需要人工判断的问题，智能客服可能无法直接解决。这种情况下，您可以选择联系在线人工客服，我们会尽快为您转接，提供进一步的帮助。
+33,"""家支持7天无理由退货吗？"",
+""需要满足什么条件？""",您好，我们支持7天无理由退货服务。为了保障您的权益和我们的运营，退货需要满足以下条件：1. 商品必须保持完好，未使用过且不影响二次销售；2. 请确保商品的原包装、附件、赠品等齐全；3. 非质量问题退货时，运费需由买家承担。如果您有其他疑问或需要进一步的帮助，请随时联系我们。
+34,"""我购买的商品，收到后发现少发了一件，怎么办？"",
+""什么时候能补寄？需要我承担运费吗？""",您好，对于您遇到的问题我们深感抱歉。关于您的问题：1. 少发商品：请您先确认一下订单详情和发货清单，如果确实少发了商品，请您提供相关照片或视频作为凭证，并联系我们的在线客服进行反馈。2. 补寄时间：在收到您的反馈并核实无误后，我们会在24小时内为您安排补寄，一般情况下3-5个工作日内可以送达。3. 运费承担：由于是我们的工作失误导致的少发情况，因此不需要您承担任何运费。再次为给您带来的不便表示歉意，感谢您的理解和支持。
+35,"""想换成其他款式，能换货吗？""",您好，关于换货的问题，我们是支持的。请您先确认需要更换的商品款式是否有库存，并且确保商品未使用、包装完好。接下来，请您联系我们的在线客服提供订单信息和换货原因，我们会尽快为您处理。一般情况下，审核通过后1-3个工作日内会安排快递上门取件，换货周期大约为7-10个工作日。如有其他疑问欢迎随时咨询。
+36,"""请问商品的生产日期是什么时候？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+37,"""请问你们的商品能提供上门安装服务吗？""",您好，我们为部分商品提供上门安装服务，具体是否支持需要根据您购买的商品种类和所在地区来确定。请您提供一下订单号或商品信息，我这边帮您查询确认一下。
+38,"""请问你们的商品能提供试用装吗？""",您好，感谢您的咨询。目前我们平台的商品暂不提供试用装服务，建议您可以查看商品详情页的详细描述和其他用户的评价来了解产品信息。如果您还有其他疑问或需要进一步的帮助，请随时联系我们。
+39,"""我购买的商品，使用一段时间后出现质量问题，还能售后吗？""",您好，对于您购买的商品出现质量问题，我们非常抱歉给您带来了不便。根据我们的售后政策，商品在一定期限内出现非人为的质量问题是可以进行退换货或维修的。请您提供一下订单号和具体的问题描述，并拍摄一些问题部位的照片，发送给我们的在线客服。我们会尽快为您核实情况并给出相应的解决方案。感谢您的理解与配合！
+40,"""我想给商品更换成更大的尺寸，能换吗？"",
+""尺寸差价怎么处理？""",您好，关于您的问题：1. 更换商品尺寸：健身追踪器出厂已安装小号表带，包装盒内另附一条大号底部表带。您可以根据需要更换不同尺寸的表带。2. 尺寸差价处理：如果您购买的是我们的健身追踪器，更换表带时不需要支付额外费用，因为大号表带已经包含在包装盒内。如果是其他商品，请联系客服进行具体咨询。
+41,"""快递丢失了，怎么办？""，
+""这种情况你们会怎么赔偿？多久能解决？""",您好，对于快递丢失的情况我们深感抱歉。请您先提供订单号和相关物流信息，我们会尽快与物流公司核实情况。一旦确认是快递丢失，我们将为您重新发货或进行退款处理。赔偿方式会根据实际情况而定，一般会在3-5个工作日内完成处理。请您放心，我们会全程跟进直到问题解决。如有其他疑问欢迎随时咨询。
+42,"""我购买的商品，想申请退款，但是已经使用过了，能退吗？""",您好，关于您想申请退款的问题，一般来说，已经使用过的商品可能无法进行无理由退货。但具体能否退货还需要根据我们的退换货政策以及商品的具体情况来判断。请您提供一下订单号和商品信息，我会帮您查询具体情况，并给出相应的处理建议。如果有质量问题，我们也会按照国家三包政策为您处理。感谢您的理解与配合。
+43,"""我购买的商品，快递送达时，我不在家，怎么办？""",您好，关于您的问题：当快递送达时您不在家，您可以选择以下几种方式处理：1. 联系快递员重新安排送货时间。2. 如果快递公司支持，您可以授权快递员将包裹放置在指定的安全位置，如门卫处或快递柜。3. 您也可以选择让快递员将包裹送至附近的代收点，方便您之后自取。建议您尽快与快递员取得联系并告知您的需求。如有其他疑问欢迎随时咨询。
+44,"""请问你们的优惠券能用于所有商品吗？""",您好，关于您的问题：优惠券的使用范围可能因具体活动而异。通常情况下，我们会明确标注优惠券适用的商品范围。请您查看优惠券的具体说明或在购物车页面尝试使用，以确认其是否适用于您想购买的商品。如有其他疑问欢迎随时咨询。
+45,"""请问你们的商品能提供终身维修服务吗？""",您好，感谢您的咨询。我们目前提供的售后服务政策中，并没有终身维修服务这一项。不过，我们的产品在保修期内是享有免费维修服务的。如果您购买了延保服务，那么在延保期间内也可以享受相应的维修保障。对于超出保修期或延保期的产品，我们可以提供有偿维修服务。希望这个回答能够帮到您，如果还有其他问题欢迎随时联系我们。
+46,"""我上个月购买的家电，使用不到一个月就出现故障，联系售后寄回维修，现在已经维修15天了，还没收到，而且我发现商品是翻新机，并非全新，要求退货退款并赔偿，请问该怎么处理？""",您好，非常抱歉给您带来了不愉快的购物体验。关于您的问题：1. 维修时间过长：我们会尽快为您查询维修进度，并催促相关部门加快处理速度。2. 商品疑似翻新机：请您提供购买时的相关凭证以及商品照片或视频作为证据，我们将进行核实。如果情况属实，我们承诺会按照国家三包政策为您提供退货退款服务，并给予相应的赔偿。请您保持电话畅通，我们的工作人员会在24小时内与您联系，进一步沟通解决方案。感谢您的理解和支持！
+47,"""我在你们平台批量购买了100件商品用于企业采购，收到货后发现有20件存在质量问题，15件少发，而且发票开错了抬头，需要重新开具，同时想申请质量问题商品的换货和少发商品的补寄，请问流程是什么？"",",您好，非常抱歉给您带来了不愉快的购物体验。针对您的问题，我们将尽快为您解决：1. 质量问题商品换货：请您先将存在质量问题的商品拍照留证，并通过平台提交换货申请，上传相关照片作为凭证，我们会在24小时内审核并安排换货事宜。2. 少发商品补寄：请您提供订单号及少发商品的具体信息，我们会核实后尽快为您补发。3. 发票抬头错误：请告知正确的发票抬头信息，我们将在确认无误后为您重新开具发票。整个处理过程预计需要3-5个工作日，请您耐心等待。如有其他疑问欢迎随时咨询。
+48,"""我购买的食品类商品，收到后发现生产日期临近过期，而且包装破损，部分商品受潮无法食用，我要求退货退款并赔偿，同时担心食用了受潮商品影响健康，请问能提供相关保障吗？""",您好，非常抱歉给您带来了不愉快的购物体验。关于您提到的问题，我们将会尽快为您处理：1. 退货退款：请您提供商品的照片以及订单信息，我们会尽快审核并安排退货退款事宜。2. 赔偿：对于因包装破损导致的商品受潮问题，我们将根据实际情况给予相应的赔偿。3. 健康保障：如果您在食用过程中感到身体不适，请及时就医，并保留好相关医疗证明，我们会根据情况为您提供进一步的帮助。请您放心，我们会尽全力解决您的问题。请您将相关信息发送至我们的客服邮箱或通过在线客服提交，以便我们更快地为您处理。再次为给您带来的不便表示歉意，感谢您的理解与支持。
+49,"""我购买的商品包装破损，商品出现损坏，而且快递员拒绝承认是运输问题，同时我已经签收商品，请问还能申请售后吗？""",您好，对于您遇到的问题我们深感抱歉。即使已经签收商品，如果发现包装破损且商品损坏，您仍然可以申请售后处理。请您尽快联系我们的客服，并提供以下信息：1. 商品照片，特别是损坏部位的清晰图片；2. 包装箱的照片，尤其是破损处；3. 快递面单的照片。这些资料将帮助我们更好地了解情况并为您解决问题。同时，我们会与快递公司进行沟通，核实具体情况。请您放心，我们将尽全力保障您的权益。
+50,"""我购买的大家电需要上门安装，但是安装人员上门后说需要额外收取配件费，而且安装服务原本应该是免费的，同时安装人员操作不规范，导致家电出现轻微损坏，请问该怎么处理？""",您好，对于您遇到的问题我们深感抱歉。关于安装人员额外收取配件费以及操作不规范导致家电损坏的情况，您可以按照以下步骤处理：1. 请保留好购买凭证、安装服务单据以及损坏部位的照片或视频作为证据；2. 联系我们的官方客服热线（400-XXX-XXXX），提供上述材料并说明具体情况；3. 我们会尽快安排专业人员进行核实，并根据实际情况为您提供免费维修或者更换服务，同时对违规收费问题进行调查处理。感谢您的理解与配合！
+51,"""我购买的商品在质保期内出现质量问题，寄回维修后，维修人员说需要更换配件，而且要收取配件费，但是质保期内应该免费维修，同时维修时间已经超过承诺的7天，请问该怎么处理？"",",您好，关于您的问题：1. 质保期内维修：根据我们的保修政策，在质保期内因材料或工艺缺陷导致的问题，授权服务提供商将免费为您维修。如果需要更换配件且该配件属于原厂材料或工艺缺陷的一部分，也应免费更换。2. 维修时间：我们承诺的维修时间为7天内完成，若超过此期限，请您提供维修单号，我们将尽快为您查询处理进度，并协调相关部门加快处理速度。对于给您带来的不便，我们深感歉意。如有其他疑问欢迎随时咨询。
+52,"""我购买的大型设备需要上门检修，但是检修人员上门后说设备故障无法现场修复，需要拉回仓库维修，而且维修时间不确定，同时我担心设备拉回过程中出现损坏，请问该怎么处理？""",您好，关于您的问题：1. 设备需要拉回仓库维修：如果检修人员已经确认设备故障无法现场修复，那么将设备拉回仓库进行进一步的检查和维修是必要的。2. 维修时间不确定：我们会尽快处理您的设备，并在维修完成后第一时间通知您。3. 担心设备拉回过程中出现损坏：请放心，我们的工作人员会采取适当的保护措施来确保设备在运输过程中的安全。若因运输导致的损坏，我们将负责处理。感谢您的理解与支持，如有其他疑问欢迎随时咨询。
+53,"""我想试用商品，但是试用期间商品出现故障，而且不是人为操作导致的，同时我想延长试用期限，请问可以吗？另外故障商品能更换吗？""",您好，关于您的问题：1. 试用期间商品出现非人为故障：根据我们的保修政策，在保修期内，如果产品被合理判定为存在制造缺陷，授权服务提供商将免费为您维修。若无法修复，我们将为您提供更换服务（可能需要支付额外费用以获取升级型号）。2. 延长试用期限：我们目前没有提供延长试用期的服务，建议您尽快完成试用并决定是否购买。3. 故障商品更换：如前所述，对于在保修期内且因制造缺陷导致的故障，我们可以为您提供维修或更换服务。请您通过售后支持网站提交申请，并附上购买凭证副本。如有其他疑问欢迎随时咨询。
+54,"""我购买的商品，收到后发现是临期商品（还有15天过期），但下单时页面未标注临期，而且商品包装上也没有临期提示，我要求退货退款并赔偿，请问可以吗？""",您好，非常抱歉给您带来了不愉快的购物体验。关于您收到的商品为临期商品且页面未标注的情况，我们深感歉意。根据我们的售后政策，对于临期商品的问题，您可以申请退货退款。请您提供商品的照片以及订单信息，我们会尽快为您处理。关于赔偿问题，我们会根据实际情况进行评估，并在核实后给予合理的解决方案。请您放心，我们会尽快解决您的问题。感谢您的理解与支持！
+55,"""我购买的商品，收到后发现商品的颜色和详情页描述的不一致，详情页是深红色，实际收到的是浅红色，而且商品有轻微的异味，想申请换货""",您好，对于您反馈的商品颜色不符以及存在异味的问题，我们深感抱歉。请您先确认商品包装内的清单和说明书等是否齐全，并检查商品是否有其他质量问题。如果确实存在色差及异味问题，请您拍摄商品照片或视频作为证据，并通过我们的官方客服渠道提交换货申请。一般情况下，审核会在1-3个工作日内完成，审核通过后我们会尽快为您安排换货。期间如有任何疑问，欢迎随时联系我们。
+57,"""我购买的商品，快递寄到后，我拆开包装发现商品损坏，但是快递员已经离开，没有当场验货，请问还能申请售后吗？""",您好，对于您遇到的问题我们深感抱歉。即使没有当场验货，您仍然可以申请售后处理。请您尽快拍照留存商品损坏的证据，并通过我们的官方客服渠道提交售后申请。在申请时，请详细描述问题并上传相关照片作为凭证。我们会尽快为您审核处理，并根据实际情况提供换货或退款服务。如有其他疑问，欢迎随时联系我们。
+58,"""我购买的商品，使用时发现商品的功能和详情页描述的不一致，详情页说支持无线充电，实际不支持，而且商品的续航时间也比描述的短很多，要求退货退款并赔偿，请问可以吗？"",",您好，非常抱歉给您带来了不愉快的购物体验。关于您反馈的商品功能与详情页描述不符以及续航时间较短的问题，我们深感歉意。请您提供一下购买订单号以及商品存在的具体问题的照片或视频作为凭证，我们会尽快为您核实处理。如果情况属实，我们将按照相关法律法规及平台规则为您提供退货退款服务，并就此次不愉快的购物体验给予适当的补偿。请您放心，您的权益我们会全力保障。感谢您的理解和支持！
+64,"""使用吹风机时，人员需要佩戴哪些防护装备？""",使用吹风机时，人员需要佩戴以下防护装备：1. 合格的听力防护装备 2. 合格的眼部防护装备。3. 在多尘环境中操作时佩戴面罩。4. 防滑鞋底的工作靴或工作鞋 5. 急救箱。
+65,"""操作吹风机时，人员需要注意哪些安全要点？""","操作吹风机时，人员需要注意以下安全要点：1. 禁止无关人员及动物进入作业区域，即距操作人员 10 米范围内。2. 吹风机可能高速喷射物体，物体反弹后可能击中操作人员，易造成严重眼部损伤。3. 严禁将吹风机喷口对准人或动物。4. 安装或拆卸配件及其他部件前必须先关闭发动机。5. 任何防护装置缺失时严禁操作吹风机。6. 严禁在通风不良的空间操作吹风机，避免吸入废气。7. 加油前必须关闭发动机。8. 吹风机运行中、停机后及怠速状态下，催化消音器均异常滚烫。注意火灾危险，尤其在易燃材料附近或存在易燃气体环境中操作时。9. 操作时需小心，尤其是左手操作时。避免身体直接接触排气口区域。10. 站在梯子或支架上时严禁操作吹风机。<PIC>此外，使用吹风机的人员需佩戴以下防护装备：1. 合格的听力防护装备。2. 合格的眼部防护装备。3. 在多尘环境中操作时佩戴面罩。4. 防滑鞋底的工作靴或工作鞋。5. 急救箱。<PIC> , [""Blower_02"", ""Manual04_0""]"
+66,"""使用吹风机时，如何调节化油器？""",化油器调节需要根据具体情况进行，以下是调节步骤：\\n1. 检查吹风管（15）与喷口（14）已安装到位。\\n2. 将 H、L 调节螺钉逆时针旋至限位终点。\\n3. 按第 13 页启动吹风机发动机，怠速与半油门交替运转 1-2 分钟预热。若发动机无法怠速运转，顺时针旋动 T 螺钉直至正常怠速。\\n4. 调节 T 螺钉，使发动机精准维持怠速，转速不偏高。\\n5. 微调 L 螺钉，使发动机达到最大怠速转速，然后将 L 螺钉逆时针旋出最多 1/4 圈。\\n6. 必要时旋动 T 螺钉提升发动机转速。\\n7. 发动机全开油门，调节 H 螺钉直至发动机达到最大转速。\\n8. 将 H 螺钉逆时针旋 1/8 圈（若限位限制则小于 1/8 圈）。
+67,"""吹风机冷机时，该如何启动？""",您好，关于您的问题：冷机启动吹风机时，请按照以下步骤操作：1. 将停机开关调至启动位置。2. 将阻风门控制器调至阻风门位置（A），该位置同时为自动启动油门位置。3. 反复按压泵油膜片直至燃油充满膜片，无需完全充满。4. 左手将设备机身按压在地面（注意！切勿用脚踩压）。右手握紧启动手柄，缓慢拉动启动绳至感受到阻力（启动钩啮合），然后快速用力拉动。5. 发动机点火后立即按下阻风门控制器，重复操作直至发动机启动。发动机启动后迅速全开油门，启动油门自动解除。
+68,"""吹风机热机时，该如何启动？""","热机启动吹风机时，请按照以下步骤操作：1. 将阻风门控制器调至工作位置，无需使用阻风门。2. 左手将设备机身按压在地面（注意！切勿用脚踩压）。3. 右手握紧启动手柄，缓慢拉动启动绳至感受到阻力（启动钩啮合），然后快速用力拉动。<PIC>4. 发动机点火后立即按下阻风门控制器，重复操作直至发动机启动。5. 发动机启动后迅速全开油门，启动油门自动解除。 , [""Manual04_26""]"
+69,"""该如何关闭吹风机？""",关闭吹风机时，您需要通过停机开关切断点火电源来关闭发动机。
+70,"""空调的重要组成部件有哪些？""","空调的重要组成部件包括室内机，具体功能会根据机型有所调整。此外，空调还包括遥控器、空气滤网等部件。<PIC> 为了确保空调正常运行，请定期清洁和维护这些部件。 , [""Manual01_0""]"
+71,"""如何找到空调遥控器的按键？""","使用遥控器可更便捷地操作空调，附加功能的按键位于遥控器盖板下方。请打开遥控器盖板查看所有按键。<PIC> 请将遥控器对准空调底部的信号接收器进行操作。 , [""Manual01_6""]"
+72,"""如何给空调遥控器安装电池？""","给空调遥控器安装电池的步骤如下：1. 取下电池盖。2. 装入新电池，确保电池正、负极安装正确。3. 重新装上电池盖。<PIC><PIC>注意：请勿将不同型号电池混用，也切勿将新电池与旧电池混用，否则可能导致产品故障。 , [""drill0_04"", ""drill0_05""]"
+73,"""如何安装空调遥控器支架？""",安装空调遥控器支架的步骤如下：\\n1. 选择安全且便于取用的位置，避免阳光直射以保护遥控器。\\n2. 用螺丝刀将两颗螺丝拧紧，固定支架。\\n3. 将遥控器滑入支架中。
+74,"""如何用空调快速调节室内温度？""","您好，要快速调节室内温度，您可以使用极速制冷/制热模式。具体步骤如下：1. 按下开/关键开启电源。2. 按下极速键。<PIC>在极速制冷模式下，空调将以18摄氏度的温度强风出风30分钟；在极速制热模式下，空调将以30摄氏度的温度强风出风30分钟。 , [""drill0_04""]"
+75,"""如何使用空调的自清洁运行功能？""","使用空调的自清洁运行功能，请按照以下步骤操作：1. 按下自清洁键，显示屏上会显示自清洁标识。2. 若关闭电源，风扇将继续运行 30 分钟，对室内机内部进行清洁。<PIC> 注意：制冷和除湿运行时，室内机内部会产生水汽，可使用自清洁功能去除水汽。 , [""Manual01_17""]"
+76,"""如何使用空调的等离子净化功能？""","您好，使用空调的等离子净化功能，请按照以下步骤操作：1. 按下开 / 关键开启电源。2. 按下等离子键，显示屏上会显示等离子标识。<PIC>等离子净化功能运行时，等离子灯和制冷灯将同时亮起。请注意，并非所有机型都支持此功能。 , [""Manual03_1""]"
+77,"""单冷型空调如何开启自动运行模式？""",单冷型空调开启自动运行模式的步骤如下：1. 按下开 / 关键开启电源。2. 反复按下模式键，选择自动运行模式。3. 若当前温度高于或低于所需温度，按下上升 / 下降键选择所需的运行代码。在自动运行模式下，风扇转速和温度会根据室内温度自动调节。
+78,"""如何使用空调的自动转换运行功能？""",使用空调的自动转换运行功能，请按照以下步骤操作：1. 按下开 / 关键开启电源。2. 反复按下模式键，选择自动转换运行模式，显示屏上会显示对应标识。3. 按下上升 / 下降键设置所需温度，温度调节范围为 18 摄氏度（64 华氏度）-30 摄氏度（86 华氏度）。4. 反复按下风速键选择风扇转速。
+79,"""如何开启空调的节能制冷模式？""","您好，开启空调的节能制冷模式，请按照以下步骤操作：1. 按下开 / 关键开启电源。2. 反复按下模式键，选择制冷模式。3. 按下节能键，显示屏上会显示节能标识。<PIC> , [""drill0_03""]"
+80,"""无遥控器时如何操作空调？""",无遥控器时，您可以通过室内机的开 / 关键操作空调。具体步骤如下：1. 打开前盖板，轻轻掀起盖板两侧即可。2. 按下开 / 关键。此时风扇转速默认设为高速。- 冷暖型机型的运行模式会根据室内温度自动切换。- 单冷型机型的温度将默认设为 22 摄氏度（71.6 华氏度）。
+81,"""如何让空调实现自动重启？""","您好，关于空调实现自动重启的功能，当停电后再次开启空调时，该功能可恢复之前的运行设置，此功能为工厂默认设置。如需关闭或重新开启自动重启功能，请按照以下步骤操作：1. 打开前盖板，轻轻掀起盖板两侧即可。<PIC>2. 按住开 / 关键 6 秒钟，设备会发出两声蜂鸣，指示灯闪烁 6 次。<PIC>- 如需重新开启该功能，再次按住开 / 关键 6 秒钟即可，设备会发出两声蜂鸣，蓝色指示灯闪烁 4 次。<PIC>请注意，具体功能可能会根据机型有所调整。 , [""drill0_04"", ""drill0_05"", ""drill0_06""]"
+82,"""不同型号空调的清洁频率是多少？""",建议每两周清洁一次空气滤网，必要时可增加清洁频率。不同型号的空调在清洁频率上没有特别的区别，但具体操作步骤可能会有所不同，请根据您空调的具体型号进行操作。
+83,"""如何清洁空调的空气滤网？""",建议每两周清洁一次空气滤网，必要时可增加清洁频率。1. 关闭电源并拔下电源线。2. 打开前盖板，轻轻掀起盖板两侧即可。3. 握住空气滤网的把手，轻轻向上提起，将其从机身中取出。4. 用吸尘器清理滤网，或用温水冲洗，若滤网污垢较难清理，可在温水中加入洗涤剂清洗。5. 将滤网置于阴凉处晾干。
+84,"""如何清洁空调的3M多重防护滤网？""","清洁空调的3M多重防护滤网，请按照以下步骤操作：\\n1. 关闭电源并拔下电源线。\\n2. 打开前盖板，取出空气滤网（详见 “清洁空气滤网”）。\\n3. 抽出 3M 多重防护滤网。<PIC>\\n4. 用吸尘器清理滤网污垢，切勿用水清洗 3M 多重防护滤网，以免造成滤网损坏。 , [""Manual01_27""]"
+85,"""如何清洁空调的等离子滤网？""",清洁空调的等离子滤网步骤如下：1. 关闭电源并拔下电源线。2. 打开前盖板，取出空气滤网（详见 “清洁空气滤网”）。3. 在 10 秒内取下等离子滤网。4. 用吸尘器清理滤网污垢，若污垢较难清理，可用温水冲洗。5. 将滤网置于阴凉处晾干。* 功能会根据机型有所调整。
+86,"""如何快速组装蒸汽清洁机？""",组装蒸汽清洁机的步骤如下：1. 将主机身固定扣（部件 15）从主机身（部件 7）背部取下。2. 按图示将手柄杆（部件 4）插入主机身（部件 7），直至听到咔嗒声到位。3. 安装拖布时，按下拖布释放扣（部件 17）拉开挡板，然后装入拖布（部件 16）。4. 加水时，可以使用配套量杯按图示加水，也可以按下水箱解锁扣（部件 10），取下水箱在水槽加水。5. 如果需要安装延长管，请先从手持蒸汽器（部件 13）底部孔位拔出转接头（部件 25），再将延长管（部件 21）上的锁扣与手持蒸汽器机身（部件 13）卡槽对齐，插入并顺时针旋转延长管，确保牢固锁定。按照以上步骤即可快速完成蒸汽清洁机的组装。
+87,"""蒸汽清洁机有哪些实用的产品功能？如何快速上手使用？""",蒸汽清洁机具有以下实用功能：\\n1. 水箱（部件 9）位于手持蒸汽器顶部，可使用蒸馏水或去离子水替代自来水。\\n2. 就绪指示灯位于手持蒸汽器手柄处，当水转化为蒸汽、机器可使用时，指示灯亮起。\\n3. 开关（部件 2 与部件 11）：按下出蒸汽。\\n4. 旋转拖头（部件 18）：可清洁狭小空间及橱柜下方。\\n5. 拖布（部件 16）：吸水纤维拖布可吸附蒸汽松动的污垢，拖布可重复使用、机洗。\\n6. 配件包括喷射喷嘴、角形喷嘴、延长管、圆刷、布艺清洁头和玻璃清洁组件等，适用于不同场景的清洁需求。\\n快速上手使用步骤如下：\\n1. 安装手柄杆（部件 4）到主机身（部件 7），直至听到咔嗒声到位。 \\n2. 加水至水箱（部件 9），可以使用配套量杯按图示加水，见图 A；也可以按下水箱解锁扣（部件 10），取下水箱在水槽加水，见图 B \\n3. 顺时针旋转快速收线扣将电源线完全展开，插入 120V 接地插座。\\n4. 蒸汽拖把就绪后，就绪指示灯亮起。此时即可开始使用。
+88,"""如何使用蒸汽清洁机清洁硬质地面？""",在使用蒸汽清洁机清洁硬质地面时，请遵循以下步骤：\\n1. 请先扫地或吸尘，确保地面无大颗粒杂物。\\n2. 缓慢移动清洁机，同时按下开关出蒸汽。\\n3. 如需对区域消毒，将蒸汽拖把置于该区域至少15秒，但不超过20秒。\\n4. 不出蒸汽时，请拔掉电源、取下水箱加水后继续清洁。\\n注意：首次使用时，机器可能需数秒才出蒸汽。水需通过过滤器流入加热器。该延迟仅首次使用出现。\\n本蒸汽清洁机适用于瓷砖、Vinyl地板、复合地板、大理石、石材及封边木地板。在打蜡或部分未打蜡地板上使用可能降低光泽度。不可用于未封边木地板。为达到最佳效果，请在不显眼处测试或查阅地板厂家保养说明。
+89,"""组装人体工学椅涉及哪些部件？""","组装人体工学椅涉及以下部件：C1 与 C2、脚轮、底座盖、气杆、底盘、脚踏、橡胶圈、座椅、椅背连接件、扶手、头枕与腰枕。请按照说明书中的步骤进行组装。<PIC> <PIC> <PIC> <PIC> <PIC> <PIC> <PIC> <PIC> <PIC> <PIC> <PIC> <PIC> <PIC> <PIC> <PIC> <PIC> , [""Manual02_0"", ""Manual02_1"", ""Manual02_2"", ""Manual02_3"", ""Manual02_4"", ""Manual02_5"", ""Manual02_6"", ""Manual02_7"", ""Manual02_8"", ""Manual02_9"", ""Manual02_10"", ""Manual02_11"", ""Manual02_12"", ""Manual02_13"", ""Manual02_14"", ""Manual02_15""]"
+90,"""椅子的扶手使用一段时间后为什么会松动？""",大多数情况下，扶手和椅背的螺丝会在使用一段时间后松动，重新拧紧螺丝即可解决问题。
+91,"""这款椅子有哪些功能？""","这款椅子具有以下功能：1. 高度调节：向上拉起“升降”拉杆即可调节椅子高度，到达所需高度后松开“升降”拉杆。调节高度时请将身体微微抬离座椅。<PIC> 2. 椅背后仰功能：向上拉起“后仰”拉杆，椅背角度可随人体动作独立倾斜。向下按下“后仰”拉杆，椅背角度即可锁定。将椅背复位至正常位置时请靠在椅背上，否则椅背可能会快速回弹。<PIC> 3. 按摩功能：插入USB即可启用腰枕的按摩功能。<PIC> , [""Manual02_6"", ""Manual02_7"", ""Manual02_14""]"
+92,"""洗碗机的部件有哪些？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+93,"""首次使用时，如何将洗碗机连接到排水口？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+94,"""使用前如何为洗碗机添加专用盐？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+95,"""如何为洗碗机添加洗涤剂？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+96,"""如何为洗碗机添加洗涤块？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+97,"""如何在洗碗机中添加和使用亮碟剂以获得更好的洗涤效果？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+98,"""哪些物品不适合在洗碗机中清洗？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+99,"""如何根据洗碗机型号安装餐具篮？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+100,"""使用洗碗机前如何安装可折叠下层篮架？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+101,"""如何调节洗碗机满载时上下碗篮的高度？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+102,"""如何清洁洗碗机的进水管滤网？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+103,"""如何清洁洗碗机的上层喷淋臂？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+104,"""如何拆除空气净化器滤网的塑料包装？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+105,"""如何安装空气净化器的脚轮？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+106,"""空气净化器通常有哪些模式？如何设置？这些模式有什么特点？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+107,"""空气净化器的室内空气质量指示灯是什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+108,"""如何清洁空气净化器的设备内外？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+109,"""如何清洁空气净化器的滤网？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+110,"""如何更换空气净化器的滤网？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+111,"""如何清洁空气净化器的灰尘传感器？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+112,"""空气净化器需要长期存放时该怎么做？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+113,"""如何了解这款健身单车的技术规格？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+114,"""启动健身单车前，我需要做什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+115,"""我听说买的这款健身单车配有控制台和显示功能，能为我介绍一下吗？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+116,"""在健身单车上运动前，我需要调整什么来保证运动的舒适度？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+117,"""使用健身单车的轻松骑行类别时，我能体验到哪些预设运动程序？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+118,"""使用健身单车的山地类别时，我能体验到哪些预设运动程序？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+119,"""挑战健身单车的最高难度类别时，我能体验到哪些预设运动程序？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+120,"""如果我想编辑健身单车的用户档案，需要遵循哪些步骤？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+121,"""我想在使用健身单车时设置心率目标，能否根据我的年龄为我推荐合适的目标心率？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+122,"""我听说这款健身单车有体能测试程序，这是什么功能？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+123,"""如果要给电钻充电，需要遵循哪些步骤？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+124,"""我的DCB101型号电钻指示灯闪烁时，这些闪烁标识代表什么含义？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+126,"""使用电钻时，如何安装单套无键夹头？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+127,"""如果要安装和拆卸电钻的电池组，需要遵循什么步骤？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+128,"""使用电钻的腰带挂钩和批头夹时，需要特别注意什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+129,"""购买电钻后，应配备哪些附件？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+130,"""电钻的三年有限保修包含哪些内容？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+131,"""购买健身追踪器后，包装盒里应该有什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+132,"""我刚发现健身追踪器电量低，该如何正确为其充电？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+133,"""为了让健身追踪器性能更佳，日常佩戴和运动时该将其佩戴在什么位置？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+134,"""我的健身追踪器表带太紧了，该如何扣紧表带？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+135,"""我想取下健身追踪器，该如何正确拆卸表带？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+136,"""我听说可以操作健身追踪器的界面，具体该遵循哪些步骤？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+137,"""健身追踪器能对手机的通知实现哪些功能？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+138,"""能告诉我健身追踪器是如何追踪皮肤温度变化的吗？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+139,"""通过运动应用，健身追踪器是如何追踪并分析我的运动情况的？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+140,"""健身追踪器是如何测量我的心率的？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+141,"""我该如何仅使用健身追踪器完成消费支付？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+142,"""使用健身追踪器时，我可能会遇到哪些问题以及该如何解决？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+144,"""我想给健身追踪器设置锁屏，该如何实现？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+145,"""使用冰箱冰柜时需要注意什么？只需告诉我手册中的前五条。""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+146,"""给冰箱连接电源时，需要做到哪些注意事项？只需告诉我手册中的前五条。""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+153,"""考虑到燃油高度易燃且有毒，使用发电机时我需要注意什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+154,"""发电机工作后，发动机和消音器可能会发烫，这种情况下我该如何保证自身安全？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+155,"""日常使用中，如何防止发电机触电事故的发生？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+156,"""需要通过发电机的燃油开关旋钮供油时，我该遵循哪些步骤？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+157,"""使用发电机时，燃油的使用前检查十分重要，该如何操作？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+158,"""启动发电机发动机的前两个步骤是什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+159,"""我需要给发电机连接交流电，该过程中如何保证自身安全？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+160,"""我注意到发电机上有两种不同的开关，请为我介绍一下。""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+161,"""我该在哪里查找并记录发电机的标识信息？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+162,"""使用发电机的直流保护器时，我需要注意什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+163,"""使用发电机前，对发动机机油进行使用前检查十分重要，正确的步骤是什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+164,"""根据手册说明，启动发电机发动机的最后三个步骤是什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+165,"""发电机的电池电量不足了，该如何正确充电？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+166,"""我需要让发电机的发动机停机，告诉我该如何操作。""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+167,"""根据手册的建议，使用发电机时该如何检查火花塞？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+168,"""为了正确更换发电机的发动机机油，我需要遵循的前六个步骤是什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+169,"""我在操作发电机空气滤清器时出现了失误，请告诉我正确的步骤。""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+170,"""如果发电机的发动机无法启动，我该怎么办？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+171,"""我需要将发电机的燃油排空，该如何正确操作？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+172,"""使用该发电机为对电压敏感的精密设备供电前，我需要做什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+173,"""在划船或钓鱼的场景中，拖曳速度、半滑航速度和滑航速度分别指什么，它们在技巧和应用上有何不同？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+174,"""如何在深水中登上并平衡摩托艇，确保操作的安全性和稳定性？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+175,"""在滑航速度下驾驶摩托艇转弯时，有哪些技巧能在急转弯时保证稳定性和操控性？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+176,"""驾驶摩托艇时，有哪些技巧能在完成大椭圆转弯、绕圈和8字行驶动作的同时，保持操控性和稳定性？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+177,"""在驾驶摩托艇进行中低速转弯时，如何控制油门并保持行驶的稳定性和操控性？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+178,"""如何驾驶摩托艇以拖曳速度直行和转弯，保证操作的平顺性和操控性？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+179,"""摩托艇全加速行驶时，如何安全平稳地将其停稳？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+180,"""驾驶摩托艇时，如何避免发生碰撞事故，保障自身和水上其他人员的安全？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+181,"""水泵发动机安全停机的正确步骤是什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+182,"""水泵的核心部件有哪些？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+183,"""清洗油箱滤网的详细步骤是什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+184,"""水泵安全排放燃油的正确步骤是什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+185,"""水泵无法抽水的潜在原因有哪些，该如何有效诊断并解决这些问题？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+186,"""如何为温控器设置日期和时间，以实现精准的日程和温度控制？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+187,"""如何调整温控器的系统和风扇运行设置，以优化供暖和制冷效果？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+188,"""如何调整温控器的程序日程，以实现高效的能源利用和温度控制？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+189,"""如何在不影响已编程日程的情况下，临时更改温控器的温度设置？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+190,"""当设备或系统出现警报界面时，应采取哪些操作？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+191,"""针对热泵应如何修改接线，以确保连接正确且功能正常？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+192,"""如何安全更换温控器的电池，确保更换后设备功能正常？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+193,"""当标签与端子不匹配时，应如何正确为温控器重新接线，确保连接无误？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+194,"""遇到温控器故障时，可采用哪些故障排除解决方案？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+195,"""设备或系统中构成处理器单元的关键组件或部件有哪些？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+196,"""耳机有哪些类型，以及如何更换耳塞？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+197,"""为保持遮光罩的清晰度和功能性，正确的清洁步骤是什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+198,"""为确保安全且最佳的使用效果，游玩区域的推荐尺寸是多少？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+199,"""使用和操作VR头显时应采取哪些安全预防措施，以确保用户安全和设备使用寿命？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+200,"""功能键盘的保修政策通常包含哪些内容，又不包含哪些内容？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+201,"""功能键盘的保修政策中，损害赔偿的除外责任或免责声明通常是什么？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+202,"""如何设置功能键盘？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+203,"""如何拆卸和重新安装功能键盘的轴体？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+204,"""如何将功能键盘搭配CAM软件使用？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+205,"""如何在硬件模式下使用功能键盘？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+206,"""如何安装儿童电动摩托车的挡泥板？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+207,"""如何安装儿童电动摩托车的前轮？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+208,"""如何为蓝牙激光鼠标安装电池？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+209,"""如何为蓝牙激光鼠标安装WIDCOMM蓝牙驱动程序？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+210,"""如何为蓝牙激光鼠标卸载WIDCOMM蓝牙驱动程序？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+211,"""如何在Windows系统中为蓝牙激光鼠标设置快速配对？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+212,"""如何通过WIDCOMM蓝牙驱动程序为蓝牙激光鼠标设置配对？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+213,"""如何查看蓝牙激光鼠标的电量状态？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+214,"""如何首次为蓝牙激光鼠标使用该驱动程序？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+215,"""如何将蓝牙激光鼠标与其他人机接口设备相连接？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+216,"""如何拆卸烤箱门？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+217,"""如何安装烤箱门？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+218,"""如何移动烤箱的顶部加热元件（仅限部分型号）？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+219,"""如何更换烤箱的后部灯（如有）？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+220,"""如何使用烤箱的接油盘？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+221,"""如何清洁烤箱外部？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+222,"""如何使用烤箱的烤架？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+223,"""烤箱的催化侧面板有什么作用？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+224,"""如何使用烤箱的烤盘？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+225,"""如何使用烤箱的烤架烤盘套装？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+226,"""如何使用烤箱的油脂过滤器？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+227,"""如何使用烤箱的滑动搁架？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+228,"""如何为混合即时相机安装肩带？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+229,"""如何为混合即时相机装入电池？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+230,"""如何为混合即时相机装入相纸盒？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+231,"""如何为混合即时相机取出用完的相纸盒？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+232,"""如何设置混合即时相机的自动打印模式？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+233,"""如何设置混合即时相机的手动打印模式（初始设置）？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+234,"""如何使用混合即时相机拍摄照片？""",您好，暂未查询到相关产品信息，已为您转接人工客服。
+241,"""If this is the first time to use airfryer, What should I do before first use?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+242,"""How to find the approval label of emission control certificate of the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+243,"""How do I use the battery conversion feature before sailing?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+244,"""How the ship steers?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+245,"""What should I do if face over temperature warning on the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+246,"""If I want to listen to music on my phone, how do I turn on the sound system?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+247,"""How do I use the storage compartments if I want to store wet items while on board?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+248,"""How to open the battery compartment when manipulating the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+249,"""How to install an anchor light while the boat is moving?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+250,"""How do I use the jet wash function to clean the boat after using it?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+251,"""How do I turn on or off the water supply button on my boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+252,"""How to remove the bimini top of the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+253,"""How do I install a bimini top on my boat if I want to use the canopy?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+254,"""How to store the bimini top in the upright position of the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+255,"""When I am sailing, how do I check the engine oil level to ensure continued sailing?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+256,"""How can I use the bilge pump of the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+257,"""How to perform anchor light switch check while sailing?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+258,"""When I want to start the boat, how do I turn on the boat's engine to get the machine started?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+259,"""How do I turn a boat while sailing?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+260,"""How to operate the boat cross wakes and swells?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+261,"""How do I load the boat when the cruise is over?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+262,"""How to flush the cooling system of the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+263,"""How to replace the fuse of the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+264,"""How to check the engine oil level of the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+265,"""How to use the energy saving mode of a coffee machine?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+266,"""How to change the default setting of the energy saving mode?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+267,"""How to program the water valume of a coffee machine?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+268,"""How should I do if I want to empty the system before not in use, for frost protection or before maintenance?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+269,"""How should I do if I want to reset to factory settings of the coffee machine?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+270,"""How should I clean my coffee maker after I use it so that it can last longer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+271,"""How to open the swim platform of the boat\uff1f""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+272,"""How to open the livewell and add water on the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+273,"""What is the maintenance setting screen of the boat controller?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+274,"""In the boat's steering position, what does the factory reset screen show?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+275,"""What is the trip screen shown?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+276,"""When I am ready to sail, if everything is ready, how do I make the boat move forward?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+277,"""How do I check the boat's steering system when I'm driving it?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+278,"""How should fire extinguishers be stored on board and where should they be placed?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+279,"""How to care the throttle-cable of the boat?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+280,"""How do I charge the camera battery when I'm not using it?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+281,"""How to install the camera battery when another one is power off?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+282,"""How do I connect the camera using a household power socket?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+283,"""How do you mount the lens of a camera when preparing for photography?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+284,"""How do you install the card into a camera before photography?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+285,"""Have you ever wondered how to remove the camera shutter button? Understanding this process can enhance your photography experience and allow for quick repairs!""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+286,"""How do I replace the camera's date/time battery?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+287,"""How to set an off-center subject mode of a camera?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+288,"""Before taking photos, we need to know How to use the eyepiece cover of the camera?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+289,"""How do I select the AF Mode when before taking a picture?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+290,"""How to set the camera model to \""P\"" model?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+291,"""After or during shooting, how can I view the camera image on TV for better clarity?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+292,"""How can I delete a single image from my camera if I don't like the photo?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+293,"""How can I erase all images from my camera if I don't like these.""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+294,"""How do I print photos using the camera's CP direct method after taking them?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+295,"""How do you set up the camera to fine tune the model when using it?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+296,"""After the earphones is in my hand, what are the components I should have?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+297,"""If the case battery of earphones is low, how can I charge is?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+298,"""When bluetooth are pairing and connecting, what scenarios I might encounter?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+299,"""What are the two main controling functions of earphones?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+300,"""Besides the two main controling functions, what other functions of the earphones can I operate?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+301,"""If my earphones won't work, how can I reset them?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+302,"""What are the maintenance and care policies of the earphones?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+303,"""From three different observing views, what buttons and interfaces should this eReader have?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+304,"""What do the functions of Main Menu and Browser History of the eReader can do?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+305,"""When in eBook mode of this eReader, what will happen after pressing \""M\"" botton?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+306,"""If I want to listen to music using this eReader, what should I do?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+307,"""Can this eReader record voice? If so, how do I operate this feature?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+308,"""I can't find the way to play video using this eReader, can you tell me how to do that?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+309,"""Can this eReader become a photo viewer? If so, how do I operate this feature?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+310,"""When using this eReader, what kinds of trobles might I encounter and how to solve them?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+311,"""When connecting the fax, hwo can I properly finish the procedure?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+312,"""What should I pay attention to in order to ensure my safety when using this fax?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+313,"""In order to keep your fingers safe, what should you pay attention to about the fax?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+314,"""I'm about to move this fax. Is there anything I should pay attention to?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+315,"""Are caution or warning labels inside the fax important? If not, can I remove them?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+316,"""If I'm in Canada, is there any statement of the fax vailable in my country?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+317,"""When using the grill, how to connect regulator to the LP Tank?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+318,"""To engure my safety when using the grill, how to do leak testing on valves, hose and regulatol?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+319,"""What should I pay attention to on ablout indirect cooking using the grill?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+320,"""What are the first three steps in assembly process of the grill according to the manual?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+321,"""Can you share me some safety tips using the grill?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+322,"""What are identification numbers of my jetski? I don't understand that.""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+323,"""I've heard that my jetski has cruising limitations. Please introduce them.""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+324,"""I've heard that my jetski has cruising limitations. Please introduce them.""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+325,"""What are the operation requirements if I want to use my jetski?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+326,"""What kinds of watercraft characteristics does my jetski have?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+327,"""When encountering vessels driving my jetski, what rules should I obey?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+328,"""I'd like to remove and install the seat of my jetski, what steps should I follow?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+329,"""In daily usage, how to open and close the hood of the jetski?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+330,"""I've noticed that there are two different kinds of filler caps on the jetski. How to remove them?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+331,"""If I need to manipulate the two kinds of engine switches on the jetski, what should I do?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+332,"""There are two kinds of levers on the jetski, how to manipulate them?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+333,"""What information should I obtain about Quick Shift Trim System (QSTS) selector when using my jetski""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+334,"""What do fuel meter and hour meter on my jetski do?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+344,"""Inspecting fuel filter and fuel tank of my jetski is important. How to do that?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+345,"""How to adjust the adjustable sponson of my jetski if needed?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+346,"""The intake and impeller of my jetski are dirty. How to clean them?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+347,"""How to start my jetski in different situations?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+348,"""What are basic steps to board my jetski with a passenger in deep water?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+349,"""If it is difficult to balance the jetski at a stand still, what should I do?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+350,"""What is the max load of the jetski?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+351,"""What is the overview of the base station of a landline?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+352,"""How can you connect the base station of a landline?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+353,"""How can you install the handset of a landline?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+354,"""How can you check the battery level of a landline?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+355,"""What can you do if your landline is in searching status?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+356,"""How can you know about the current status with different LED indicator behavior on a landline?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+357,"""How can you know about the current status with different LED indicator behavior on the base station of a landline?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+358,"""How can you lower the roll bar of a lawn mower?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+359,"""How can you adjust the rear-shock assemblies for a lawn mower with suspension system only?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+360,"""How can you adjust the height of cut for a lawn mower with an electric deck lift?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+361,"""How can you load a lawn mower?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+362,"""How can you unload a lawn mower?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+363,"""How can you change the engine oil of a lawn mower?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+364,"""How can you remove the filters of a lawn mower?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+365,"""How can you replace the mower belt of a lawn mower?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+366,"""How can you set up control of a over-the-range microwave?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+367,"""How can you set the light timer of a over-the-range microwave?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+368,"""How can you set yout favorite recipe with a over-the-range microwave?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+369,"""How can you reheat food with a over-the-range microwave?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+370,"""How can you use auto defrost of a over-the-range microwave?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+371,"""How can you clean the grease filter of a over-the-range microwave?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+372,"""How can you replace the charcoal filter of a over-the-range microwave? ""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+373,"""How can you replace the oven light of a over-the-range microwave? ""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+374,"""How can you set the PCI Express 3.0 x16 slots of a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+375,"""How can you set the jumpers of a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+376,"""How can you set the rear panel connectors of a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+377,"""How can you set the onboard LED of a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+378,"""How can you update the BIOS file of a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+379,"""How can you create RAID of a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+380,"""How can you use SATA ODD & USB devices to install an operating system for a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+381,"""How can you secure the motherboard to the chassis?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+382,"""How can you prepare the installation of Central Processing Unit (CPU) for a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+383,"""How do you know about system memory of a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+384,"""How do you know about Serial port connector (10-1 pin COM) of a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+385,"""How do you know about TPM connector (14-1 pin TPM) for a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+386,"""How do you know about Thermal sensor connector (2-pin T_SENSOR) of a motherboard?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+387,"""How can you set quick release for a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+388,"""How can you set pressure cooking lid for a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+389,"""How can you set float valve for a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+390,"""What do you know about anti-block shield for a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+391,"""How can you set steam release valve for a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+392,"""How can you set anti-block shield for a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+393,"""How can you set silicone cap and float valve for a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+394,"""How can you Install the condensation collector for a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+395,"""How can you install the sealing ring for a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+396,"""How can you remove silicone sealing ring for a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+397,"""What do you know about sealing ring of a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+398,"""What do you know about steam release valve of a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+399,"""What do you know about quick release button of a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+400,"""What can you know about natural release(NRorNPR) of a multi-use pressure cooker and air fryer?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+401,"""What is the robot anatomy of the vacuum?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+402,"""What are the two primary modes available on a vacuum cleaner that can be used to tailor its performance to meet different home cleaning needs?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+403,"""What is the proper procedure for emptying the vacuum cleaner's bin?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+404,"""What is the correct procedure for cleaning the vacuum cleaner filter?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+405,"""What is the proper procedure for cleaning the full bin sensors on a vacuum cleaner?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+406,"""What is the correct procedure for cleaning the extractors (brushes or rollers) on a vacuum cleaner?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+407,"""What is the proper procedure for cleaning the sensors and charging contacts on a vacuum cleaner?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+408,"""What is the correct procedure for positioning the home base of a vacuum cleaner?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+409,"""What is the proper procedure for cleaning the front caster wheel of a vacuum cleaner?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+410,"""What is the correct procedure for cleaning the side brush of a vacuum cleaner?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+411,"""What is the function of the dual-mode virtual wall barrier on a vacuum cleaner?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+412,"""What are the troubleshooting steps if the vacuum indicates a problem?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+413,"""What are the detailed instructions for T-rail mounting of a camera or equipment?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+414,"""What are the steps to power the camera?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+415,"""What is the proper way to use the brake lever and brake button?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+416,"""What are the essential preparation checks to perform before using a snowmobile?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+417,"""What are the detailed steps to start the engine of a snowmobile?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+418,"""What is a V-BeltHolder?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+419,"""What are the steps to adjust the throttle cable on a snowmobile?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+420,"""What is the proper way to use the steering system on a snowmobile?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+421,"""What are the correct steps to turn using a snowmobile?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+422,"""What are the proper techniques for riding uphill on a snowmobile?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+423,"""What are the proper techniques for riding downhill on a snowmobile?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+424,"""What are the correct techniques for crossing a slope on a snowmobile?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+425,"""What are the steps to inspect the spark plug on a snowmobile?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+426,"""What are the steps to clean a snowmobile?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+427,"""What are the best methods for memorizing communication channels using a manual program?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+428,"""What are the common causes and conditions that can lead to poor reception in television or radio signals?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+429,"""What are the steps to enable and customize captions and on-screen text settings on a television?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+430,"""What are the steps to properly connect and set up an outdoor antenna for optimal signal reception?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+431,"""What are the steps to properly connect a DVD player to a television or audio system for optimal performance?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+432,"""What are the key factors to check when troubleshooting technical issues or malfunctions?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+433,"""What safety precautions should be followed to ensure safe operation during this process?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+434,"""How do you adjust the intensity settings on an electric toothbrush to suit your oral care needs?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+435,"""What are the steps to activate and deactivate the various features on an electric toothbrush for customized usage?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+436,"""What are the steps to charge an electric toothbrush when it is inside a travel case, and how do you ensure it charges properly?""","Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."

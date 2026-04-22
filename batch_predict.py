@@ -32,6 +32,8 @@ HEADERS = {
 INPUT_FILE = "./data/question_public.csv"
 OUTPUT_FILE = "./data/submission.csv"
 EXPERIMENTS_DIR = Path("./experiments")
+REQUEST_TIMEOUT_SECONDS = 90
+MAX_REQUEST_RETRIES = 2
 
 
 def get_answer(question: str) -> str:
@@ -41,16 +43,23 @@ def get_answer(question: str) -> str:
         "images": [],
         "session_id": ""
     }
-    try:
-        response = requests.post(API_URL, json=payload, headers=HEADERS, timeout=30)
-        if response.status_code == 200:
-            res_data = response.json()
-            return res_data.get("data", {}).get("answer", "接口未返回有效答案")
-        else:
+    last_error = ""
+    for attempt in range(MAX_REQUEST_RETRIES + 1):
+        try:
+            response = requests.post(API_URL, json=payload, headers=HEADERS, timeout=REQUEST_TIMEOUT_SECONDS)
+            if response.status_code == 200:
+                res_data = response.json()
+                return res_data.get("data", {}).get("answer", "接口未返回有效答案")
+
             body_preview = response.text[:300].replace("\n", " ").strip()
-            return f"Error: {response.status_code} | {body_preview}"
-    except Exception as e:
-        return f"Request Failed: {str(e)}"
+            last_error = f"Error: {response.status_code} | {body_preview}"
+        except Exception as e:
+            last_error = f"Request Failed: {str(e)}"
+
+        if attempt < MAX_REQUEST_RETRIES:
+            time.sleep(1.5 * (attempt + 1))
+
+    return last_error
 
 
 def normalize_answer(answer: str) -> str:

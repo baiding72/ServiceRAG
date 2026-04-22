@@ -16,6 +16,8 @@ import os
 import re
 import time
 import uuid
+import base64
+import mimetypes
 from typing import List, Optional, Tuple
 
 os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
@@ -25,7 +27,9 @@ from fastapi import FastAPI, Header, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from openai import OpenAI
+import requests
 
+from faq_retriever import FAQRetriever
 from image_retriever import ImageRetriever
 from retriever import ManualRetriever
 
@@ -50,6 +54,14 @@ SEMANTIC_CANDIDATE_K = int(os.getenv("SEMANTIC_CANDIDATE_K", "18"))
 BM25_CANDIDATE_K = int(os.getenv("BM25_CANDIDATE_K", "12"))
 RRF_K = int(os.getenv("RRF_K", "60"))
 SKIP_IMAGE_RETRIEVER = os.getenv("SKIP_IMAGE_RETRIEVER", "").lower() in {"1", "true", "yes"}
+ENABLE_VL_RERANK = os.getenv("ENABLE_VL_RERANK", "true").lower() == "true"
+VL_RERANK_MODEL_NAME = os.getenv("VL_RERANK_MODEL_NAME", "qwen3-vl-rerank")
+VL_RERANK_TOP_K = int(os.getenv("VL_RERANK_TOP_K", "2"))
+VL_RERANK_TIMEOUT = int(os.getenv("VL_RERANK_TIMEOUT", "30"))
+VL_RERANK_ENDPOINT = os.getenv(
+    "VL_RERANK_ENDPOINT",
+    "https://dashscope.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank"
+)
 
 # 超时配置（秒）
 LLM_TIMEOUT = 30
@@ -71,7 +83,8 @@ SYSTEM_PROMPT = """你是一个专业的电商与家电产品售后客服。用�
 【类别二：通用售后与客诉问题】
 例如：物流发货、退换货政策、开发票、快递员态度投诉、商品少发/错发、退款时效等。
 回答规则：
-- 即使【参考知识】没有提及，你也**必须**扮演专业、耐心的客服，利用你的通用常识给出合理的安抚性或指导性解答。
+- 若提供了 FAQ、售后政策或客服知识，请优先依据这些参考知识作答。
+- 如果【参考知识】没有覆盖完整细节，你也**必须**扮演专业、耐心的客服，利用通用常识补足合理的安抚性或指导性解答。
 - **绝不能直接转人工**，要主动提供帮助和解决方案。
 - 态度要诚恳、专业，体现服务意识。
 
@@ -88,6 +101,12 @@ SYSTEM_PROMPT = """你是一个专业的电商与家电产品售后客服。用�
 - "text": 你的客服回答文本（含 `<PIC>` 占位符，不含图片ID列表）
 - "images": 你引用的图片 ID 列表（如果没有引用图片，则为空列表 []）
 
+【语言要求】
+- 必须使用与用户问题相同的语言回答。
+- 英文问题必须用英文回答；中文问题必须用中文回答。
+- 不得因为参考知识是中文就把英文问题答成中文；也不得因为参考知识是英文就把中文问题答成英文。
+- 型号、按钮名、菜单名、原始术语可以保留原文，但整体客服正文语言必须与用户问题一致。
+
 【JSON 输出示例】
 产品问题示例：
 {"text": "DCB107电池组充电中 <PIC> 电池组已充满 <PIC> 过热/过冷延迟 <PIC> ", "images": ["drill0_04", "drill0_05", "drill0_06"]}
@@ -100,6 +119,35 @@ SYSTEM_PROMPT = """你是一个专业的电商与家电产品售后客服。用�
 2. text 字段中的回答要完整、专业、有帮助，确保回答了用户的所有子问题。
 3. images 字段必须是你实际引用的图片ID，不要凭空捏造。"""
 
+ENGLISH_FALLBACK_NO_INFO = "Sorry, I could not find sufficiently relevant product information for your question. I am transferring you to a human agent."
+CHINESE_FALLBACK_NO_INFO = "您好，暂未查询到相关产品信息，已为您转接人工客服。"
+ENGLISH_FALLBACK_BUSY = "Sorry, the system is busy right now. Please try again later."
+CHINESE_FALLBACK_BUSY = "您好，系统繁忙，请稍后再试。"
+
+GENERAL_SERVICE_KEYWORDS_ZH = {
+    "退货", "换货", "退款", "发票", "物流", "快递", "运费", "投诉", "客服", "售后",
+    "补发", "少发", "错发", "保质期", "取消订单", "开发票", "赔偿", "维修费用", "寄修",
+    "发货", "到货", "签收", "工单", "上门安装", "安装服务", "纸质版说明书", "终身维修", "试用装",
+    "以旧换新", "海外", "国外", "乡镇", "配送"
+}
+GENERAL_SERVICE_KEYWORDS_EN = {
+    "return", "refund", "exchange", "invoice", "shipping", "delivery", "courier",
+    "complaint", "customer service", "after-sales", "after sales", "replacement",
+    "missing item", "wrong item", "damaged package", "cancel order", "warranty card",
+    "repair fee", "repair policy", "dispatch", "dispatching", "ship overseas",
+    "ship abroad", "can i get an invoice", "billing", "logistics"
+}
+TECHNICAL_KEYWORDS_ZH = {
+    "指示灯", "闪烁", "按钮", "菜单", "界面", "设置", "重置", "安装", "组装", "步骤",
+    "如何", "怎么", "启动", "关闭", "连接", "充电", "故障", "报错", "说明书", "功能",
+    "参数", "屏幕", "操作"
+}
+TECHNICAL_KEYWORDS_EN = {
+    "button", "menu", "screen", "setting", "settings", "reset", "install", "assembly",
+    "step", "steps", "turn on", "turn off", "charge", "error", "manual",
+    "feature", "spec", "specification", "display", "operate", "operation"
+}
+
 
 # ============================================
 # 全局变量（应用启动时初始化）
@@ -108,6 +156,7 @@ SYSTEM_PROMPT = """你是一个专业的电商与家电产品售后客服。用�
 # 向量检索器
 retriever: Optional[ManualRetriever] = None
 image_retriever: Optional[ImageRetriever] = None
+faq_retriever: Optional[FAQRetriever] = None
 
 # OpenAI 客户端
 llm_client: Optional[OpenAI] = None
@@ -126,7 +175,7 @@ async def lifespan(app: FastAPI):
 
     启动时初始化资源，关闭时清理资源
     """
-    global retriever, image_retriever, llm_client
+    global retriever, image_retriever, faq_retriever, llm_client
 
     print("\n" + "=" * 50)
     print("🚀 初始化应用...")
@@ -140,6 +189,14 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         print(f"   ✗ 向量检索器加载失败: {e}")
         print("   ⚠️  服务将以降级模式运行（仅返回兜底回复）")
+
+    print("\n📚 加载 FAQ 检索器...")
+    try:
+        faq_retriever = FAQRetriever()
+        print("   ✓ FAQ 检索器加载成功")
+    except Exception as e:
+        faq_retriever = None
+        print(f"   ⚠️  FAQ 检索器未启用: {e}")
 
     print("\n🖼️  加载图片检索器...")
     if SKIP_IMAGE_RETRIEVER:
@@ -268,6 +325,82 @@ def verify_token(authorization: Optional[str] = None) -> None:
         )
 
 
+def detect_question_language(question: str) -> str:
+    """
+    粗粒度判断问题语言，仅用于路由和输出语言约束。
+    返回值: "en" 或 "zh"
+    """
+    text = (question or "").strip()
+    if not text:
+        return "zh"
+
+    ascii_letters = sum(ch.isascii() and ch.isalpha() for ch in text)
+    cjk_chars = sum("\u4e00" <= ch <= "\u9fff" for ch in text)
+
+    if ascii_letters > 0 and cjk_chars == 0:
+        return "en"
+    return "zh"
+
+
+def infer_content_type_preferences(question: str) -> List[str]:
+    query = (question or "").lower()
+    preferences = []
+
+    if any(token in query for token in ("step", "steps", "install", "assembly", "setup")) or any(
+        token in question for token in ("步骤", "安装", "组装", "如何设置", "怎么设置")
+    ):
+        preferences.append("steps")
+
+    if any(token in query for token in ("screen", "button", "menu", "setting", "settings", "reset")) or any(
+        token in question for token in ("界面", "按钮", "菜单", "设置", "重置")
+    ):
+        preferences.append("ui")
+
+    if "<PIC>" in question or any(token in question for token in ("图片", "图示", "照片", "看图")):
+        preferences.append("image_section")
+
+    deduped = []
+    seen = set()
+    for item in preferences:
+        if item not in seen:
+            seen.add(item)
+            deduped.append(item)
+    return deduped
+
+
+def classify_question_intent(question: str) -> str:
+    """
+    轻量问题路由：
+    - service_faq: 售后 / 客诉 / 物流 / 发票 / 退款类
+    - manual_technical: 产品技术与使用类
+    - mixed: 同时包含售后与技术诉求
+    """
+    normalized = re.sub(r"\s+", " ", (question or "").strip().lower())
+    if not normalized:
+        return "manual_technical"
+
+    has_service = any(token in question for token in GENERAL_SERVICE_KEYWORDS_ZH) or any(
+        token in normalized for token in GENERAL_SERVICE_KEYWORDS_EN
+    )
+    has_technical = any(token in question for token in TECHNICAL_KEYWORDS_ZH) or any(
+        token in normalized for token in TECHNICAL_KEYWORDS_EN
+    )
+
+    if has_service and has_technical:
+        return "mixed"
+    if has_service:
+        return "service_faq"
+    return "manual_technical"
+
+
+def localized_no_info_answer(question: str) -> str:
+    return ENGLISH_FALLBACK_NO_INFO if detect_question_language(question) == "en" else CHINESE_FALLBACK_NO_INFO
+
+
+def localized_busy_answer(question: str) -> str:
+    return ENGLISH_FALLBACK_BUSY if detect_question_language(question) == "en" else CHINESE_FALLBACK_BUSY
+
+
 # ============================================
 # 核心业务逻辑函数
 # ============================================
@@ -332,6 +465,22 @@ def retrieve_knowledge(question: str, top_k: int = RETRIEVE_TOP_K) -> List[dict]
         return retriever.rerank_results(question, candidate_pool, top_k=top_k)
     except Exception as e:
         print(f"检索失败: {e}")
+        return []
+
+
+def retrieve_faq_knowledge(question: str, top_k: int = 3) -> List[dict]:
+    global faq_retriever
+    if faq_retriever is None:
+        try:
+            faq_retriever = FAQRetriever()
+        except Exception as e:
+            print(f"FAQ 检索器初始化失败: {e}")
+            return []
+
+    try:
+        return faq_retriever.search(question, top_k=top_k)
+    except Exception as e:
+        print(f"FAQ 检索失败: {e}")
         return []
 
 
@@ -408,6 +557,25 @@ def build_context(retrieved_docs: List[dict]) -> str:
     return "\n\n".join(context_parts)
 
 
+def build_faq_context(faq_docs: List[dict]) -> str:
+    if not faq_docs:
+        return ""
+
+    context_parts = []
+    for i, doc in enumerate(faq_docs, 1):
+        part = f"【FAQ参考 {i}】\n"
+        part += f"主题: {doc.get('title', '')}\n"
+        part += f"类别: {doc.get('category', '')}\n"
+        part += f"回答要点: {doc.get('answer_guideline', '')}\n"
+        service_tips = doc.get("service_tips", [])
+        if service_tips:
+            part += f"处理提示: {'；'.join(service_tips)}\n"
+        part += "-" * 40
+        context_parts.append(part)
+
+    return "\n\n".join(context_parts)
+
+
 def retrieve_visual_candidates(question: str, top_k: int = VISUAL_RETRIEVE_TOP_K) -> List[dict]:
     """
     检索与问题语义相关的图片候选。
@@ -441,6 +609,155 @@ def build_visual_context(visual_docs: List[dict]) -> str:
         part += "-" * 40
         context_parts.append(part)
     return "\n\n".join(context_parts)
+
+
+def image_path_to_data_uri(image_path: str) -> Optional[str]:
+    if not image_path:
+        return None
+
+    path = image_path
+    if not os.path.isabs(path):
+        path = os.path.join(os.getcwd(), path)
+
+    if not os.path.exists(path):
+        return None
+
+    mime_type, _ = mimetypes.guess_type(path)
+    mime_type = mime_type or "image/jpeg"
+
+    try:
+        with open(path, "rb") as image_file:
+            encoded = base64.b64encode(image_file.read()).decode("utf-8")
+        return f"data:{mime_type};base64,{encoded}"
+    except Exception as e:
+        print(f"图片转 Data URI 失败: {path} error={e}")
+        return None
+
+
+def vl_rerank_images(question: str, visual_docs: List[dict], intent_hint: Optional[str] = None) -> List[dict]:
+    """
+    使用 qwen3-vl-rerank 对图片候选进行统一重排。
+    仅返回最相关的 1~N 张图片，后续用于决定是否保留 <PIC>。
+    """
+    if not ENABLE_VL_RERANK or not visual_docs:
+        return visual_docs[:VL_RERANK_TOP_K]
+
+    documents = []
+    index_to_doc = {}
+    for index, doc in enumerate(visual_docs):
+        data_uri = image_path_to_data_uri(doc.get("image_path", ""))
+        if not data_uri:
+            continue
+        documents.append({"image": data_uri})
+        index_to_doc[len(documents) - 1] = doc
+
+    if not documents:
+        return []
+
+    instruct = "Given a user question, rank the images that most directly help answer it."
+    if intent_hint == "manual_technical":
+        instruct = (
+            "Given a user question about a product manual, rank the images that most directly explain the "
+            "indicator, button, screen, part location, installation structure, or chart needed for the answer."
+        )
+
+    payload = {
+        "model": VL_RERANK_MODEL_NAME,
+        "input": {
+            "query": {"text": question},
+            "documents": documents,
+        },
+        "parameters": {
+            "top_n": min(VL_RERANK_TOP_K, len(documents)),
+            "return_documents": False,
+            "instruct": instruct,
+        },
+    }
+
+    api_key = os.getenv("DASHSCOPE_API_KEY", LLM_API_KEY)
+    if not api_key:
+        return visual_docs[:VL_RERANK_TOP_K]
+
+    try:
+        response = requests.post(
+            VL_RERANK_ENDPOINT,
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json=payload,
+            timeout=VL_RERANK_TIMEOUT,
+        )
+        response.raise_for_status()
+        data = response.json()
+        results = (
+            data.get("output", {}).get("results")
+            or data.get("results")
+            or data.get("data", {}).get("results")
+            or []
+        )
+        reranked_docs = []
+        for item in results:
+            idx = item.get("index")
+            if idx is None or idx not in index_to_doc:
+                continue
+            enriched = dict(index_to_doc[idx])
+            enriched["vl_rerank_score"] = float(item.get("relevance_score", 0.0))
+            reranked_docs.append(enriched)
+
+        if reranked_docs:
+            return reranked_docs
+    except Exception as e:
+        print(f"VL 图片重排失败: {e}")
+
+    return visual_docs[:VL_RERANK_TOP_K]
+
+
+def should_allow_images(question: str, intent_hint: Optional[str], retrieved_docs: Optional[List[dict]]) -> bool:
+    """
+    严格控制 `<PIC>` 使用：
+    - FAQ 默认不插图
+    - mixed 仅在明确涉及部件/界面/图示时允许
+    - technical 仅在图能直接帮助理解时允许
+    """
+    if not retrieved_docs:
+        return False
+
+    q = (question or "").lower()
+    zh_q = question or ""
+
+    explicit_visual = any(token in zh_q for token in ("图片", "图示", "如图", "示意图", "位置", "外观", "指示灯", "尺寸", "尺码")) or any(
+        token in q for token in ("image", "picture", "diagram", "shown", "indicator", "layout", "location", "screen", "button", "size", "chart")
+    )
+    structured_visual = any(token in zh_q for token in ("按钮", "界面", "菜单", "屏幕", "安装", "组装", "部件")) or any(
+        token in q for token in ("button", "menu", "screen", "assembly", "install", "part", "component")
+    )
+
+    if intent_hint == "service_faq":
+        return False
+    if intent_hint == "mixed":
+        return explicit_visual or structured_visual
+    return explicit_visual or structured_visual
+
+
+def trim_answer_for_quality(text: str, question: str, intent_hint: Optional[str]) -> str:
+    """
+    控制 FAQ / mixed 回答长度与结构，避免大段政策化展开。
+    """
+    cleaned = re.sub(r"\s+", " ", (text or "").strip())
+    if not cleaned:
+        return cleaned
+
+    if intent_hint in {"service_faq", "mixed"}:
+        sentences = re.split(r"(?<=[。！？!?])|(?<=[.?!])", cleaned)
+        sentences = [s.strip() for s in sentences if s.strip()]
+        if len(sentences) > 4:
+            cleaned = " ".join(sentences[:4]).strip()
+
+        if len(cleaned) > 420:
+            cleaned = cleaned[:420].rstrip(" ，,;；") + "。"
+
+    return cleaned
 
 
 def parse_llm_json_response(raw_response: str) -> Tuple[str, List[str]]:
@@ -502,6 +819,7 @@ def align_text_and_images(text: str, images: List[str], allowed_images: Optional
     """
     sanitized_text = (text or "").strip()
     sanitized_images = [str(image).strip() for image in images if str(image).strip()]
+    sanitized_images = list(dict.fromkeys(sanitized_images))
 
     if allowed_images is not None:
         allowed_set = set(allowed_images)
@@ -555,7 +873,8 @@ def call_llm(
     question: str,
     context: str,
     retrieved_docs: List[dict] = None,
-    visual_docs: List[dict] = None
+    visual_docs: List[dict] = None,
+    intent_hint: Optional[str] = None
 ) -> str:
     """
     调用 LLM 生成回答（JSON 格式输出 + 后处理）
@@ -570,39 +889,67 @@ def call_llm(
     """
     if llm_client is None:
         # LLM 未配置，返回兜底回复
-        return "您好，暂未查询到相关信息，已为您转接人工客服。"
+        return localized_no_info_answer(question)
 
     try:
+        answer_language = detect_question_language(question)
+        if answer_language == "en":
+            language_instruction = "You must answer in English. Never answer in Chinese. Keep the answer professional, direct, and concise."
+        else:
+            language_instruction = "你必须使用中文回答。不要输出英文客服正文，除非是必须保留的按钮名、型号或原始术语。回答要直接、简洁。"
+
+        allow_images = should_allow_images(question, intent_hint, retrieved_docs)
+        reranked_visual_docs: List[dict] = []
+        if allow_images:
+            reranked_visual_docs = vl_rerank_images(question, visual_docs or [], intent_hint=intent_hint)
+
         # 构建图片 ID 映射提示（帮助 LLM 正确引用）
         image_hint = ""
-        visual_context = build_visual_context(visual_docs or [])
-        available_image_ids: List[str] = []
-        if retrieved_docs:
-            all_images = []
-            for doc in retrieved_docs:
-                imgs = doc.get('images', [])
-                all_images.extend(imgs)
-            available_image_ids.extend(all_images)
-        if visual_docs:
-            available_image_ids.extend(
-                [doc.get("image_id", "") for doc in visual_docs if doc.get("image_id")]
+        visual_context = build_visual_context(reranked_visual_docs)
+        unique_images = list(
+            dict.fromkeys(
+                [doc.get("image_id", "") for doc in reranked_visual_docs if doc.get("image_id")]
             )
+        )
 
-        unique_images = list(dict.fromkeys(available_image_ids))
-        if unique_images:
+        if unique_images and allow_images:
             image_hint = f"\n\n【可用图片ID】（引用时请确保使用这些正确的ID）: {json.dumps(unique_images, ensure_ascii=False)}"
+        else:
+            visual_context = ""
+            unique_images = []
 
         visual_block = ""
         if visual_context:
             visual_block = visual_context + "\n"
 
         # 构建 User Prompt
+        route_instruction = ""
+        if intent_hint == "service_faq":
+            route_instruction = (
+                "【问题类型提示】\n"
+                "该问题更可能属于售后 FAQ / 客诉 / 物流 / 发票问题。请优先依据 FAQ 参考知识作答。回答要短、直接、完整，优先逐条回应用户的子问题；除非参考知识明确给出，否则不要自行补充具体赔偿金额、固定时效、收费标准、法律结论或平台细则。通常控制在2-4句内，不要长篇展开，也不要插入<PIC>。\n\n"
+            )
+        elif intent_hint == "manual_technical":
+            route_instruction = (
+                "【问题类型提示】\n"
+                "该问题更可能属于产品技术与使用问题。请严格以参考知识为依据，不要凭空补充未在参考知识中出现的具体技术步骤或参数。只有当图片能直接帮助理解部件位置、界面、按钮、指示灯、安装结构或图表时，才允许插入<PIC>。\n\n"
+            )
+        elif intent_hint == "mixed":
+            route_instruction = (
+                "【问题类型提示】\n"
+                "该问题同时包含产品技术与售后 FAQ 两类诉求。请先拆成多个子问题：技术部分优先依据手册参考知识回答，售后部分优先依据 FAQ 参考知识回答，然后逐一完整作答。整体要简洁，优先回答结论与操作建议，不要长篇扩写；除非问题明确依赖图示，否则不要插入<PIC>。\n\n"
+            )
+
         user_prompt = f"""【用户问题】
 {question}
 
+{route_instruction}\
 【参考知识】
 {context}
 {visual_block}{image_hint}
+
+【语言要求】
+{language_instruction}
 
 请根据以上信息，输出 JSON 格式的回答。记住：判断问题是"产品技术与使用问题"还是"通用售后与客诉问题"，并采用相应的回答策略。"""
 
@@ -623,6 +970,7 @@ def call_llm(
 
         # 解析 JSON 响应
         text, images = parse_llm_json_response(raw_response)
+        text = trim_answer_for_quality(text, question, intent_hint)
         text, images = align_text_and_images(text, images, allowed_images=unique_images or None)
 
         # 格式化最终答案
@@ -633,7 +981,7 @@ def call_llm(
     except Exception as e:
         print(f"LLM 调用失败: {e}")
         # 返回兜底回复
-        return "您好，暂未查询到相关信息，已为您转接人工客服。"
+        return localized_no_info_answer(question)
 
 
 def generate_fallback_answer(question: str) -> str:
@@ -662,6 +1010,8 @@ def generate_fallback_answer(question: str) -> str:
             pass
 
     # 默认兜底回复
+    if detect_question_language(question) == "en":
+        return "Your question has been received. Please wait while we process it. Thank you."
     return "您好，您的问题已收到，请您耐心等待处理结果，谢谢。"
 
 
@@ -695,29 +1045,61 @@ async def chat(
 
     # 2. 处理 session_id
     session_id = request.session_id or str(uuid.uuid4())
+    intent_type = classify_question_intent(request.question)
 
     # 3. 检索相关知识
-    try:
-        retrieved_docs = retrieve_knowledge(request.question)
-    except Exception as e:
-        print(f"检索异常: {e}")
+    faq_docs: List[dict] = []
+    if intent_type == "service_faq":
         retrieved_docs = []
-
-    try:
-        visual_docs = retrieve_visual_candidates(request.question)
-    except Exception as e:
-        print(f"图片检索异常: {e}")
         visual_docs = []
+        faq_docs = retrieve_faq_knowledge(request.question, top_k=3)
+    elif intent_type == "mixed":
+        try:
+            retrieved_docs = retrieve_knowledge(request.question)
+        except Exception as e:
+            print(f"检索异常: {e}")
+            retrieved_docs = []
+        faq_docs = retrieve_faq_knowledge(request.question, top_k=3)
+
+        try:
+            visual_docs = retrieve_visual_candidates(request.question)
+        except Exception as e:
+            print(f"图片检索异常: {e}")
+            visual_docs = []
+    else:
+        try:
+            retrieved_docs = retrieve_knowledge(request.question)
+        except Exception as e:
+            print(f"检索异常: {e}")
+            retrieved_docs = []
+
+        try:
+            visual_docs = retrieve_visual_candidates(request.question)
+        except Exception as e:
+            print(f"图片检索异常: {e}")
+            visual_docs = []
 
     # 4. 构建上下文
-    context = build_context(retrieved_docs)
+    manual_context = build_context(retrieved_docs)
+    faq_context = build_faq_context(faq_docs)
+    if faq_context and manual_context != "暂无相关参考知识。":
+        context = faq_context + "\n\n" + manual_context
+    elif faq_context:
+        context = faq_context
+    else:
+        context = manual_context
 
     # 5. 调用 LLM 生成回答
-    # 注意：即使没有检索结果，也会调用 LLM 处理通用售后问题
     try:
         if llm_client:
             # LLM 可用，直接调用（双路意图处理在 Prompt 中实现）
-            answer = call_llm(request.question, context, retrieved_docs, visual_docs)
+            answer = call_llm(
+                request.question,
+                context,
+                retrieved_docs,
+                visual_docs,
+                intent_hint=intent_type
+            )
         else:
             # LLM 不可用，使用兜底回复
             answer = generate_fallback_answer(request.question)
@@ -748,6 +1130,7 @@ async def health():
         "status": "ok",
         "timestamp": int(time.time()),
         "retriever": "loaded" if retriever else "not_loaded",
+        "faq_retriever": "loaded" if faq_retriever else "not_loaded",
         "image_retriever": "loaded" if image_retriever else "not_loaded",
         "llm": "configured" if llm_client else "not_configured"
     }
@@ -766,6 +1149,7 @@ async def root():
         "docs": "/docs",
         "features": {
             "vector_search": retriever is not None,
+            "faq_search": faq_retriever is not None,
             "image_search": image_retriever is not None,
             "llm_generation": llm_client is not None
         }

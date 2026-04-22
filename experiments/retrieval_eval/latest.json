@@ -37,7 +37,7 @@
       "question": "如何根据洗碗机型号安装餐具篮？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 4,
+      "rank": 5,
       "image_hit": false
     },
     {
@@ -45,7 +45,7 @@
       "question": "使用洗碗机前如何安装可折叠下层篮架？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 5,
+      "rank": 6,
       "image_hit": false
     },
     {
@@ -77,7 +77,7 @@
       "question": "如果要给电钻充电，需要遵循哪些步骤？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 2,
+      "rank": 4,
       "image_hit": true
     },
     {
@@ -101,7 +101,7 @@
       "question": "如果要安装和拆卸电钻的电池组，需要遵循什么步骤？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 2,
+      "rank": 5,
       "image_hit": true
     },
     {
@@ -133,7 +133,7 @@
       "question": "为了正确更换发电机的发动机机油，我需要遵循的前六个步骤是什么？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 2,
+      "rank": 1,
       "image_hit": false
     },
     {
@@ -157,7 +157,7 @@
       "question": "水泵安全排放燃油的正确步骤是什么？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 4,
+      "rank": 2,
       "image_hit": false
     },
     {
@@ -181,7 +181,7 @@
       "question": "如何为蓝牙激光鼠标安装电池？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 2,
+      "rank": 1,
       "image_hit": false
     },
     {
@@ -237,7 +237,7 @@
       "question": "What is the maintenance setting screen of the boat controller?",
       "category": "screen_button",
       "prefer_image": false,
-      "rank": 5,
+      "rank": 2,
       "image_hit": true
     },
     {
@@ -245,7 +245,7 @@
       "question": "In the boat's steering position, what does the factory reset screen show?",
       "category": "screen_button",
       "prefer_image": false,
-      "rank": 1,
+      "rank": 2,
       "image_hit": true
     },
     {
@@ -293,7 +293,7 @@
       "question": "该如何关闭吹风机？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 3,
+      "rank": 1,
       "image_hit": true
     },
     {
@@ -333,7 +333,7 @@
       "question": "使用前如何为洗碗机添加专用盐？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 9,
+      "rank": 1,
       "image_hit": false
     },
     {
@@ -373,7 +373,7 @@
       "question": "如何更换空气净化器的滤网？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 1,
+      "rank": 3,
       "image_hit": true
     },
     {
@@ -389,7 +389,7 @@
       "question": "启动健身单车前，我需要做什么？",
       "category": "chinese_tech",
       "prefer_image": false,
-      "rank": 4,
+      "rank": 3,
       "image_hit": true
     },
     {
@@ -517,7 +517,7 @@
       "question": "How to open the battery compartment when manipulating the boat?",
       "category": "english",
       "prefer_image": false,
-      "rank": 1,
+      "rank": 3,
       "image_hit": true
     },
     {
@@ -533,7 +533,7 @@
       "question": "What do the functions of Main Menu and Browser History of the eReader can do?",
       "category": "screen_button",
       "prefer_image": false,
-      "rank": 1,
+      "rank": 2,
       "image_hit": true
     },
     {
@@ -597,7 +597,7 @@
       "question": "In daily usage, how to open and close the hood of the jetski?",
       "category": "steps",
       "prefer_image": false,
-      "rank": 1,
+      "rank": 2,
       "image_hit": true
     },
     {
@@ -655,7 +655,7 @@
       "question": "使用洗碗机前如何安装可折叠下层篮架？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 3,
+      "rank": 2,
       "image_hit": false
     },
     {
@@ -687,7 +687,7 @@
       "question": "如果要给电钻充电，需要遵循哪些步骤？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 2,
+      "rank": 3,
       "image_hit": true
     },
     {
@@ -695,7 +695,7 @@
       "question": "我的DCB101型号电钻指示灯闪烁时，这些闪烁标识代表什么含义？",
       "category": "screen_button",
       "prefer_image": true,
-      "rank": 4,
+      "rank": 1,
       "image_hit": true
     },
     {
@@ -711,7 +711,7 @@
       "question": "如果要安装和拆卸电钻的电池组，需要遵循什么步骤？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 2,
+      "rank": 1,
       "image_hit": true
     },
     {
@@ -943,7 +943,7 @@
       "question": "使用前如何为洗碗机添加专用盐？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 3,
+      "rank": 1,
       "image_hit": false
     },
     {
@@ -999,7 +999,7 @@
       "question": "启动健身单车前，我需要做什么？",
       "category": "chinese_tech",
       "prefer_image": false,
-      "rank": 6,
+      "rank": 3,
       "image_hit": true
     },
     {
@@ -1031,7 +1031,7 @@
       "question": "我需要让发电机的发动机停机，告诉我该如何操作。",
       "category": "steps",
       "prefer_image": false,
-      "rank": 6,
+      "rank": 2,
       "image_hit": true
     },
     {
@@ -1079,7 +1079,7 @@
       "question": "如何安装儿童电动摩托车的前轮？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 2,
+      "rank": 1,
       "image_hit": false
     },
     {
@@ -1111,7 +1111,7 @@
       "question": "If this is the first time to use airfryer, What should I do before first use?",
       "category": "english",
       "prefer_image": false,
-      "rank": 7,
+      "rank": 3,
       "image_hit": false
     },
     {
@@ -1127,7 +1127,7 @@
       "question": "How to open the battery compartment when manipulating the boat?",
       "category": "english",
       "prefer_image": false,
-      "rank": 2,
+      "rank": 3,
       "image_hit": true
     },
     {
@@ -1175,7 +1175,7 @@
       "question": "Can this eReader become a photo viewer? If so, how do I operate this feature?",
       "category": "steps",
       "prefer_image": false,
-      "rank": 2,
+      "rank": 1,
       "image_hit": true
     },
     {
@@ -1257,7 +1257,7 @@
       "question": "如何根据洗碗机型号安装餐具篮？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 3,
+      "rank": 4,
       "image_hit": false
     },
     {
@@ -1265,7 +1265,7 @@
       "question": "使用洗碗机前如何安装可折叠下层篮架？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 6,
+      "rank": 4,
       "image_hit": false
     },
     {
@@ -1337,7 +1337,7 @@
       "question": "启动发电机发动机的前两个步骤是什么？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 6,
+      "rank": 1,
       "image_hit": true
     },
     {
@@ -1353,7 +1353,7 @@
       "question": "为了正确更换发电机的发动机机油，我需要遵循的前六个步骤是什么？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 10,
+      "rank": 3,
       "image_hit": false
     },
     {
@@ -1401,7 +1401,7 @@
       "question": "如何为蓝牙激光鼠标安装电池？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 7,
+      "rank": 1,
       "image_hit": false
     },
     {
@@ -1489,7 +1489,7 @@
       "question": "How do I replace the camera's date/time battery?",
       "category": "english",
       "prefer_image": true,
-      "rank": 1,
+      "rank": 2,
       "image_hit": true
     },
     {
@@ -1505,7 +1505,7 @@
       "question": "吹风机冷机时，该如何启动？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 3,
+      "rank": 1,
       "image_hit": true
     },
     {
@@ -1545,7 +1545,7 @@
       "question": "首次使用时，如何将洗碗机连接到排水口？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 1,
+      "rank": 2,
       "image_hit": false
     },
     {
@@ -1553,7 +1553,7 @@
       "question": "使用前如何为洗碗机添加专用盐？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 5,
+      "rank": 1,
       "image_hit": false
     },
     {
@@ -1593,7 +1593,7 @@
       "question": "如何更换空气净化器的滤网？",
       "category": "steps",
       "prefer_image": false,
-      "rank": 1,
+      "rank": 3,
       "image_hit": true
     },
     {
@@ -1609,7 +1609,7 @@
       "question": "启动健身单车前，我需要做什么？",
       "category": "chinese_tech",
       "prefer_image": false,
-      "rank": 3,
+      "rank": 4,
       "image_hit": true
     },
     {
@@ -1641,7 +1641,7 @@
       "question": "我需要让发电机的发动机停机，告诉我该如何操作。",
       "category": "steps",
       "prefer_image": false,
-      "rank": 1,
+      "rank": 2,
       "image_hit": true
     },
     {
@@ -1689,7 +1689,7 @@
       "question": "如何安装儿童电动摩托车的前轮？",
       "category": "steps",
       "prefer_image": true,
-      "rank": 1,
+      "rank": 2,
       "image_hit": false
     },
     {
@@ -1721,7 +1721,7 @@
       "question": "If this is the first time to use airfryer, What should I do before first use?",
       "category": "english",
       "prefer_image": false,
-      "rank": 6,
+      "rank": 3,
       "image_hit": false
     },
     {
@@ -1785,7 +1785,7 @@
       "question": "Can this eReader become a photo viewer? If so, how do I operate this feature?",
       "category": "steps",
       "prefer_image": false,
-      "rank": 2,
+      "rank": 6,
       "image_hit": true
     },
     {

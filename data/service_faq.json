@@ -1,0 +1,110 @@
+[
+  {
+    "id": "faq_shipping_scope",
+    "category": "shipping",
+    "title": "配送范围与乡镇配送",
+    "keywords": ["乡镇", "配送", "送到", "偏远地区", "海外", "国外", "shipping", "delivery", "remote area", "abroad"],
+    "question_patterns": ["能送到乡镇吗", "支持寄到国外吗", "配送范围是什么"],
+    "answer_guideline": "说明配送范围需以收货地址和商品类型为准。大部分地区可配送，偏远或海外地区需要进一步核实。若系统支持乡镇配送，一般不会单独加收特殊费用，但偏远地区物流时效可能更长。",
+    "service_tips": ["请用户提供收货地址或订单号以便核实", "说明偏远地区时效可能延长"]
+  },
+  {
+    "id": "faq_shipping_fee_eta",
+    "category": "shipping",
+    "title": "运费与配送时效",
+    "keywords": ["运费", "多久", "几天", "到货", "发货", "时效", "shipping fee", "delivery time", "eta", "dispatch"],
+    "question_patterns": ["需要额外加运费吗", "多久能到", "什么时候发货"],
+    "answer_guideline": "说明运费取决于订单金额、活动和地区，常规地区通常在下单后24-48小时内发货，配送时效约2-5个工作日，偏远地区可能需要5-7个工作日或更久。",
+    "service_tips": ["给出常规发货时效范围", "提醒以物流信息为准"]
+  },
+  {
+    "id": "faq_pickup_pending",
+    "category": "logistics_status",
+    "title": "物流待揽收",
+    "keywords": ["待揽收", "揽收", "物流一直不动", "pickup pending", "not picked up", "courier not collected"],
+    "question_patterns": ["物流一直显示待揽收", "为什么还没揽收"],
+    "answer_guideline": "说明待揽收通常表示商家已打包或已创建运单，等待快递员上门取件。一般24小时内会更新，若超过24小时仍未揽收，应协助用户联系平台或客服催促。",
+    "service_tips": ["明确这是物流状态解释", "给出24小时的催促建议"]
+  },
+  {
+    "id": "faq_invoice",
+    "category": "invoice",
+    "title": "开票与重开发票",
+    "keywords": ["发票", "开票", "抬头", "税号", "重开", "invoice", "billing", "tax number", "reissue"],
+    "question_patterns": ["可以开发票吗", "发票类型是什么", "抬头写错了怎么办"],
+    "answer_guideline": "说明通常支持开具电子发票，企业抬头需提供公司名称、税号和邮箱等信息。若信息填写错误，可联系售后申请更正或重开，处理时效通常为1-3个工作日。",
+    "service_tips": ["提示用户准备订单号和开票资料", "说明电子发票为主"]
+  },
+  {
+    "id": "faq_return_exchange",
+    "category": "return_exchange",
+    "title": "退货换货与退款",
+    "keywords": ["退货", "换货", "退款", "取消订单", "退换", "return", "refund", "exchange", "cancel order"],
+    "question_patterns": ["支持7天无理由退货吗", "能换货吗", "能全额退款吗"],
+    "answer_guideline": "说明退换货是否支持取决于商品状态、订单时间和平台规则。若在支持范围内，可申请退货、换货或退款；退款通常会原路退回，到账时间受支付渠道影响。",
+    "service_tips": ["提醒保持商品包装和配件齐全", "说明具体处理以订单审核为准"]
+  },
+  {
+    "id": "faq_damaged_or_wrong_item",
+    "category": "after_sales",
+    "title": "包装破损、少发、错发、收货异常",
+    "keywords": ["包装破损", "损坏", "少发", "错发", "漏发", "破损", "wrong item", "missing item", "damaged package"],
+    "question_patterns": ["收到后发现少了一件", "包装破损怎么办", "发错货怎么办"],
+    "answer_guideline": "说明需先保留包装和商品照片、开箱视频等凭证，并提供订单号。客服核实后可安排补发、换货或退款，若属商家或物流责任，相关运费通常不由用户承担。",
+    "service_tips": ["强调证据留存", "说明会优先核实补发或售后处理"]
+  },
+  {
+    "id": "faq_quality_complaint",
+    "category": "complaint",
+    "title": "质量问题、宣传不符与投诉",
+    "keywords": ["质量问题", "虚假宣传", "宣传不符", "投诉", "色差", "异味", "counterfeit", "complaint", "quality issue", "not as described"],
+    "question_patterns": ["商品和图片不一样", "功能和宣传不一致", "我要投诉"],
+    "answer_guideline": "先表达歉意，再要求订单号、商品照片、问题描述等凭证。说明会协助核实并根据结果安排退换货、退款或补偿，必要时升级至人工客服处理投诉。",
+    "service_tips": ["保持客服安抚语气", "要求提供订单号和问题凭证"]
+  },
+  {
+    "id": "faq_repair_warranty",
+    "category": "repair",
+    "title": "维修、质保与维修超时",
+    "keywords": ["维修", "保修", "质保", "维修费", "维修时间", "返修", "repair", "warranty", "repair fee", "repair delay"],
+    "question_patterns": ["维修多久能好", "质保期内出现问题怎么办", "维修人员说要收费"],
+    "answer_guideline": "说明保修范围、维修方式和处理时效通常取决于产品政策与故障类型。若在质保期内且属于非人为故障，一般可申请免费维修或检测；若维修超时，应协助升级催办并核实进度。",
+    "service_tips": ["提醒提供维修单号或订单号", "说明是否收费需结合故障归因"]
+  },
+  {
+    "id": "faq_installation",
+    "category": "installation_service",
+    "title": "上门安装与安装费用",
+    "keywords": ["上门安装", "安装服务", "安装费", "预约安装", "installation", "home installation", "on-site installation"],
+    "question_patterns": ["支持上门安装吗", "安装是免费的吗", "安装人员额外收费怎么办"],
+    "answer_guideline": "说明是否支持上门安装取决于商品品类和地区。部分大家电支持预约上门安装，是否免费需以商品页面、订单服务说明或活动规则为准。若安装人员违规收费，应保留凭证并联系客服核实处理。",
+    "service_tips": ["强调以商品页服务说明为准", "提示保留收费凭证"]
+  },
+  {
+    "id": "faq_product_date_shelf_life",
+    "category": "product_info",
+    "title": "生产日期、保质期与临期商品",
+    "keywords": ["生产日期", "出厂日期", "保质期", "临期", "过期", "production date", "manufacture date", "shelf life", "expiry"],
+    "question_patterns": ["生产日期是什么时候", "还有多久过期", "收到临期商品怎么办"],
+    "answer_guideline": "说明生产日期、出厂日期或保质期通常可在外包装、机身标签、说明书或合格证上查看。若收到临期或疑似未标注的商品，应保留照片和订单信息，联系客服核实并申请售后处理。",
+    "service_tips": ["建议用户拍摄包装/标签照片", "对临期商品给出退换处理方向"]
+  },
+  {
+    "id": "faq_trial_sample",
+    "category": "promotion",
+    "title": "试用装与试用期",
+    "keywords": ["试用装", "试用期", "试用", "sample", "trial", "trial period"],
+    "question_patterns": ["有试用装吗", "可以延长试用期吗"],
+    "answer_guideline": "说明是否提供试用装或试用期取决于活动规则和商品类型。若当前没有明确活动，通常需要联系客服或查看活动页面确认，不应擅自承诺免费试用或延长期限。",
+    "service_tips": ["避免做未经证实的承诺", "提示以活动规则为准"]
+  },
+  {
+    "id": "faq_bulk_procurement",
+    "category": "enterprise",
+    "title": "企业采购与批量问题处理",
+    "keywords": ["企业采购", "批量购买", "批量", "大量", "corporate procurement", "bulk purchase", "enterprise"],
+    "question_patterns": ["批量购买后出现问题怎么办", "企业采购开发票怎么处理"],
+    "answer_guideline": "说明企业采购问题需要结合订单数量、异常类型和开票需求统一处理。应要求用户提供订单号、异常数量、问题凭证和开票资料，并说明会由客服协助升级处理补发、换货、退款或开票。",
+    "service_tips": ["建议统一收集订单与异常清单", "说明可升级专人跟进"]
+  }
+]
