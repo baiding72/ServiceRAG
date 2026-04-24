@@ -1,0 +1,13 @@
+{
+  "run_name": "batch_20260424_011911",
+  "started_at": "2026-04-24T01:19:11",
+  "input_file": "./data/question_public.csv",
+  "api_url": "http://localhost:8000/chat",
+  "max_count": 0,
+  "expected_total": 400,
+  "result_count": 400,
+  "output_file": "./data/submission.csv",
+  "run_output_file": "experiments/batch_20260424_011911/submission.csv",
+  "elapsed_seconds": 2345.41,
+  "is_complete": true
+}

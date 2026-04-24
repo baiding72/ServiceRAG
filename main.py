@@ -751,11 +751,13 @@ def trim_answer_for_quality(text: str, question: str, intent_hint: Optional[str]
     if intent_hint in {"service_faq", "mixed"}:
         sentences = re.split(r"(?<=[。！？!?])|(?<=[.?!])", cleaned)
         sentences = [s.strip() for s in sentences if s.strip()]
-        if len(sentences) > 4:
-            cleaned = " ".join(sentences[:4]).strip()
+        max_sentences = 3 if intent_hint == "service_faq" else 4
+        if len(sentences) > max_sentences:
+            cleaned = " ".join(sentences[:max_sentences]).strip()
 
-        if len(cleaned) > 420:
-            cleaned = cleaned[:420].rstrip(" ，,;；") + "。"
+        max_chars = 260 if intent_hint == "service_faq" else 340
+        if len(cleaned) > max_chars:
+            cleaned = cleaned[:max_chars].rstrip(" ，,;；") + ("." if detect_question_language(question) == "en" else "。")
 
     return cleaned
 
@@ -927,7 +929,7 @@ def call_llm(
         if intent_hint == "service_faq":
             route_instruction = (
                 "【问题类型提示】\n"
-                "该问题更可能属于售后 FAQ / 客诉 / 物流 / 发票问题。请优先依据 FAQ 参考知识作答。回答要短、直接、完整，优先逐条回应用户的子问题；除非参考知识明确给出，否则不要自行补充具体赔偿金额、固定时效、收费标准、法律结论或平台细则。通常控制在2-4句内，不要长篇展开，也不要插入<PIC>。\n\n"
+                "该问题更可能属于售后 FAQ / 客诉 / 物流 / 发票问题。请优先依据 FAQ 参考知识作答。回答必须短、直接、以结论为先，优先逐条回应用户的子问题；除非参考知识明确给出，否则不要自行补充具体赔偿金额、固定时效、收费标准、法律结论、平台细则或额外承诺。通常控制在2-3句内，不要长篇展开，不要复述背景，不要插入<PIC>。\n\n"
             )
         elif intent_hint == "manual_technical":
             route_instruction = (
@@ -937,7 +939,7 @@ def call_llm(
         elif intent_hint == "mixed":
             route_instruction = (
                 "【问题类型提示】\n"
-                "该问题同时包含产品技术与售后 FAQ 两类诉求。请先拆成多个子问题：技术部分优先依据手册参考知识回答，售后部分优先依据 FAQ 参考知识回答，然后逐一完整作答。整体要简洁，优先回答结论与操作建议，不要长篇扩写；除非问题明确依赖图示，否则不要插入<PIC>。\n\n"
+                "该问题同时包含产品技术与售后 FAQ 两类诉求。请先拆成多个子问题：技术部分优先依据手册参考知识回答，售后部分优先依据 FAQ 参考知识回答，然后按“1. 2. 3.”逐一完整作答。整体要简洁，先给结论，再给必要操作建议；不要长篇扩写，不要补充未在参考知识中明确出现的具体赔偿/时效/费用细则；除非问题明确依赖图示，否则不要插入<PIC>。\n\n"
             )
 
         user_prompt = f"""【用户问题】

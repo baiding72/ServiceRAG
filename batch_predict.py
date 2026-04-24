@@ -128,19 +128,29 @@ def is_retryable_result(answer: str) -> bool:
     return text.startswith("Error:") or text.startswith("Request Failed:")
 
 
-def write_outputs(results: list[dict], run_submission_file: Path, run_metadata_file: Path, started_at: datetime, run_name: str, max_count: int) -> None:
+def write_outputs(
+    results: list[dict],
+    run_submission_file: Path,
+    run_metadata_file: Path,
+    started_at: datetime,
+    run_name: str,
+    max_count: int,
+    expected_total: int,
+) -> None:
     """写出官方提交文件与实验文件。"""
-    with open(OUTPUT_FILE, mode='w', encoding='utf-8-sig', newline='') as outfile:
-        fieldnames = ['id', 'ret']
-        writer = csv.DictWriter(outfile, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows([{"id": row["id"], "ret": row["ret"]} for row in results])
-
     with open(run_submission_file, mode='w', encoding='utf-8', newline='') as outfile:
         fieldnames = ['id', 'question', 'ret']
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(results)
+
+    if len(results) == expected_total:
+        with open(OUTPUT_FILE, mode='w', encoding='utf-8-sig', newline='') as outfile:
+            fieldnames = ['id', 'ret']
+            writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows([{"id": row["id"], "ret": row["ret"]} for row in results])
+        validate_submission_file(Path(OUTPUT_FILE))
 
     elapsed_seconds = time.time() - started_at.timestamp()
     metadata = {
@@ -149,16 +159,16 @@ def write_outputs(results: list[dict], run_submission_file: Path, run_metadata_f
         "input_file": INPUT_FILE,
         "api_url": API_URL,
         "max_count": max_count,
+        "expected_total": expected_total,
         "result_count": len(results),
         "output_file": OUTPUT_FILE,
         "run_output_file": str(run_submission_file),
         "elapsed_seconds": round(elapsed_seconds, 2),
+        "is_complete": len(results) == expected_total,
     }
 
     with open(run_metadata_file, mode='w', encoding='utf-8') as outfile:
         json.dump(metadata, outfile, ensure_ascii=False, indent=2)
-
-    validate_submission_file(Path(OUTPUT_FILE))
 
 
 def main():
@@ -237,12 +247,12 @@ def main():
             processed_ids.add(q_id)
 
             if args.save_every > 0 and len(results) % args.save_every == 0:
-                write_outputs(results, run_submission_file, run_metadata_file, started_at, run_name, max_count)
+                write_outputs(results, run_submission_file, run_metadata_file, started_at, run_name, max_count, total)
 
             time.sleep(0.1)  # 防止并发过高
 
     results.sort(key=lambda row: int(row["id"]))
-    write_outputs(results, run_submission_file, run_metadata_file, started_at, run_name, max_count)
+    write_outputs(results, run_submission_file, run_metadata_file, started_at, run_name, max_count, total)
 
     print("\n" + "=" * 50)
     print(f"✅ 处理完成！")
