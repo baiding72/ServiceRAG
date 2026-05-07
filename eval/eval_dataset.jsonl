@@ -1,0 +1,30 @@
+{"id":"eval_001","question":"我的DCB107或DCB112型号电钻指示灯闪烁时，这些闪烁标识代表什么含义？","intent":"image_related","expected_product":"电钻","expected_section":"电池","expected_image_ids":["drill10_04","drill10_05","drill10_06"],"answer_keywords":["DCB107","DCB112","充电","过热"]}
+{"id":"eval_002","question":"How do I turn on or off the water supply button on my boat?","intent":"usage_guide","expected_product":"汇总英文","expected_section":"water supply","expected_image_ids":[],"answer_keywords":["water supply","engines","hatch"]}
+{"id":"eval_003","question":"我想更换健身追踪器的表带，有其他尺寸可选吗？","intent":"image_related","expected_product":"健身追踪器","expected_section":"表带","expected_image_ids":["Manual16_51","Manual16_52"],"answer_keywords":["表带尺寸","环境条件"]}
+{"id":"eval_004","question":"物流一直显示待揽收，是什么原因？","intent":"warranty_return","expected_product":"","expected_section":"物流","expected_image_ids":[],"answer_keywords":["待揽收","24小时","客服"]}
+{"id":"eval_005","question":"请问你们的商品能送到乡镇吗？需要额外加运费吗？多久能到？","intent":"warranty_return","expected_product":"","expected_section":"配送","expected_image_ids":[],"answer_keywords":["乡镇","运费","3-5天"]}
+{"id":"eval_006","question":"我的商品售后维修后不到10天又出现同样故障，怎么处理？","intent":"warranty_return","expected_product":"","expected_section":"维修","expected_image_ids":[],"answer_keywords":["免费","重新维修","质保"]}
+{"id":"eval_007","question":"If the factory reset screen is shown at the steering position, what does it mean?","intent":"image_related","expected_product":"汇总英文","expected_section":"factory reset","expected_image_ids":[],"answer_keywords":["factory reset","screen"]}
+{"id":"eval_008","question":"电池组充电时指示灯有哪些状态？","intent":"image_related","expected_product":"电钻","expected_section":"充电","expected_image_ids":["drill10_04","drill10_05","drill10_06"],"answer_keywords":["充电中","已充满","延迟"]}
+{"id":"eval_009","question":"发票可以开公司抬头吗，电子发票多久能开？","intent":"warranty_return","expected_product":"","expected_section":"发票","expected_image_ids":[],"answer_keywords":["发票","抬头","电子"]}
+{"id":"eval_010","question":"安装前需要先检查哪些部件？","intent":"usage_guide","expected_product":"","expected_section":"安装","expected_image_ids":[],"answer_keywords":["检查","部件"]}
+{"id":"eval_011","question":"Where is the engine shut-off switch located?","intent":"image_related","expected_product":"汇总英文","expected_section":"Engine shut-off switch","expected_image_ids":[],"answer_keywords":["engine shut-off","switch"]}
+{"id":"eval_012","question":"按钮按下后屏幕没有反应，应该先排查什么？","intent":"troubleshooting","expected_product":"","expected_section":"按钮","expected_image_ids":[],"answer_keywords":["按钮","屏幕","检查"]}
+{"id":"eval_013","question":"Can I return the product if I bought the wrong model?","intent":"warranty_return","expected_product":"","expected_section":"return","expected_image_ids":[],"answer_keywords":["return","exchange"]}
+{"id":"eval_014","question":"这个菜单里的 reset 选项怎么用？","intent":"usage_guide","expected_product":"","expected_section":"reset","expected_image_ids":[],"answer_keywords":["reset","菜单"]}
+{"id":"eval_015","question":"图片里的指示灯位置在哪里？","intent":"image_related","expected_product":"","expected_section":"指示灯","expected_image_ids":[],"answer_keywords":["指示灯","位置"]}
+{"id":"eval_016","question":"商品少发了一个配件，应该怎么处理？","intent":"warranty_return","expected_product":"","expected_section":"少发","expected_image_ids":[],"answer_keywords":["少发","补发","客服"]}
+{"id":"eval_017","question":"How should I close the livewell?","intent":"usage_guide","expected_product":"汇总英文","expected_section":"livewell","expected_image_ids":[],"answer_keywords":["livewell","close","lid"]}
+{"id":"eval_018","question":"电钻电池过热过冷延迟是什么意思？","intent":"troubleshooting","expected_product":"电钻","expected_section":"过热","expected_image_ids":[],"answer_keywords":["过热","过冷","延迟"]}
+{"id":"eval_019","question":"海外地址可以配送吗？","intent":"warranty_return","expected_product":"","expected_section":"海外","expected_image_ids":[],"answer_keywords":["海外","配送"]}
+{"id":"eval_020","question":"How do I operate the aerator switch?","intent":"usage_guide","expected_product":"汇总英文","expected_section":"Aerator switch","expected_image_ids":[],"answer_keywords":["aerator","switch","livewell"]}
+{"id":"eval_021","question":"可以提供纸质版说明书吗？","intent":"warranty_return","expected_product":"","expected_section":"纸质版说明书","expected_image_ids":[],"answer_keywords":["说明书","电子版","客服"]}
+{"id":"eval_022","question":"安装服务是否需要额外收费？","intent":"warranty_return","expected_product":"","expected_section":"安装服务","expected_image_ids":[],"answer_keywords":["安装","收费"]}
+{"id":"eval_023","question":"How do I keep the START and HOUSE switches during normal operation?","intent":"usage_guide","expected_product":"汇总英文","expected_section":"START","expected_image_ids":[],"answer_keywords":["START","HOUSE","ON"]}
+{"id":"eval_024","question":"设备报错后可以直接重置吗？","intent":"troubleshooting","expected_product":"","expected_section":"重置","expected_image_ids":[],"answer_keywords":["报错","重置"]}
+{"id":"eval_025","question":"如果快递员态度不好，可以投诉吗？","intent":"warranty_return","expected_product":"","expected_section":"投诉","expected_image_ids":[],"answer_keywords":["投诉","快递员","客服"]}
+{"id":"eval_026","question":"screen 上显示的设置页面如何恢复出厂？","intent":"image_related","expected_product":"","expected_section":"恢复出厂","expected_image_ids":[],"answer_keywords":["screen","设置","恢复出厂"]}
+{"id":"eval_027","question":"收到商品外包装破损但商品没坏，怎么处理？","intent":"warranty_return","expected_product":"","expected_section":"破损","expected_image_ids":[],"answer_keywords":["包装","破损","客服"]}
+{"id":"eval_028","question":"电源按钮和菜单按钮分别在哪里？","intent":"image_related","expected_product":"","expected_section":"按钮","expected_image_ids":[],"answer_keywords":["电源按钮","菜单按钮"]}
+{"id":"eval_029","question":"Can I get an invoice for my order?","intent":"warranty_return","expected_product":"","expected_section":"invoice","expected_image_ids":[],"answer_keywords":["invoice"]}
+{"id":"eval_030","question":"水管接头需要如何拆卸？","intent":"usage_guide","expected_product":"","expected_section":"Hose fitting","expected_image_ids":[],"answer_keywords":["Hose fitting","拆卸"]}

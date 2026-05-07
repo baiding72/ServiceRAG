@@ -144,7 +144,8 @@ def write_outputs(
         writer.writeheader()
         writer.writerows(results)
 
-    if len(results) == expected_total:
+    official_output_written = max_count == 0 and len(results) == expected_total
+    if official_output_written:
         with open(OUTPUT_FILE, mode='w', encoding='utf-8-sig', newline='') as outfile:
             fieldnames = ['id', 'ret']
             writer = csv.DictWriter(outfile, fieldnames=fieldnames)
@@ -162,6 +163,7 @@ def write_outputs(
         "expected_total": expected_total,
         "result_count": len(results),
         "output_file": OUTPUT_FILE,
+        "official_output_written": official_output_written,
         "run_output_file": str(run_submission_file),
         "elapsed_seconds": round(elapsed_seconds, 2),
         "is_complete": len(results) == expected_total,

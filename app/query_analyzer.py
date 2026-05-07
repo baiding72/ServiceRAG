@@ -113,7 +113,7 @@ def extract_entities(query: str) -> Dict[str, List[str]]:
         if hint.lower() in normalized or hint in query:
             entities["products"].append(hint)
 
-    for model in re.findall(r"\b[A-Z]{2,}[A-Z0-9-]{2,}\b", query):
+    for model in re.findall(r"(?<![A-Za-z0-9])[A-Z]{2,}[A-Z0-9-]{2,}(?![A-Za-z0-9])", query):
         entities["models"].append(model)
 
     for code in re.findall(r"\b(?:E|ERR|ERROR)[-_]?\d{1,4}\b", query, flags=re.IGNORECASE):
@@ -182,4 +182,3 @@ def route_intent(analysis: QueryAnalysis) -> str:
     if analysis.intent in {"usage_guide", "troubleshooting", "image_related", "comparison"}:
         return "manual_technical"
     return "manual_technical"
-

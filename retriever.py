@@ -34,15 +34,15 @@ from sentence_transformers import CrossEncoder, SentenceTransformer
 
 # ChromaDB 持久化目录
 # ⚠️ 重要：必须与 build_vector_db.py 中的配置保持一致！
-CHROMA_PERSIST_DIR = "./data/chroma_db_m3"
+CHROMA_PERSIST_DIR = os.getenv("CHROMA_DB_PATH", "./data/chroma_db_m3")
 
 # Collection 名称
-COLLECTION_NAME = "manuals_qa_m3"
+COLLECTION_NAME = os.getenv("CHROMA_COLLECTION", "manuals_qa_m3")
 
 # Embedding 模型名称（多语言 SOTA 模型）
 # BAAI/bge-m3: 多语言支持，向量维度 1024，中英文效果俱佳
-EMBEDDING_MODEL_NAME = "BAAI/bge-m3"
-ENABLE_RERANK = os.getenv("ENABLE_RERANK", "true").lower() == "true"
+EMBEDDING_MODEL_NAME = os.getenv("EMBEDDING_MODEL_NAME", "BAAI/bge-m3")
+ENABLE_RERANK = os.getenv("RERANKER_ENABLED", os.getenv("ENABLE_RERANK", "true")).lower() == "true"
 RERANKER_MODEL_NAME = os.getenv("RERANKER_MODEL_NAME", "BAAI/bge-reranker-base")
 RERANK_CANDIDATE_K = int(os.getenv("RERANK_CANDIDATE_K", "18"))
 BM25_CANDIDATE_K = int(os.getenv("BM25_CANDIDATE_K", "12"))
@@ -168,12 +168,14 @@ class ManualRetriever:
         """
         results = self.collection.get(include=['documents', 'metadatas'])
         corpus = []
+        seen_chunk_ids = set()
 
         for corpus_index, (chunk_id, content, metadata) in enumerate(zip(
             results.get("ids", []),
             results.get("documents", []),
             results.get("metadatas", []),
         )):
+            seen_chunk_ids.add(chunk_id)
             images_str = metadata.get('images', '[]')
             try:
                 images = json.loads(images_str)
@@ -200,6 +202,44 @@ class ManualRetriever:
                     "corpus_index": corpus_index,
                 }
             )
+
+        structured_path = os.getenv("STRUCTURED_KNOWLEDGE_PATH", "data/structured_knowledge.json")
+        if os.path.exists(structured_path):
+            try:
+                with open(structured_path, "r", encoding="utf-8") as file:
+                    structured_items = json.load(file)
+                added = 0
+                for item in structured_items:
+                    chunk_id = item.get("chunk_id", "")
+                    if not chunk_id or chunk_id in seen_chunk_ids or item.get("level") == "parent":
+                        continue
+                    content = item.get("content", "")
+                    bm25_text = item.get("bm25_text") or item.get("embedding_text") or content
+                    corpus.append(
+                        {
+                            "chunk_id": chunk_id,
+                            "content": content,
+                            "retrieval_text": item.get("embedding_text", content),
+                            "images": item.get("images", []) or [],
+                            "product": item.get("product", "unknown"),
+                            "parent_id": item.get("parent_id", ""),
+                            "sub_manual": item.get("sub_manual", ""),
+                            "section_title": item.get("section_title", ""),
+                            "language": item.get("language", ""),
+                            "content_type": item.get("content_type", ""),
+                            "source_path": item.get("source_file", ""),
+                            "distance": 999.0,
+                            "normalized_content": self._normalize_text(bm25_text),
+                            "bm25_tokens": self._tokenize_for_bm25(bm25_text),
+                            "corpus_index": len(corpus),
+                        }
+                    )
+                    seen_chunk_ids.add(chunk_id)
+                    added += 1
+                if added:
+                    print(f"   ✓ BM25 补载 structured knowledge 缺失 chunk: {added}")
+            except Exception as exc:
+                print(f"   ⚠️ BM25 structured knowledge 补载失败: {exc}")
 
         return corpus
 

@@ -6,9 +6,13 @@ dist/
 wheels/
 *.egg-info
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Virtual environments
 .venv
+.venv/
+venv/
 
 # Local environment
 .env
@@ -20,6 +24,7 @@ wheels/
 
 # Vector DB artifacts
 data/chroma_db/
+data/chroma_db*/
 data/chroma_db_m3_*/
 data/chroma_db_m3_test/
 data/chroma_db_m3_manual/
@@ -30,4 +35,8 @@ data/chroma_image_db*/
 
 # Generated outputs
 # data/submission.csv 生成结果也同步
+experiments/batch_*/
+eval_reports/*.json
+eval_reports/*.md
+eval_reports/traces/
 *.log

@@ -25,6 +25,9 @@ def normalize_result(raw: Dict[str, Any], route: str = "") -> RetrievalResult:
         "manual": product,
         "product": product,
         "section_title": section_title,
+        "sub_manual": raw.get("sub_manual") or metadata.get("sub_manual") or "",
+        "language": raw.get("language") or metadata.get("language") or "",
+        "content_type": raw.get("content_type") or metadata.get("content_type") or "",
         "source_path": raw.get("source_path") or metadata.get("source_path") or "",
         "score": float(raw.get("score", raw.get("retrieval_score", 0.0)) or 0.0),
         "dense_score": float(raw.get("dense_score", raw.get("semantic_score", 0.0)) or 0.0),
@@ -35,7 +38,8 @@ def normalize_result(raw: Dict[str, Any], route: str = "") -> RetrievalResult:
         "images": _images(raw),
         "matched_terms": raw.get("matched_terms", []),
         "parent_id": raw.get("parent_id") or metadata.get("parent_id") or "",
+        "route_ranks": raw.get("route_ranks", {}),
+        "rrf_score": float(raw.get("rrf_score", raw.get("score", 0.0)) or 0.0),
         "metadata": metadata or {k: v for k, v in raw.items() if k not in {"content", "text"}},
         "route": route or raw.get("route", ""),
     }
-

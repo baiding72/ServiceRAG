@@ -195,6 +195,24 @@ def clean_text(text: str) -> str:
     return text
 
 
+def remove_last_pic_placeholder(text: str) -> str:
+    index = text.rfind(IMAGE_PLACEHOLDER)
+    if index < 0:
+        return text
+    return clean_text(text[:index] + text[index + len(IMAGE_PLACEHOLDER):])
+
+
+def align_content_pic_placeholders(text: str, images: List[str]) -> str:
+    """
+    保守对齐正文中的 <PIC> 数量。
+    若图片 ID 少于占位符，只删除多余的末尾 <PIC>；不新增或猜测图片 ID。
+    """
+    text = clean_text(text)
+    while text.count(IMAGE_PLACEHOLDER) > len(images):
+        text = remove_last_pic_placeholder(text)
+    return text
+
+
 def preprocess_text_for_structure(text: str, product: str) -> str:
     """
     对结构较差的原文做轻量预标准化，帮助 section / step 识别。
@@ -330,13 +348,33 @@ def parse_raw_manual_records(raw_content: str, file_name: str) -> List[Tuple[str
     2. 单个 Python 字面量数组
     3. 按行拼接的多条 JSON/字面量记录（汇总英文手册）
     """
+    def apply_known_alignment_fixes(text_content: str, image_list: List[str]) -> Tuple[str, List[str]]:
+        """
+        修正已确认的原始手册 <PIC> / 图片列表错位。
+
+        可编程温控器手册中 Manual36_40 是高级菜单结束时的 DONE 界面，
+        但原始文本在“显示完成。按选择键保存并退出。”后漏了一个 <PIC>。
+        如果直接丢弃最后一张图，会导致 Manual36_41~Manual36_50 整段后续图片
+        全部向前错一位，因此这里补回缺失占位符。
+        """
+        if (
+            file_name == "可编程温控器手册.txt"
+            and text_content.count(IMAGE_PLACEHOLDER) + 1 == len(image_list)
+            and "Manual36_40" in image_list
+        ):
+            marker = "6 完成所有系统设置编号循环后，显示“完成”。按选择键保存并退出。"
+            replacement = f"{marker} {IMAGE_PLACEHOLDER}"
+            if marker in text_content and replacement not in text_content:
+                text_content = text_content.replace(marker, replacement, 1)
+        return text_content, image_list
+
     def normalize_record(data: Any) -> Optional[Tuple[str, List[str]]]:
         if isinstance(data, list) and len(data) >= 1:
             text_content = data[0]
             image_list = data[1] if len(data) > 1 and isinstance(data[1], list) else []
-            return str(text_content), image_list
+            return apply_known_alignment_fixes(str(text_content), image_list)
         if isinstance(data, str):
-            return data, []
+            return apply_known_alignment_fixes(data, [])
         return None
 
     try:
@@ -409,10 +447,6 @@ def split_text_by_pic_tags(text: str, image_list: List[str]) -> List[Tuple[str, 
         # 清洗文本
         part = clean_text(part)
 
-        # 过滤过短的片段
-        if len(part) < MIN_CHUNK_LENGTH:
-            continue
-
         # 当前段落的图片列表
         chunk_images = []
 
@@ -421,6 +455,13 @@ def split_text_by_pic_tags(text: str, image_list: List[str]) -> List[Tuple[str, 
         if i < len(parts) - 1 and image_index < len(image_list):
             chunk_images.append(image_list[image_index])
             image_index += 1
+
+        # 过滤过短且无图片的片段；有图片时保留占位符位置
+        if len(part) < MIN_CHUNK_LENGTH and not chunk_images:
+            continue
+
+        if chunk_images:
+            part = clean_text(f"{part} {IMAGE_PLACEHOLDER}")
 
         chunks.append((part, chunk_images))
 
@@ -518,7 +559,8 @@ def is_major_heading_line(line: str) -> bool:
 
 def attach_section_title(section_title: str, text: str) -> str:
     text = clean_text(text)
-    title = clean_text(section_title)
+    title = clean_text(section_title).replace(IMAGE_PLACEHOLDER, " ")
+    title = clean_text(re.sub(r"\s+", " ", title))
     if not title:
         return text
     if text.startswith(title):
@@ -687,9 +729,10 @@ def merge_pic_children(pic_units: List[Tuple[str, List[str]]], target_len: int =
         if text:
             current_texts.append(text)
             current_len += unit_len
-        for image_id in images:
-            if image_id not in current_images:
-                current_images.append(image_id)
+        # Preserve one image id per <PIC>. Some manuals intentionally reuse the
+        # same image id at multiple positions, so de-duplicating here breaks the
+        # required placeholder/image alignment.
+        current_images.extend(images)
 
     if current_texts or current_images:
         merged.append((clean_text("\n".join(current_texts)), current_images))
@@ -766,16 +809,8 @@ def build_child_units(section_text: str, section_images: List[str], section_titl
     2. <PIC> 图文块
     3. 普通段落 + 滑动窗口
     """
-    if is_toc_section(section_text, section_title):
+    if is_toc_section(section_text, section_title) and IMAGE_PLACEHOLDER not in section_text:
         return []
-
-    step_blocks = split_step_blocks(section_text)
-    if step_blocks:
-        units = []
-        for step_no, block_text in merge_step_units(step_blocks):
-            for piece in split_long_text_with_overlap(block_text, target_len=CHILD_TARGET_LENGTH):
-                units.append((attach_section_title(section_title, piece), [], step_no))
-        return units
 
     if IMAGE_PLACEHOLDER in section_text:
         units = []
@@ -784,8 +819,16 @@ def build_child_units(section_text: str, section_images: List[str], section_titl
             target_len=PIC_GROUP_TARGET_LENGTH,
         )
         for piece, images in merged_pic_units:
-            for child_text in split_long_text_with_overlap(piece, target_len=PIC_GROUP_TARGET_LENGTH):
-                units.append((attach_section_title(section_title, child_text), images, ""))
+            child_text = attach_section_title(section_title, piece)
+            units.append((child_text, images, ""))
+        return units
+
+    step_blocks = split_step_blocks(section_text)
+    if step_blocks:
+        units = []
+        for step_no, block_text in merge_step_units(step_blocks):
+            for piece in split_long_text_with_overlap(block_text, target_len=CHILD_TARGET_LENGTH):
+                units.append((attach_section_title(section_title, piece), [], step_no))
         return units
 
     units = []
@@ -834,7 +877,7 @@ def parse_manual_file(file_path: Path) -> List[TextChunk]:
         sections = split_into_sections(text_content, image_list)
 
         for section_text, section_images, section_title in sections:
-            parent_text = clean_text(section_text)
+            parent_text = align_content_pic_placeholders(section_text, section_images)
             if len(parent_text) < MIN_CHUNK_LENGTH:
                 continue
 
@@ -878,7 +921,7 @@ def parse_manual_file(file_path: Path) -> List[TextChunk]:
             child_chunks = []
 
             for child_index, (child_text, child_images, step_no) in enumerate(child_units):
-                child_text = clean_text(child_text)
+                child_text = align_content_pic_placeholders(child_text, child_images)
                 if len(child_text) < MIN_CHUNK_LENGTH:
                     continue
 

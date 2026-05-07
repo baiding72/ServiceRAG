@@ -34,22 +34,22 @@ from sentence_transformers import SentenceTransformer
 # ============================================
 
 # 输入文件路径
-INPUT_FILE = Path("./data/structured_knowledge.json")
+INPUT_FILE = Path(os.getenv("STRUCTURED_KNOWLEDGE_PATH", "./data/structured_knowledge.json"))
 
 # ChromaDB 持久化目录
 # ⚠️ 重要：bge-m3 向量维度为 1024，必须使用新目录，不能复用旧目录！
-CHROMA_PERSIST_DIR = "./data/chroma_db_m3"
+CHROMA_PERSIST_DIR = os.getenv("CHROMA_DB_PATH", "./data/chroma_db_m3")
 
 # Collection 名称
-COLLECTION_NAME = "manuals_qa_m3"
+COLLECTION_NAME = os.getenv("CHROMA_COLLECTION", "manuals_qa_m3")
 
 # Embedding 模型名称（多语言 SOTA 模型）
 # BAAI/bge-m3: 多语言支持，向量维度 1024，中英文效果俱佳
 # BAAI/bge-small-zh-v1.5: 仅中文，向量维度 512（已弃用）
-EMBEDDING_MODEL_NAME = "BAAI/bge-m3"
+EMBEDDING_MODEL_NAME = os.getenv("EMBEDDING_MODEL_NAME", "BAAI/bge-m3")
 
 # 批量处理大小（避免内存溢出）
-BATCH_SIZE = 10  # bge-m3 模型较大，使用更小批次
+BATCH_SIZE = int(os.getenv("VECTOR_BUILD_BATCH_SIZE", "10"))  # bge-m3 模型较大，使用更小批次
 
 
 # ============================================
